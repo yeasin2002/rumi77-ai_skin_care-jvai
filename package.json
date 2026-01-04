@@ -112,7 +112,7 @@
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "latest",
     "storybook": "latest",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.18",
     "tsx": "latest",
     "typescript": "^5.8.3",
     "vite": "latest",
