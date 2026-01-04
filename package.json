@@ -66,7 +66,7 @@
     "clsx": "^2.1.1",
     "codehawk-cli": "^10.1.0",
     "dotenv": "^17.2.1",
-    "drizzle-orm": "^0.44.3",
+    "drizzle-orm": "^0.45.1",
     "gel": "latest",
     "knex": "latest",
     "kysely": "latest",
