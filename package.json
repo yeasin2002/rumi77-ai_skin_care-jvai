@@ -104,7 +104,7 @@
     "eslint": "^9.33.0",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "latest",
-    "eslint-plugin-storybook": "9.0.18",
+    "eslint-plugin-storybook": "10.1.11",
     "happy-dom": "latest",
     "jsdom": "latest",
     "knip": "^5.62.0",
