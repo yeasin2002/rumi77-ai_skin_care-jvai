@@ -1,0 +1,29 @@
+import bundleAnalyzer from '@next/bundle-analyzer'
+import type { NextConfig } from 'next'
+import createNextIntlPlugin from 'next-intl/plugin'
+
+const withNextIntl = createNextIntlPlugin()
+const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
+
+const nextConfig: NextConfig = {
+  // standalone output for Docker
+  // output: 'standalone',
+
+  experimental: {
+    typedRoutes: true,
+  },
+
+  eslint: {
+    ignoreDuringBuilds: process.env.NODE_ENV === 'production',
+  },
+
+  typescript: {
+    ignoreBuildErrors: process.env.NODE_ENV === 'production',
+  },
+
+  images: {
+    remotePatterns: [],
+  },
+}
+
+export default withBundleAnalyzer(withNextIntl(nextConfig))
