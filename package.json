@@ -106,7 +106,7 @@
     "cross-env": "latest",
     "drizzle-kit": "latest",
     "eslint": "^9.33.0",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "16.1.1",
     "eslint-config-prettier": "latest",
     "eslint-plugin-storybook": "9.0.18",
     "happy-dom": "latest",
