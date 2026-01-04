@@ -70,7 +70,7 @@
     "gel": "latest",
     "knex": "latest",
     "kysely": "latest",
-    "lucide-react": "^0.454.0",
+    "lucide-react": "^0.562.0",
     "next": "^15.4.7",
     "next-intl": "^4.3.4",
     "next-themes": "latest",
@@ -80,7 +80,7 @@
     "react-dom": "^19.1.1",
     "react-hook-form": "latest",
     "react-hot-toast": "^2.6.0",
-    "tailwind-merge": "^2.6.0",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.25.76"
   },

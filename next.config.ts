@@ -8,10 +8,7 @@ const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'tr
 const nextConfig: NextConfig = {
   // standalone output for Docker
   // output: 'standalone',
-
-  experimental: {
-    typedRoutes: true,
-  },
+  typedRoutes: true,
 
   eslint: {
     ignoreDuringBuilds: process.env.NODE_ENV === 'production',
