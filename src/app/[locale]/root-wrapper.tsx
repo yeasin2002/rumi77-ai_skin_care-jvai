@@ -4,7 +4,6 @@
 
 import { NextIntlClientProvider } from 'next-intl'
 import React from 'react'
-import { ThemeProvider } from '../../components/theme-provider'
 
 export const RootWrapper = ({
   children,
@@ -17,9 +16,8 @@ export const RootWrapper = ({
   //   useScan({ enabled: process.env.NODE_ENV === 'development' })
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-        <NextIntlClientProvider locale={locale}>{children}</NextIntlClientProvider>
-      </ThemeProvider>
+      {/* <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange> */}
+      <NextIntlClientProvider locale={locale}>{children}</NextIntlClientProvider>
     </>
   )
 }

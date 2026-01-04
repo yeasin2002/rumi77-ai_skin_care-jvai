@@ -4,5 +4,5 @@ export default async function HomePage() {
   const t = await getTranslations('hero')
   console.log('page: title', t('title'))
 
-  return <div>Hello</div>
+  return <div className="bg-background h-screen w-screen">Hello</div>
 }

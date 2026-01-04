@@ -28,7 +28,8 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <RootWrapper locale={locale}>{children}</RootWrapper>
+        {children}
+        {/* <RootWrapper locale={locale}>{children}</RootWrapper> */}
         <Toaster />
       </body>
     </html>
