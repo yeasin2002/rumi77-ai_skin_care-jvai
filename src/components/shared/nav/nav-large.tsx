@@ -1,0 +1,16 @@
+import Logo from '@/assets/logo.svg'
+import { Button } from '@/components/ui'
+import { LanguageToggle } from '../language-toggle'
+
+export const NavLarge = () => {
+  return (
+    <nav className="flex items-center justify-between py-4">
+      <Logo />
+
+      <div className="flex items-center justify-center gap-x-4">
+        <LanguageToggle />
+        <Button>Sign in</Button>
+      </div>
+    </nav>
+  )
+}

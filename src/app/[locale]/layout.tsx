@@ -27,9 +27,8 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        {children}
-        {/* <RootWrapper locale={locale}>{children}</RootWrapper> */}
+      <body className={inter.className + ` container mx-auto`}>
+        <RootWrapper locale={locale}>{children}</RootWrapper>
         <Toaster />
       </body>
     </html>
