@@ -1,17 +1,15 @@
 import { Toaster } from 'react-hot-toast'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import type React from 'react'
 import '../../styles/globals.css'
 
 import { rootMetadata } from '#/config/root-metadata'
 import { routing } from '@/i18n/routing'
+import { fonts } from '@/lib/fonts'
 import { hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { RootWrapper } from './root-wrapper'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default async function RootLayout({
   children,
@@ -27,7 +25,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className + ` container mx-auto`}>
+      <body className={`${fonts} `}>
         <RootWrapper locale={locale}>{children}</RootWrapper>
         <Toaster />
       </body>
