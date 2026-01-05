@@ -1,0 +1,40 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "extends": ["config:recommended", "schedule:weekly", ":dependencyDashboard", "group:recommended"],
+
+  "timezone": "Asia/Dhaka",
+
+  "automerge": false,
+
+  "labels": ["dependencies"],
+
+  "rangeStrategy": "bump",
+
+  "rebaseWhen": "conflicted",
+
+  "separateMajorMinor": true,
+  "separateMinorPatch": false,
+
+  "packageRules": [
+    {
+      "description": "Group all patch updates",
+      "matchUpdateTypes": ["patch"],
+      "groupName": "patch dependencies"
+    },
+    {
+      "description": "Group minor updates except core framework",
+      "matchUpdateTypes": ["minor"],
+      "excludePackageNames": ["next", "react", "react-dom"],
+      "groupName": "minor dependencies"
+    },
+    {
+      "description": "Keep Next.js and React updates separate",
+      "matchPackageNames": ["next", "react", "react-dom"],
+      "separateMajorMinor": true
+    }
+  ],
+
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 0
+}
