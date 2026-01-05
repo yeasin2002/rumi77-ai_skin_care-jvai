@@ -5,11 +5,11 @@ import Image from 'next/image'
 export const AboutGlowmi = () => {
   return (
     <section>
-      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div className="flex justify-center bg-[#FEF9F6]">
+      <div className="grid grid-cols-1 lg:grid-cols-5">
+        <div className="flex justify-center bg-[#FEF9F6] lg:col-span-2">
           <Image src={aboutImage} alt="Glowmi Product" className="w-full max-w-md" />
         </div>
-        <div className="space-y-6">
+        <div className="flex flex-col justify-center space-y-6 bg-[#FFFFFF] px-24 lg:col-span-3">
           <h2 className={`${caudex.className} text-foreground text-4xl lg:text-5xl`}>
             About Glowmi
           </h2>
