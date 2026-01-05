@@ -16,6 +16,7 @@ export const NavList = ({ className, ...props }: Props) => {
     <nav className={cn(`flex justify-between`, className)} {...props}>
       {navItems.map((item) => (
         <Link
+          key={item.name}
           href={{ pathname: item.url }}
           className={`${caudex.className} text-2xl font-bold text-white`}
         >
