@@ -6,15 +6,17 @@ export const Hero = () => {
   return (
     <main className="relative">
       <video src={'/hero-video.mp4'} autoPlay muted loop />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-28 bg-black/20">
-        <h1 className={`${caudex.className} text-6xl text-white`}>A Glow that feels like you</h1>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-10 bg-black/20 lg:gap-y-28">
+        <h1 className={`${caudex.className} text-3xl text-white lg:text-6xl`}>
+          A Glow that <br className="md:hidden" /> feels like you
+        </h1>
         <Button
-          className={`${openSans.className} px-10 py-8 text-2xl font-normal [box-shadow:none]!`}
+          className={`${openSans.className} text-xl font-normal [box-shadow:none]! lg:px-10 lg:py-8 lg:text-2xl`}
         >
           SHOP NOW
         </Button>
       </div>
-      <NavList className="absolute top-5 w-full justify-around" />
+      <NavList className="absolute top-5 right-2 justify-around md:w-full" />
     </main>
   )
 }
