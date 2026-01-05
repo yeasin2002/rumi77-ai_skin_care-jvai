@@ -34,3 +34,7 @@ export default async function RootLayout({
 }
 
 export const metadata: Metadata = { ...rootMetadata }
+
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}

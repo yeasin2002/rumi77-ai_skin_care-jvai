@@ -12,5 +12,4 @@ const openSans = Open_Sans({
 })
 
 const fontList = [caudex, openSans]
-
 export const fonts = fontList.map((f) => f.variable)

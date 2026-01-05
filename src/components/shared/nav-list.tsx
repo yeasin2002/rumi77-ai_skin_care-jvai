@@ -12,9 +12,11 @@ interface Props extends React.ComponentPropsWithRef<'nav'> {}
 
 export const NavList = ({ className, ...props }: Props) => {
   return (
-    <nav className={cn(className)} {...props}>
+    <nav className={cn(`flex justify-between`, className)} {...props}>
       {navItems.map((item) => (
-        <Link href={{ pathname: item.url }}>{item.name}</Link>
+        <Link href={{ pathname: item.url }} className="font-caudex text-3xl font-bold text-white">
+          {item.name}
+        </Link>
       ))}
     </nav>
   )

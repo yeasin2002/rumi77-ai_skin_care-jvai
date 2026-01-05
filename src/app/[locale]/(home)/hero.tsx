@@ -11,7 +11,7 @@ export const Hero = () => {
           SHOP NOW
         </Button>
       </div>
-      <NavList />
+      <NavList className="absolute top-5 w-full justify-around" />
     </main>
   )
 }
