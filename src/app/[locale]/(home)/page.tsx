@@ -4,6 +4,8 @@ import { BestProductsList } from './best-products'
 import { GlowmiProductShowcase } from './glowmi-product-showcase'
 import { GlowmiStates } from './glowmi-states'
 import { Hero } from './hero'
+import { SkincareShowcase } from './skincare-showcase'
+import { Transformation } from './transformation'
 import { VisualsResults } from './visuals-results'
 
 export default async function HomePage() {
@@ -16,6 +18,8 @@ export default async function HomePage() {
       <GlowmiStates />
       <GlowmiProductShowcase />
       <VisualsResults />
+      {/* <Transformation /> */}
+      <SkincareShowcase />
     </div>
   )
 }
