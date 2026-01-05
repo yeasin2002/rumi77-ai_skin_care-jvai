@@ -6,7 +6,7 @@ export const caudex = Caudex({
   variable: '--font-caudex',
 })
 export const openSans = Open_Sans({
-  weight: '400',
+  weight: ['400', '600'],
   subsets: ['latin'],
   variable: '--font-openSans',
 })

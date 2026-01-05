@@ -41,9 +41,6 @@ export const ContactUs = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom dark bar */}
-      <div className="bg-main-button mt-16 h-3 w-full" />
     </section>
   )
 }
