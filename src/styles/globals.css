@@ -49,6 +49,9 @@
   /* custom variables */
   --font-caudex: var(--font-caudex);
   --font-openSans: var(--font-openSans);
+
+  --color-main-button: #244731;
+  --color-main-primary-base_medium: #58351B;
 }
 
 :root {

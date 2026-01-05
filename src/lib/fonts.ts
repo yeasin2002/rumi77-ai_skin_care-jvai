@@ -1,7 +1,7 @@
 import { Caudex, Open_Sans } from 'next/font/google'
 
 export const caudex = Caudex({
-  weight: '400',
+  weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-caudex',
 })
