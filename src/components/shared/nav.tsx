@@ -1,5 +1,6 @@
 import Logo from '@/assets/logo.svg'
 import { Button } from '@/components/ui'
+import { openSans } from '@/lib/fonts'
 import { LanguageToggle } from './language-toggle'
 
 export const Nav = () => {
@@ -9,7 +10,7 @@ export const Nav = () => {
 
       <div className="flex items-center justify-center gap-x-4">
         <LanguageToggle />
-        <Button>Sign in</Button>
+        <Button className={openSans.className}>Sign in</Button>
       </div>
     </header>
   )

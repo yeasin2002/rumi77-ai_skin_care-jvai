@@ -1,11 +1,11 @@
 import { Caudex, Open_Sans } from 'next/font/google'
 
-const caudex = Caudex({
+export const caudex = Caudex({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-caudex',
 })
-const openSans = Open_Sans({
+export const openSans = Open_Sans({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-openSans',

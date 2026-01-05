@@ -1,5 +1,6 @@
+import { caudex } from '@/lib/fonts'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { cn } from '../../lib/utils'
 
 const navItems = [
   { name: 'Home', url: '' },
@@ -14,7 +15,10 @@ export const NavList = ({ className, ...props }: Props) => {
   return (
     <nav className={cn(`flex justify-between`, className)} {...props}>
       {navItems.map((item) => (
-        <Link href={{ pathname: item.url }} className="font-caudex text-3xl font-bold text-white">
+        <Link
+          href={{ pathname: item.url }}
+          className={`${caudex.className} text-2xl font-bold text-white`}
+        >
           {item.name}
         </Link>
       ))}

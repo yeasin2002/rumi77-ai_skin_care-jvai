@@ -25,7 +25,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fonts} `}>
+      <body className={`${fonts}`}>
         <RootWrapper locale={locale}>{children}</RootWrapper>
         <Toaster />
       </body>
