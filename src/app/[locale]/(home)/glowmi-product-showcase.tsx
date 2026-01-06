@@ -18,7 +18,7 @@ export const GlowmiProductShowcase = () => {
       </div>
 
       {/* Video Section with Text Overlay */}
-      <div className="relative mt-8 h-[300px] w-full overflow-hidden sm:h-[400px] md:h-[500px] lg:mt-28">
+      <div className="relative mt-8 h-[300px] w-full overflow-hidden sm:h-[400px] md:h-[700px] lg:mt-28">
         <video
           autoPlay
           muted

@@ -13,7 +13,7 @@ export const Hero = () => {
         <Button
           className={`${openSans.className} text-xl font-normal [box-shadow:none]! lg:px-10 lg:py-8 lg:text-2xl`}
         >
-          SHOP NOW
+          STAY CONNECTED
         </Button>
       </div>
       <NavList className="absolute top-5 right-2 justify-around md:w-full" />

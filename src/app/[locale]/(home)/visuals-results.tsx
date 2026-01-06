@@ -44,8 +44,8 @@ export const VisualsResults = () => {
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {ResultsData.map((item) => (
           <div key={item.title} className="flex flex-col rounded-2xl bg-white p-6 py-10 shadow-sm">
-            <div className="mb-4 flex size-10 shrink-0 items-center justify-center overflow-visible rounded-xl bg-[#2447311A]">
-              <Image src={item.Icon} alt="Icons" />
+            <div className="mb-4 flex size-14 shrink-0 items-center justify-center overflow-visible rounded-xl bg-[#2447311A]">
+              <Image src={item.Icon} alt="Icons" className="size-8" />
             </div>
             <h3 className={`text-main-button text-3xl font-semibold ${caudex.className}`}>
               {item.title}

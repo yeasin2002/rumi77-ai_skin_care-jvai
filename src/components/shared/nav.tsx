@@ -10,7 +10,7 @@ export const Nav = () => {
 
       <div className="flex items-center justify-center gap-x-4">
         <LanguageToggle />
-        <Button className={openSans.className}>Coming</Button>
+        <Button className={openSans.className}>COMING</Button>
       </div>
     </header>
   )
