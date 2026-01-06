@@ -2,26 +2,41 @@ import type { Metadata } from 'next'
 
 export const rootMetadata: Metadata = {
   title: {
-    default: 'Next.js Boilerplate',
-    template: '%s | Next.js Boilerplate',
+    default: 'GLOWMI - AI-Powered Skincare',
+    template: '%s | GLOWMI',
   },
-  description: 'A comprehensive Next.js boilerplate with modern tooling',
-  keywords: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  description:
+    'Discover personalized skincare with GLOWMI. AI-powered skin analysis, premium ingredients, and customized routines for your unique skin needs.',
+  keywords: [
+    'skincare',
+    'AI skin analysis',
+    'personalized skincare',
+    'luxury skincare',
+    'skin routine',
+    'GLOWMI',
+    'beauty',
+    'cosmetics',
+    'Saudi Arabia',
+    'KSA',
+  ],
+  authors: [{ name: 'GLOWMI' }],
+  creator: 'GLOWMI',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
-    title: 'Next.js Boilerplate',
-    description: 'A comprehensive Next.js boilerplate with modern tooling',
-    siteName: 'Next.js Boilerplate',
+    alternateLocale: 'ar_SA',
+    url: 'https://glowmi.com',
+    title: 'GLOWMI - AI-Powered Skincare',
+    description:
+      'Discover personalized skincare with GLOWMI. AI-powered skin analysis, premium ingredients, and customized routines for your unique skin needs.',
+    siteName: 'GLOWMI',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Next.js Boilerplate',
-    description: 'A comprehensive Next.js boilerplate with modern tooling',
-    creator: '@yourusername',
+    title: 'GLOWMI - AI-Powered Skincare',
+    description:
+      'Discover personalized skincare with GLOWMI. AI-powered skin analysis, premium ingredients, and customized routines.',
+    creator: '@glowmi',
   },
   robots: {
     index: true,
