@@ -1,6 +1,7 @@
 import { Nav } from '@/components/shared/nav'
 import { AboutGlowmi } from './about-glowmi'
 import { BestProductsList } from './best-products'
+import { CollectionProduct } from './collection-product'
 import { ContactUs } from './contact-us'
 import { Footer } from './footer'
 import { GlowmiProductShowcase } from './glowmi-product-showcase'
@@ -17,7 +18,10 @@ export default async function HomePage() {
       <Nav />
       <Hero />
       <AboutGlowmi />
-      <BestProductsList />
+
+      {/* <BestProductsList /> */}
+      <CollectionProduct />
+
       <GlowmiStates />
       <GlowmiProductShowcase />
       <VisualsResults />

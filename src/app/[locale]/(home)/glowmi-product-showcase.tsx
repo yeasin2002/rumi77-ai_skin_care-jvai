@@ -1,12 +1,10 @@
 import { SiteHeading } from '../../../components/shared'
 
-import showcase1 from '@/assets/image/product-showcase/showcase-1.png'
-import showcase2 from '@/assets/image/product-showcase/showcase-2.png'
-import showcase3 from '@/assets/image/product-showcase/showcase-3.png'
-import showcase4 from '@/assets/image/product-showcase/showcase-4.png'
+import showcase1 from '@/assets/image/product-showcase-comming.png'
+
 import Image from 'next/image'
 
-const imageList = [showcase1, showcase2, showcase3, showcase4]
+const imageList = [showcase1, showcase1, showcase1, showcase1]
 
 export const GlowmiProductShowcase = () => {
   return (
@@ -20,7 +18,7 @@ export const GlowmiProductShowcase = () => {
       </div>
 
       {/* Video Section with Text Overlay */}
-      <div className="relative mt-8 h-[300px] w-full overflow-hidden sm:h-[400px] md:h-[500px]">
+      <div className="relative mt-8 h-[300px] w-full overflow-hidden sm:h-[400px] md:h-[500px] lg:mt-28">
         <video
           autoPlay
           muted

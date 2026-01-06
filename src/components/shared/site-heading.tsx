@@ -20,23 +20,23 @@ export const SiteHeading = ({
 }: Props) => {
   return (
     <div className={cn('flex flex-col items-center justify-center gap-4', wrapperClassname)}>
-      <h1
+      <h2
         className={cn(
           `${caudex.className} text-main-button text-5xl font-normal`,
           headingClassName
         )}
       >
         {heading}
-      </h1>
+      </h2>
       {subHeading && (
-        <h2
+        <h3
           className={cn(
             ` ${openSans.className} text-main-primary-base_medium`,
             subHeadingClassname
           )}
         >
           {subHeading}
-        </h2>
+        </h3>
       )}
     </div>
   )
