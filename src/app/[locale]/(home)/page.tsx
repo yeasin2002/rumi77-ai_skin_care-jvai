@@ -28,7 +28,7 @@ export default async function HomePage() {
       <VisualsResults />
       {/* <Transformation /> */}
       <SkincareShowcase />
-      <ContactUs />
+      {/* <ContactUs /> */}
       <HomeBottomCta />
 
       {/* <Footer /> */}

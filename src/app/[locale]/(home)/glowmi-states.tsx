@@ -15,12 +15,12 @@ export const GlowmiStates = () => {
         subHeading="Our intelligent platform combines cutting-edge AI with dermatological expertise to deliver personalized skincare solutions."
         wrapperClassname="py-10"
       />
-      <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-5 md:grid-cols-3">
         {cardsStates.map((data, index) => (
           <div
             key={data.title}
             className={
-              'flex flex-col items-center rounded-2xl bg-white px-6 py-10 text-center shadow-sm ' +
+              'flex flex-col items-center rounded-2xl bg-white px-6 py-10 text-center shadow-sm lg:py-16' +
               caudex.className
             }
           >

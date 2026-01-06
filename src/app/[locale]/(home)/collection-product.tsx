@@ -46,7 +46,7 @@ export const CollectionProduct = () => {
                 src={CollectionProductImage}
                 alt={item.title}
                 fill
-                className="object-cover opacity-80 backdrop-blur-[184px]"
+                className="object-cover opacity-30 backdrop-blur-[184px]"
               />
               {/* Coming Soon overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">

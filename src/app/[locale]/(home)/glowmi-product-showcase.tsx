@@ -1,8 +1,8 @@
-import { SiteHeading } from '../../../components/shared'
+import Image from 'next/image'
 
 import showcase1 from '@/assets/image/product-showcase-comming.png'
-
-import Image from 'next/image'
+import { SiteHeading } from '@/components/shared'
+import { caudex, openSans } from '@/lib/fonts'
 
 const imageList = [showcase1, showcase1, showcase1, showcase1]
 
@@ -32,10 +32,15 @@ export const GlowmiProductShowcase = () => {
         {/* Text Overlay */}
         <div className="absolute inset-0 flex items-center bg-black/20">
           <div className="px-6 py-8 sm:px-12 md:px-16 lg:px-24">
-            <h2 className="max-w-md font-serif text-2xl leading-tight text-white italic sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2
+              className={
+                'max-w-md text-2xl leading-tight text-white italic sm:text-3xl md:text-4xl lg:text-5xl ' +
+                caudex.className
+              }
+            >
               Glow brighter every day with cosmetics that best in you
             </h2>
-            <p className="mt-4 max-w-sm text-sm text-white/80 sm:text-base">
+            <p className={`mt-4 max-w-sm text-sm text-white/80 sm:text-base ${openSans.className}`}>
               Elevate your beauty with luxurious cosmetics crafted to celebrate your natural charm.
             </p>
           </div>

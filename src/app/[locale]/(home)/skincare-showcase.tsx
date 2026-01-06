@@ -38,7 +38,7 @@ const skincareDetails: SkincareItem[] = [
 
 export const SkincareShowcase = () => {
   return (
-    <section className="bg-[#FFFFFF] px-4 py-20 sm:px-8">
+    <section className="bg-[#FFFFFF] px-4 py-20 sm:px-8 lg:py-32">
       <SiteHeading
         heading="Where Science Meets Skincare"
         subHeading="Every Glowmi product is backed by research and designed for results"
