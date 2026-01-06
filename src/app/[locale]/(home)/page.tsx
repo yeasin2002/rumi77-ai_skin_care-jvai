@@ -4,6 +4,7 @@ import { BestProductsList } from './best-products'
 import { CollectionProduct } from './collection-product'
 import { ContactUs } from './contact-us'
 import { Footer } from './footer'
+import { FooterSingle } from './footer-single'
 import { GlowmiProductShowcase } from './glowmi-product-showcase'
 import { GlowmiStates } from './glowmi-states'
 import { Hero } from './hero'
@@ -29,7 +30,9 @@ export default async function HomePage() {
       <SkincareShowcase />
       <ContactUs />
       <HomeBottomCta />
-      <Footer />
+
+      {/* <Footer /> */}
+      <FooterSingle />
     </div>
   )
 }
