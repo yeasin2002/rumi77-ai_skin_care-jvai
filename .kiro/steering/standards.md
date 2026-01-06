@@ -1,4 +1,4 @@
-# Code Standards & AI Integration
+# Code Standards & API Integration
 
 ## Code Quality Principles
 
@@ -16,11 +16,8 @@ const users: User[] = []
 import type { User } from '@/types'
 
 // ❌ Don't
-enum UserRole {
-  Customer,
-  Admin,
-} // Use union types
-const users: any = [] // Use proper types
+enum UserRole { Customer, Admin }  // Use union types
+const users: any = []              // Use proper types
 ```
 
 - Use `as const` for literals, `T[]` for arrays
@@ -72,82 +69,97 @@ const fetchData = async (id: string) => {
 - No hardcoded secrets
 - Validate/sanitize inputs
 - `target="_blank"` → add `rel="noopener"`
-- No `eval()` or dynamic code execution
+- Store JWT in httpOnly cookies (not localStorage)
 
 ## Testing
 
 - Descriptive test names
 - Test happy path + error scenarios
 - No focused tests (`fit`, `fdescribe`) in commits
-- Mock external dependencies
+- Mock API calls in tests
 
 ---
 
-## AI Integration
+## API Integration
 
-### Features
+### API Client Setup
 
-**Skin Analyzer**
-
-- Quick Check: text-based basic assessment
-- Deep Profile: comprehensive with optional photo
-- Store inputs in `ai_inputs` table
-
-**Chat Assistant ("Ask Glowmi")**
-
-- Conversational skincare advice
-- Product recommendations (Glowmi SKUs only)
-- Ingredient explanations
-
-### AI Outputs
-
-- AM/PM routines, ingredient reasoning
-- Safe/Avoid ingredient lists
-- Product recommendations
-- Store in `ai_outputs` table
-
-### RAG Architecture
-
-- Knowledge base: Glowmi products + INCI data
-- Recommendations only from available products
-- Consistent responses for same issues
-
-### Safety Rules Engine
-
-| Rule           | Flagged Items                                     |
-| -------------- | ------------------------------------------------- |
-| Pregnancy      | Retinoids, strong acids, hydroquinone             |
-| Conflicts      | Retinol + AHA/BHA, Vitamin C + Niacinamide timing |
-| Sensitive Skin | Reduce actives, prioritize gentle/fragrance-free  |
-| Strong Actives | High-concentration retinoids, chemical peels      |
-
-### Required Consent
-
-- PDPL-compliant modal before AI analysis
-- Bilingual (EN + AR)
-- Log in `consent_audit` table
-
-### API Endpoints
-
-```
-POST /api/ai/analyze  # Skin analysis (requires consent)
-POST /api/ai/chat     # Chat (requires session)
-GET  /api/ai/history  # Past analyses (requires auth)
+```typescript
+// src/lib/api/client.ts
+const apiClient = {
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  // Include credentials for httpOnly cookies
+  credentials: 'include',
+}
 ```
 
-### Data Schema
+### Type-Safe API Responses
 
-**ai_inputs:** id, user_id, session_id, input_type, content, image_url, locale, created_at
+```typescript
+// src/types/api.ts
+export type ApiResponse<T> = {
+  success: boolean
+  data?: T
+  error?: string
+}
 
-**ai_outputs:** id, input_id, routine_am, routine_pm, safe_ingredients, avoid_ingredients, product_recommendations, reasoning, warnings, created_at
+// Validate with Zod
+const userSchema = z.object({
+  id: z.string(),
+  email: z.string().email(),
+  role: z.enum(['customer', 'admin']),
+})
+```
 
-**formulation_ideas:** id, concept_name, key_ingredients, suggested_inci, target_concerns, demand_score, generated_at
+### React Query Usage
 
-### R&D Intelligence
+```typescript
+// Use React Query for server state
+const { data, isLoading, error } = useQuery({
+  queryKey: ['products'],
+  queryFn: () => api.products.getAll(),
+})
+```
 
-- Formulation Radar: trending concerns, ingredient demand
-- Lab Brief: concept name, key ingredients, INCI list, target profiles
-- Analytics: geographic trends, demand clusters, product-gap matrix
+### API Endpoints (Frontend calls)
+
+| Feature   | Endpoints                                      |
+| --------- | ---------------------------------------------- |
+| Auth      | POST /auth/login, /auth/register, /auth/logout |
+| Products  | GET /products, /products/:id                   |
+| Cart      | GET/POST/PUT/DELETE /cart                      |
+| Orders    | GET/POST /orders                               |
+| AI        | POST /ai/analyze, /ai/chat                     |
+| User      | GET/PUT /user/profile, /user/addresses         |
+
+### Error Handling
+
+- Handle 401 → redirect to login
+- Handle 403 → show forbidden message
+- Handle 500 → show generic error
+- Handle network errors gracefully
+
+---
+
+## AI Features (Frontend)
+
+### Skin Analyzer UI
+
+- Quick Check: text input form
+- Deep Profile: multi-step form with optional photo upload
+- Display loading states during API calls
+
+### Chat Assistant UI
+
+- Real-time chat interface
+- Message history display
+- Product recommendation cards
+
+### Required UI Elements
+
+- Consent modal before AI analysis (PDPL)
+- Non-medical disclaimer display
+- Loading/streaming states for AI responses
 
 ### Disclaimers (Required)
 

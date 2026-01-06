@@ -6,14 +6,19 @@
 | --------------- | ---------------------------------------------------------------- |
 | Framework       | Next.js 15 (App Router), React 19 (RSC), TypeScript 5.8 (strict) |
 | Styling         | Tailwind CSS, shadcn/ui + Radix UI, Lucide icons, Framer Motion  |
-| Database        | Drizzle ORM + PostgreSQL (Neon/PlanetScale/Turso support)        |
-| Auth            | better-auth (JWT, role-based: customer/admin)                    |
+| State/Data      | React Query (TanStack Query) for API state management            |
+| Auth            | JWT tokens via REST API (stored in httpOnly cookies)             |
 | i18n            | next-intl (en/ar with RTL), locale routing                       |
-| Payment         | KSA-compliant gateway + COD                                      |
-| AI              | OpenAI API (GPT-4), RAG architecture                             |
 | Testing         | Vitest, Playwright, Testing Library, Storybook                   |
 | Quality         | ESLint, Prettier, Knip, Codehawk                                 |
 | Package Manager | Bun                                                              |
+
+## API Integration
+
+- REST API for all backend operations
+- API client with interceptors for auth tokens
+- Environment-based API URL configuration
+- Type-safe API response handling with Zod
 
 ## Project Structure
 
@@ -21,7 +26,6 @@
 ├── .kiro/steering/     # AI steering docs
 ├── config/             # App configuration
 ├── public/             # Static assets
-├── drizzle/            # DB migrations
 ├── scripts/            # Build scripts
 ├── src/
 │   ├── app/
@@ -33,25 +37,21 @@
 │   │   │   ├── (ai)/           # AI features
 │   │   │   ├── (pages)/        # Static pages
 │   │   │   └── (admin)/        # Admin dashboard
-│   │   └── api/                # API routes
-│   │       ├── auth/, products/, orders/, cart/
-│   │       ├── ai/ (analyze, chat, history)
-│   │       ├── admin/ (orders, products, customers, analytics, rd)
-│   │       └── webhooks/
 │   ├── components/
 │   │   ├── ui/         # shadcn/ui ✅
 │   │   ├── shared/     # Nav, footer, headings ✅
 │   │   ├── shop/, checkout/, ai/, admin/
-│   ├── db/schema/      # Drizzle schemas
 │   ├── hooks/          # Custom hooks
 │   ├── i18n/locales/   # en/, ar/
-│   ├── lib/            # Utilities, AI helpers
+│   ├── lib/
+│   │   ├── api/        # API client, endpoints
+│   │   └── utils.ts    # Utilities
 │   ├── styles/         # Global CSS
-│   ├── types/          # TypeScript types
+│   ├── types/          # TypeScript types (API responses, models)
 │   ├── utils/          # Helpers
-│   ├── validations/    # Zod schemas
+│   ├── validations/    # Zod schemas for API responses
 │   ├── env.ts          # Env validation
-│   └── middleware.ts   # Auth & locale
+│   └── middleware.ts   # Auth & locale middleware
 ```
 
 ## Conventions
@@ -60,7 +60,7 @@
 
 - kebab-case files, PascalCase components
 - `.tsx` for components, `.ts` for utilities
-- `@/*` → `src/*`, `#/*` → project root
+- `@/*` → `src/*`
 
 ### Components
 
@@ -68,17 +68,12 @@
 - Shared: `src/components/shared/`
 - Feature-specific in dedicated folders
 
-### Database
+### API Integration
 
-- Schemas in `src/db/schema/`
-- Migrations in `./drizzle/`
-- Drizzle ORM conventions
-
-### API
-
-- Routes in `src/app/api/`
-- RESTful conventions
-- Zod validation
+- API client in `src/lib/api/`
+- Type definitions in `src/types/`
+- Zod validation for API responses
+- React Query for server state
 
 ### i18n
 
@@ -101,15 +96,6 @@ npm run dev           # Dev server
 npm run build         # Production build
 npm run start         # Production server
 npm run type-check    # TypeScript check
-```
-
-### Database
-
-```bash
-npm run db:generate   # Generate migrations
-npm run db:migrate    # Apply migrations
-npm run db:studio     # Drizzle Studio
-npm run db:seed       # Seed data
 ```
 
 ### Testing
@@ -137,8 +123,9 @@ npm run storybook       # Dev server
 npm run build-storybook # Build
 ```
 
-## Security
+## Environment Variables
 
-- No secrets in code (use env vars)
-- TLS encryption, PDPL consent logging
-- Role-based access, audit logging
+```env
+NEXT_PUBLIC_API_URL=    # Backend API base URL
+NEXT_PUBLIC_APP_URL=    # Frontend app URL
+```

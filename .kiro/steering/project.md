@@ -1,8 +1,14 @@
-# GLOWMI - AI-Powered Skincare E-Commerce Platform
+# GLOWMI - AI-Powered Skincare E-Commerce (Frontend)
 
 ## Overview
 
-Premium bilingual (EN + AR with RTL) AI-powered skincare e-commerce platform for KSA market. Combines luxury skincare shopping with AI-driven skin analysis and personalized recommendations.
+Premium bilingual (EN + AR with RTL) frontend for AI-powered skincare e-commerce platform targeting KSA market. Connects to backend via REST API.
+
+## Architecture
+
+- **This repo:** Frontend only (Next.js)
+- **Backend:** Separate repo/service (REST API)
+- **Communication:** REST API with JWT authentication
 
 ## Implementation Status
 
@@ -11,47 +17,36 @@ Premium bilingual (EN + AR with RTL) AI-powered skincare e-commerce platform for
 - Homepage (hero, about, products showcase, contact, footer)
 - i18n routing (en/ar), navigation with language toggle
 - UI components: button, card, carousel, dropdown-menu, sheet
-- Database connection (Drizzle + PostgreSQL), basic user schema
 
 **🔲 To Implement:**
 
 - Shop pages (PLP, PDP), cart, checkout flow
-- User authentication and account pages
-- AI Skin Analyzer and Chat
-- Admin dashboard, API routes, full database schema
+- User authentication UI and account pages
+- AI Skin Analyzer and Chat UI
+- Admin dashboard UI
+- API integration layer
 
 ## Core Features
 
-### E-Commerce System
+### E-Commerce UI
 
-- Product catalog (SKU, pricing, images, INCI ingredients)
-- Cart with quantity management, taxes, shipping
-- Checkout: billing/shipping address, payment method selection
-- Payment: KSA-compliant gateway + Cash on Delivery (COD)
-- Order lifecycle: Pending → Paid → Processing → Shipped → Delivered
-- Order confirmation emails
+- Product listing and detail pages
+- Cart management interface
+- Checkout flow (address forms, payment selection)
+- Order confirmation and history views
 
-### AI Features (Phase 1)
+### AI Features UI
 
-- **Skin Analyzer:** Quick Check (basic) + Deep Profile (comprehensive)
-- **Chat Assistant:** "Ask Glowmi" conversational advice
-- RAG architecture using product/INCI knowledge base
-- AM/PM routine generation with ingredient reasoning
-- Safe/Avoid ingredient lists, product recommendations (Glowmi SKUs only)
+- **Skin Analyzer:** Quick Check + Deep Profile forms
+- **Chat Assistant:** "Ask Glowmi" chat interface
+- Results display with routine recommendations
+- Consent modal and disclaimer display
 
-### AI Safety Rules
+### Admin Dashboard UI
 
-- Pregnancy warnings (retinoids, strong acids, hydroquinone)
-- Ingredient conflict detection (Retinol + AHA/BHA, Vitamin C + Niacinamide timing)
-- Sensitive skin handling, strong actives warnings
-- Non-medical disclaimer (EN + AR), consent acknowledgment
-
-### Admin Dashboard
-
-- Orders, products, customers management
-- AI analytics: usage, skin concerns, geographic trends
-- R&D Intelligence: Formulation Radar, Lab Brief generation
-- Exportable reports (CSV/PDF)
+- Orders, products, customers list views
+- Analytics dashboards
+- R&D Intelligence views
 
 ## Website Pages
 
@@ -76,29 +71,24 @@ Premium bilingual (EN + AR with RTL) AI-powered skincare e-commerce platform for
 
 - Orders, Products, Customers, Analytics, R&D
 
-## E-Commerce Flow
+## E-Commerce Flow (Frontend)
 
 ```
-Browse → Add to Cart → Checkout → Address → Payment → Confirmation → Admin → Fulfillment → Delivery → Tracking → Delivered
+Browse → Add to Cart → Checkout → Address Form → Payment Selection → Confirmation → Order History
 ```
 
-### Order Statuses
+## API Integration Points
 
-Pending → Payment Pending → Paid → Processing → Shipped → Delivered → Cancelled/Refunded
-
-## Database Tables
-
-### Core
-
-users, sessions, products, categories, orders, order_items, cart, addresses
-
-### AI & Analytics
-
-skin_profiles, ai_inputs, ai_outputs, ai_sessions, formulation_ideas, events
-
-### Compliance
-
-consent_audit, feedback
+| Feature  | API Calls                                |
+| -------- | ---------------------------------------- |
+| Auth     | Login, Register, Logout, Refresh token   |
+| Products | List, Detail, Search, Filter             |
+| Cart     | Get, Add, Update, Remove items           |
+| Checkout | Create order, Payment intent             |
+| Orders   | List, Detail, Track                      |
+| AI       | Analyze skin, Chat, Get history          |
+| User     | Profile, Addresses, Preferences          |
+| Admin    | Orders, Products, Customers, Analytics   |
 
 ## Brand Guidelines
 
@@ -107,14 +97,15 @@ consent_audit, feedback
 - Colors: Dark green (#1a2e1a), cream/beige backgrounds (#f5f4f3, #e8e6e3)
 - Fonts: Serif for headings (italic emphasis), sans-serif for body
 
-## Compliance (PDPL)
+## Required UI Elements
 
-- Consent logging and audit trails
-- Data deletion request workflow
-- Data retention: delete after 12-18 months inactivity
-- TLS encryption, role-based admin access, audit logging
+### Consent & Compliance
 
-## Required Disclaimers
+- PDPL consent modal before AI features
+- Cookie consent banner
+- Data deletion request UI in profile
+
+### Disclaimers
 
 **EN:** "Glowmi AI provides educational skincare guidance only and does not diagnose, treat, or prescribe."
 
@@ -123,10 +114,10 @@ consent_audit, feedback
 ## Performance Targets
 
 - Mobile Lighthouse ≥ 85
-- Page load < 3s, API response < 5s
+- Page load < 3s
 
 ## Bilingual Requirements
 
 - All UI text in translation files (no hardcoded strings)
 - English (en) default, Arabic (ar) with full RTL
-- System messages, email templates, admin dashboard bilingual
+- All pages, forms, and messages bilingual
