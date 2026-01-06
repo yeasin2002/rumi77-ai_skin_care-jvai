@@ -12,7 +12,9 @@
 - **shadcn/ui** components with Radix UI primitives
 - **Lucide React** for icons
 - **next-themes** for dark mode support
+- **Framer Motion** for animations
 - CSS variables for theming with HSL color system
+- Custom fonts: Caudex (serif headings), Open Sans (body)
 
 ## Database & ORM
 
@@ -23,10 +25,28 @@
 ## Authentication
 
 - **better-auth** for user authentication and management
+- JWT-based session handling
+- Role-based access control (customer, admin)
 
 ## Internationalization
 
 - **next-intl** for i18n support with locale routing
+- Bilingual: English (en) + Arabic (ar)
+- Full RTL support for Arabic pages/components
+- All UI text externalized to translation files
+
+## Payment Integration
+
+- KSA-compliant payment gateway (credentials provided by client)
+- Cash on Delivery (COD) support (toggleable)
+- Payment status handling (Paid/Unpaid/Failed/Refunded)
+
+## AI Integration
+
+- OpenAI API for skin analysis and chat
+- RAG architecture for product/INCI knowledge base
+- Rule-based safety engine for ingredient warnings
+- AI input/output logging for analytics
 
 ## Testing
 
@@ -48,6 +68,20 @@
 - **Bundle Analyzer** for build analysis
 - **Knip** for unused code detection
 - **Codehawk** for code analysis
+
+## Security Requirements
+
+- TLS encryption in transit
+- Secure file upload handling
+- No exposed secrets or API keys in code
+- PDPL-aligned consent logging
+- Audit logging for admin actions
+
+## Performance Targets
+
+- Mobile Lighthouse ≥ 85
+- Page load < 3 seconds
+- API response < 5 seconds average
 
 ## Common Commands
 

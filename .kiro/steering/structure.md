@@ -6,99 +6,114 @@
 ├── .kiro/              # Kiro AI assistant configuration
 ├── .storybook/         # Storybook configuration
 ├── config/             # Application configuration files
-├── public/             # Static assets (images, icons, etc.)
+├── public/             # Static assets (images, icons, videos)
 ├── src/                # Source code (main application)
 ├── tests/              # Test files (E2E and integration)
-└── scripts/            # Build and deployment scripts
+├── scripts/            # Build and deployment scripts
+└── drizzle/            # Database migrations
 ```
 
 ## Source Directory (`src/`)
 
-The main application code follows a feature-based organization:
-
 ```
 src/
-├── app/                # Next.js App Router pages and layouts
-│   ├── [locale]/       # Internationalized routes
-│   └── api/            # API routes
-├── components/         # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── db/                 # Database configuration and schema
-│   └── schema/         # Drizzle ORM schema definitions
-├── hooks/              # Custom React hooks
-├── i18n/               # Internationalization configuration
-│   └── locales/        # Translation files
-├── lib/                # Utility libraries and configurations
-├── models/             # Data models and types
-├── stories/            # Storybook stories
-├── styles/             # Global CSS and styling
-├── templates/          # Email and other templates
-│   └── email/          # Email templates
-├── test/               # Test utilities and setup
-├── types/              # TypeScript type definitions
-├── utils/              # Helper functions and constants
-├── validations/        # Zod validation schemas
-├── env.ts              # Environment variable validation
-└── middleware.ts       # Next.js middleware
+├── app/                    # Next.js App Router
+│   ├── [locale]/           # Internationalized routes (en/ar)
+│   │   ├── (home)/         # Homepage and landing sections
+│   │   ├── (shop)/         # Shop, collections, product pages
+│   │   ├── (checkout)/     # Cart, checkout, order confirmation
+│   │   ├── (account)/      # User account, orders, addresses
+│   │   ├── (ai)/           # AI Analyzer, Chat, Results pages
+│   │   ├── (pages)/        # Static pages (about, contact, FAQ, privacy, terms)
+│   │   └── (admin)/        # Admin dashboard (protected)
+│   └── api/                # API routes
+│       ├── auth/           # Authentication endpoints
+│       ├── products/       # Product catalog API
+│       ├── orders/         # Order management API
+│       ├── cart/           # Cart operations API
+│       ├── ai/             # AI analysis & chat API
+│       └── admin/          # Admin-only endpoints
+├── components/
+│   ├── ui/                 # shadcn/ui base components
+│   ├── shared/             # Shared components (nav, footer, headings)
+│   ├── shop/               # Shop-specific components
+│   ├── checkout/           # Checkout flow components
+│   ├── ai/                 # AI feature components
+│   └── admin/              # Admin dashboard components
+├── db/
+│   └── schema/             # Drizzle ORM schemas
+│       ├── users.ts        # Users & authentication
+│       ├── products.ts     # Product catalog
+│       ├── orders.ts       # Orders & order items
+│       ├── cart.ts         # Shopping cart
+│       ├── addresses.ts    # User addresses
+│       ├── ai-sessions.ts  # AI analysis sessions
+│       ├── ai-inputs.ts    # AI input logging
+│       ├── ai-outputs.ts   # AI output logging
+│       └── consent-audit.ts # PDPL consent tracking
+├── hooks/                  # Custom React hooks
+├── i18n/
+│   ├── locales/
+│   │   ├── en/             # English translations
+│   │   └── ar/             # Arabic translations
+│   └── routing.ts          # Locale routing config
+├── lib/
+│   ├── ai/                 # AI utilities (RAG, safety rules)
+│   ├── payment/            # Payment gateway integration
+│   └── logistics/          # Delivery/logistics helpers
+├── styles/                 # Global CSS and Tailwind config
+├── types/                  # TypeScript type definitions
+├── utils/                  # Helper functions
+├── validations/            # Zod validation schemas
+├── env.ts                  # Environment variable validation
+└── middleware.ts           # Auth & locale middleware
 ```
 
 ## Key Conventions
 
 ### File Naming
-
 - Use kebab-case for files and directories
-- React components use PascalCase for the component name
+- React components use PascalCase for component name
 - Use `.tsx` for React components, `.ts` for utilities
 - Test files use `.test.ts` or `.test.tsx` suffix
-- Story files use `.stories.ts` suffix
 
 ### Import Aliases
-
 - `@/*` maps to `src/*` for internal imports
 - `#/*` maps to project root for config files
-- Use absolute imports with aliases instead of relative paths
+- Use absolute imports with aliases
 
 ### Component Organization
-
-- UI components go in `src/components/ui/` (shadcn/ui)
-- Feature-specific components in `src/components/`
-- Each component should have its own file
-- Export components as default exports
+- UI components in `src/components/ui/` (shadcn/ui)
+- Shared components in `src/components/shared/`
+- Feature-specific components in dedicated folders
+- Export components as named exports
 
 ### Database Schema
-
 - Schema files in `src/db/schema/`
 - Use Drizzle ORM conventions
-- Migrations generated in `./drizzle/` directory
+- Migrations in `./drizzle/` directory
+- Required tables: users, products, orders, order_items, cart, addresses, ai_sessions, consent_audit
 
 ### API Routes
-
 - API routes in `src/app/api/`
 - Follow RESTful conventions
-- Use route handlers for different HTTP methods
-
-### Styling
-
-- Global styles in `src/styles/globals.css`
-- Use Tailwind CSS classes
-- CSS variables for theming in HSL format
-- Component-specific styles using Tailwind
-
-### Testing
-
-- Unit tests alongside source files or in `src/test/`
-- E2E tests in `tests/e2e/`
-- Integration tests in `tests/integration/`
-- Test setup in `src/test/setup.ts`
+- Use route handlers for HTTP methods
+- Validate request data with Zod schemas
 
 ### Internationalization
+- Locale files in `src/i18n/locales/{en,ar}/`
+- Full RTL support for Arabic
+- All UI text must be translatable (no hardcoded strings)
+- Use `[locale]` dynamic route segment
 
-- Locale files in `src/i18n/locales/`
-- Route configuration in `src/i18n/routing.ts`
-- Use `[locale]` dynamic route for i18n pages
+### Styling
+- Global styles in `src/styles/globals.css`
+- Use Tailwind CSS classes
+- CSS variables for theming (HSL format)
+- Brand colors: main-button (dark green), main-primary-base_medium
 
-### Environment & Configuration
-
-- Environment variables validated in `src/env.ts`
-- Use `.env.example` as template
-- Configuration files in `config/` directory
+### Security
+- JWT authentication via better-auth
+- Role-based access control for admin
+- Consent logging for PDPL compliance
+- No secrets in code (use environment variables)
