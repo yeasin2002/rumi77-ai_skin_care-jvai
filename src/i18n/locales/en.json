@@ -1,10 +1,22 @@
 {
+  "shared": {
+    "nav": {
+      "button_text": "COMING",
+      "navItems": {
+        "home": "Home",
+        "ingredients": "Ingredients",
+        "analyzeSkin": "Analyze Skin",
+        "aboutUs": "About Us",
+        "contactUs": "Contact US"
+      }
+    }
+  },
   "home": {
     "hero": {
       "title": "A Glow that feels like you",
       "cta": "STAY CONNECTED"
     },
-    "About": {
+    "about": {
       "title": "About Glowmi",
       "desc": "GLOWMI is a premium skincare brand committed to delivering world-class products that combine advanced science with nature. Crafted for every skin tone, our formulations harness clinically proven ingredients to inspire confidence and promote radiant, timeless beauty. From the heart of Saudi Arabia to the world, GLOWMI empowers you to glow with confidence."
     },
@@ -39,7 +51,7 @@
       "heading": "Glow brighter every day with cosmetics that best in you",
       "subheading": "Elevate your beauty with luxurious cosmetics crafted to celebrate your natural charm."
     },
-    "GlowmiStates": {
+    "glowmiStates": {
       "title": "Intelligent Ingredients. Visuals Results",
       "desc": "Each Glowmi formula is powered by carefully selected ingredients, chosen for performance, safety, and skin harmony.",
       "subtitle": "All ingredients are dermatologically tested and ethically sourced.",
@@ -92,7 +104,7 @@
         }
       }
     },
-    "SkincareShowcase": {
+    "skincareShowcase": {
       "title": "Where Science Meets Skincare",
       "desc": "Every Glowmi product is backed by research and designed for results",
       "skincareDetails": {
@@ -124,5 +136,4 @@
       "copyright": "Glowmi. All rights reserved. Coming Soon."
     }
   }
-
 }
