@@ -19,10 +19,10 @@ export const SiteHeading = ({
   subHeadingClassname,
 }: Props) => {
   return (
-    <div className={cn('flex flex-col items-center justify-center gap-4', wrapperClassname)}>
+    <div className={cn('flex w-full flex-col items-center justify-center gap-4', wrapperClassname)}>
       <h2
         className={cn(
-          `${caudex.className} text-main-button text-5xl font-normal`,
+          `${caudex.className} text-main-button text-2xl font-normal lg:text-5xl`,
           headingClassName
         )}
       >

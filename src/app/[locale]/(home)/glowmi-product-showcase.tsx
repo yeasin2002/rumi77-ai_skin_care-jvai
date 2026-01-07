@@ -14,7 +14,7 @@ export const GlowmiProductShowcase = async () => {
     <div>
       <SiteHeading heading={t('title')} wrapperClassname="py-10" />
 
-      <div className="flex items-center gap-1">
+      <div className="grid grid-cols-1 items-center gap-1 lg:grid-cols-4">
         {imageList.map((im, index) => (
           <Image key={index} src={im} alt="Product showcase" className="w-full" />
         ))}

@@ -12,7 +12,7 @@ export const AboutGlowmi = async () => {
         <div className="flex justify-center bg-[#FEF9F6] lg:col-span-2">
           <Image src={aboutImage} alt="Glowmi Product" className="w-full max-w-md" />
         </div>
-        <div className="flex flex-col justify-center space-y-6 bg-[#FFFFFF] px-24 lg:col-span-3 lg:py-20">
+        <div className="flex flex-col justify-center space-y-6 bg-[#FFFFFF] px-4 py-10 lg:col-span-3 lg:px-24 lg:py-20">
           <h2 className={`${caudex.className} text-foreground text-4xl lg:text-5xl`}>
             {t('title')}
           </h2>

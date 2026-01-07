@@ -75,7 +75,11 @@ export function Transformation({
   return (
     <section className="relative py-16">
       <SiteHeading heading={title} subHeading={desc} />
-      <Image src={waveImage} alt="wave" className="absolute top-44 left-1/2 w-80" />
+      <Image
+        src={waveImage}
+        alt="wave"
+        className="absolute top-60 left-1/2 w-44 lg:top-44 lg:w-80"
+      />
 
       <div className="container m-10 mx-auto mt-40 rounded-2xl bg-[#2447311A] px-4 py-24">
         <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:items-stretch lg:gap-8">

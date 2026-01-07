@@ -10,7 +10,7 @@ export const Nav = async () => {
 
   return (
     <header className="flex items-center justify-between px-2 py-4">
-      <Image src={Logo} alt="Logo" />
+      <Image src={Logo} alt="Logo" className="w-32 md:w-full" />
 
       <div className="flex items-center justify-center gap-x-4">
         <LanguageToggle />
