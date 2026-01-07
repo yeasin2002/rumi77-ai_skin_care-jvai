@@ -9,20 +9,23 @@ import {
 import { caudex } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 
-const navItems = [
-  { name: 'Home', url: '' },
-  { name: 'Ingredients', url: '' },
-  { name: 'Analyze Skin', url: '' },
-  { name: 'About Us', url: '' },
-  { name: 'Contact US', url: '' },
-]
 interface Props {
   className?: string
 }
 
-export const NavList = ({ className, ...props }: Props) => {
+export const NavList = async ({ className, ...props }: Props) => {
+  const t = await getTranslations('shared.nav.navItems')
+
+  const navItems = [
+    { name: t('home'), url: '' },
+    { name: t('ingredients'), url: '' },
+    { name: t('analyzeSkin'), url: '' },
+    { name: t('aboutUs'), url: '' },
+    { name: t('contactUs'), url: '' },
+  ]
   return (
     <>
       <nav className={cn(`hidden justify-between md:flex`, className)} {...props}>

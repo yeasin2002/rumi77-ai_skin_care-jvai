@@ -1,8 +1,10 @@
 import logoCompact from '@/assets/image/logo-compact.png'
+import { openSans } from '@/lib/fonts'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
-import { openSans } from '../../../lib/fonts'
 
-export const FooterSingle = () => {
+export const FooterSingle = async () => {
+  const t = await getTranslations('home.footer')
   const currentYear = new Date().getFullYear()
 
   return (
@@ -13,7 +15,7 @@ export const FooterSingle = () => {
 
         {/* Tagline */}
         <p className={`text-main-primary-base_medium mt-4 text-lg ${openSans.className}`}>
-          The Essence of Timeless Glow
+          {t('tagline')}
         </p>
 
         {/* Divider */}
@@ -21,7 +23,7 @@ export const FooterSingle = () => {
 
         {/* Copyright */}
         <p className={`mt-6 text-sm text-[#2447314D] ${openSans.className}`}>
-          © {currentYear} Glowmi. All rights reserved. Coming Soon.
+          © {currentYear} {t('copyright')}
         </p>
       </div>
     </footer>

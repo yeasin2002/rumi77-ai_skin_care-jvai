@@ -3,13 +3,16 @@ import Image from 'next/image'
 import showcase1 from '@/assets/image/product-showcase-comming.png'
 import { SiteHeading } from '@/components/shared'
 import { caudex, openSans } from '@/lib/fonts'
+import { getTranslations } from 'next-intl/server'
 
 const imageList = [showcase1, showcase1, showcase1, showcase1]
 
-export const GlowmiProductShowcase = () => {
+export const GlowmiProductShowcase = async () => {
+  const t = await getTranslations('home.products_showcase')
+
   return (
     <div>
-      <SiteHeading heading="Glowmi" wrapperClassname="py-10" />
+      <SiteHeading heading={t('title')} wrapperClassname="py-10" />
 
       <div className="flex items-center gap-1">
         {imageList.map((im, index) => (
@@ -38,10 +41,10 @@ export const GlowmiProductShowcase = () => {
                 caudex.className
               }
             >
-              Glow brighter every day with cosmetics that best in you
+              {t('heading')}
             </h2>
             <p className={`mt-4 max-w-sm text-sm text-white/80 sm:text-base ${openSans.className}`}>
-              Elevate your beauty with luxurious cosmetics crafted to celebrate your natural charm.
+              {t('subheading')}
             </p>
           </div>
         </div>

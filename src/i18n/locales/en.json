@@ -133,7 +133,19 @@
     },
     "footer": {
       "tagline": "The Essence of Timeless Glow",
-      "copyright": "Glowmi. All rights reserved. Coming Soon."
+      "copyright": "Glowmi. All rights reserved. Coming Soon.",
+      "nav": {
+        "home": "Home",
+        "aboutUs": "About Us"
+      },
+      "legal": {
+        "privacyPolicy": "Privacy Policy",
+        "termsConditions": "Terms & Conditions"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "email": "Email"
+      }
     }
   }
 }

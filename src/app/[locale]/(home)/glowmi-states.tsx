@@ -1,24 +1,27 @@
 import { SiteHeading } from '@/components/shared'
 import { caudex, openSans } from '@/lib/fonts'
+import { getTranslations } from 'next-intl/server'
 
-const cardsStates = [
-  { title: 'Scan & Analyze', subtitle: "Advanced AI evaluates your skin's needs" },
-  { title: 'Personalized Routine', subtitle: 'Customized recommendations made for you' },
-  { title: 'Visible Results', subtitle: 'Science-backed formulas that work' },
-]
+export const GlowmiStates = async () => {
+  const t = await getTranslations('home.understands')
 
-export const GlowmiStates = () => {
+  const cardsStates = [
+    { key: 'scan', title: t('cards.scan.title'), subtitle: t('cards.scan.subtitle') },
+    {
+      key: 'personalized',
+      title: t('cards.personalized.title'),
+      subtitle: t('cards.personalized.subtitle'),
+    },
+    { key: 'results', title: t('cards.results.title'), subtitle: t('cards.results.subtitle') },
+  ]
+
   return (
     <section className="px-8 py-24">
-      <SiteHeading
-        heading="How Glowmi Will Understands Your Skin"
-        subHeading="Our intelligent platform combines cutting-edge AI with dermatological expertise to deliver personalized skincare solutions."
-        wrapperClassname="py-10"
-      />
+      <SiteHeading heading={t('title')} subHeading={t('desc')} wrapperClassname="py-10" />
       <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-5 md:grid-cols-3">
         {cardsStates.map((data, index) => (
           <div
-            key={data.title}
+            key={data.key}
             className={`${caudex.className} flex flex-col items-center rounded-2xl bg-white px-6 py-10 text-center shadow-sm lg:py-16`}
           >
             <span className="text-main-button text-5xl font-light">

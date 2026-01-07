@@ -3,7 +3,7 @@ import { caudex, openSans } from '@/lib/fonts'
 
 import CollectionProductImage from '@/assets/image/CollectionProduct-image.jpg'
 import lockImage from '@/assets/image/lock.png'
-import { Lock } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
 const collectionList = [
@@ -21,18 +21,17 @@ const collectionList = [
   },
 ]
 
-export const CollectionProduct = () => {
+export const CollectionProduct = async () => {
+  const t = await getTranslations('home.collection')
+
   return (
     <section className="px-4 py-16 sm:px-8">
       <p
         className={`text-center text-sm tracking-widest uppercase ${openSans.className} text-main-primary-base_medium`}
       >
-        THE COLLECTION
+        {t('subtitle')}
       </p>
-      <SiteHeading
-        heading="Unveiling Soon"
-        subHeading="Our carefully crafted collection of premium skincare essentials. Stay connected with us."
-      />
+      <SiteHeading heading={t('title')} subHeading={t('desc')} />
 
       <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {collectionList.map((item) => (

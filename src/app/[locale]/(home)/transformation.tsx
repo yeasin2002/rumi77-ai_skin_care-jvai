@@ -21,39 +21,60 @@ type FeatureCardProps = {
   description: string
 }
 
-const beforeFeatures: FeatureCardProps[] = [
-  {
-    icon: waterDrop,
-    title: 'Skin Roughness',
-    description: 'Infused with natural oils for a luminous complexion.',
-  },
-  {
-    icon: windFlow,
-    title: 'Dead Skin',
-    description: 'Every product is carefully crafted to meet the highest quality standards.',
-  },
-]
+type TransformationProps = {
+  title: string
+  desc: string
+  beforeSkinRoughnessTitle: string
+  beforeSkinRoughnessDesc: string
+  beforeDeadSkinTitle: string
+  beforeDeadSkinDesc: string
+  afterRadiantGlowTitle: string
+  afterRadiantGlowDesc: string
+  afterProvenEffectivenessTitle: string
+  afterProvenEffectivenessDesc: string
+}
 
-const afterFeatures: FeatureCardProps[] = [
-  {
-    icon: waterDrop,
-    title: 'Radiant Glow',
-    description: 'Infused with natural oils for a luminous complexion.',
-  },
-  {
-    icon: windFlow,
-    title: 'Proven Effectiveness',
-    description: 'Every product is carefully crafted to meet the highest quality standards.',
-  },
-]
+export function Transformation({
+  title,
+  desc,
+  beforeSkinRoughnessTitle,
+  beforeSkinRoughnessDesc,
+  beforeDeadSkinTitle,
+  beforeDeadSkinDesc,
+  afterRadiantGlowTitle,
+  afterRadiantGlowDesc,
+  afterProvenEffectivenessTitle,
+  afterProvenEffectivenessDesc,
+}: TransformationProps) {
+  const beforeFeatures: FeatureCardProps[] = [
+    {
+      icon: waterDrop,
+      title: beforeSkinRoughnessTitle,
+      description: beforeSkinRoughnessDesc,
+    },
+    {
+      icon: windFlow,
+      title: beforeDeadSkinTitle,
+      description: beforeDeadSkinDesc,
+    },
+  ]
 
-export function Transformation() {
+  const afterFeatures: FeatureCardProps[] = [
+    {
+      icon: waterDrop,
+      title: afterRadiantGlowTitle,
+      description: afterRadiantGlowDesc,
+    },
+    {
+      icon: windFlow,
+      title: afterProvenEffectivenessTitle,
+      description: afterProvenEffectivenessDesc,
+    },
+  ]
+
   return (
     <section className="relative py-16">
-      <SiteHeading
-        heading="Real Skin. Real Transformation"
-        subHeading="Keep visuals minimal and authentic to build trust"
-      />
+      <SiteHeading heading={title} subHeading={desc} />
       <Image src={waveImage} alt="wave" className="absolute top-44 left-1/2 w-80" />
 
       <div className="container m-10 mx-auto mt-40 rounded-2xl bg-[#2447311A] px-4 py-24">
