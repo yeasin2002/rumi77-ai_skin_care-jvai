@@ -26,7 +26,7 @@ export default async function HomePage() {
       <GlowmiStates />
       <GlowmiProductShowcase />
       <VisualsResults />
-      {/* <Transformation /> */}
+      <Transformation />
       <SkincareShowcase />
       {/* <ContactUs /> */}
       <HomeBottomCta />
