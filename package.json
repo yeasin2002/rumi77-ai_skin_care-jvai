@@ -27,8 +27,8 @@
     "dev": "next dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
     "setup": "node scripts/setup.js",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
@@ -105,8 +105,8 @@
     "autoprefixer": "^10.4.21",
     "cross-env": "latest",
     "drizzle-kit": "latest",
-    "eslint": "^9.33.0",
-    "eslint-config-next": "15.2.4",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.1",
     "eslint-config-prettier": "latest",
     "happy-dom": "latest",
     "jsdom": "latest",
@@ -122,5 +122,13 @@
     "typescript": "^5.8.3",
     "vite": "latest",
     "vitest": "latest"
-  }
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
 }
