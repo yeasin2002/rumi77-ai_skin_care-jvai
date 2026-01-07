@@ -1,5 +1,128 @@
 {
-  "hero": {
-    "title": "NextJS Boilerplate template"
+  "home": {
+    "hero": {
+      "title": "A Glow that feels like you",
+      "cta": "STAY CONNECTED"
+    },
+    "About": {
+      "title": "About Glowmi",
+      "desc": "GLOWMI is a premium skincare brand committed to delivering world-class products that combine advanced science with nature. Crafted for every skin tone, our formulations harness clinically proven ingredients to inspire confidence and promote radiant, timeless beauty. From the heart of Saudi Arabia to the world, GLOWMI empowers you to glow with confidence."
+    },
+    "collection": {
+      "subtitle": "THE COLLECTION",
+      "title": "Unveiling Soon",
+      "desc": "Our carefully crafted collection of premium skincare essentials. Stay connected with us."
+    },
+    "understands": {
+      "title": "How Glowmi Will Understands Your Skin",
+      "desc": "Our intelligent platform combines cutting-edge AI with dermatological expertise to deliver personalized skincare solutions.",
+      "cards": {
+        "scan": {
+          "index": "01",
+          "title": "Scan & Analyze",
+          "subtitle": "Advanced AI evaluates your skin's needs"
+        },
+        "personalized": {
+          "index": "02",
+          "title": "Personalized Routine",
+          "subtitle": "Customized recommendations made for you"
+        },
+        "results": {
+          "index": "03",
+          "title": "Visible Results",
+          "subtitle": "Science-backed formulas that work"
+        }
+      }
+    },
+    "products_showcase": {
+      "title": "Glowmi",
+      "heading": "Glow brighter every day with cosmetics that best in you",
+      "subheading": "Elevate your beauty with luxurious cosmetics crafted to celebrate your natural charm."
+    },
+    "GlowmiStates": {
+      "title": "Intelligent Ingredients. Visuals Results",
+      "desc": "Each Glowmi formula is powered by carefully selected ingredients, chosen for performance, safety, and skin harmony.",
+      "subtitle": "All ingredients are dermatologically tested and ethically sourced.",
+      "states": {
+        "niacinamide": {
+          "title": "Niacinamide",
+          "subtitle": "Refines texture and enhances radiance",
+          "desc": "A vitamin B3 derivative that minimizes pores and brightens skin tone."
+        },
+        "hyaluronic": {
+          "title": "Hyaluronic Complex",
+          "subtitle": "Deep hydration and skin comfort",
+          "desc": "Multi-weight molecules that hydrate at every skin level."
+        },
+        "peptide": {
+          "title": "Peptide Blend",
+          "subtitle": "Supports firmness and resilience",
+          "desc": "Advanced peptides that signal skin to produce more collagen."
+        },
+        "botanical": {
+          "title": "Botanical Extracts",
+          "subtitle": "Calm and balance the skin",
+          "desc": "Plant-derived actives that soothe and protect sensitive skin."
+        }
+      }
+    },
+    "transformation": {
+      "title": "Real Skin. Real Transformation",
+      "desc": "Keep visuals minimal and authentic to build trust",
+      "features": {
+        "before": {
+          "skinRoughness": {
+            "title": "Skin Roughness",
+            "description": "Infused with natural oils for a luminous complexion."
+          },
+          "deadSkin": {
+            "title": "Dead Skin",
+            "description": "Every product is carefully crafted to meet the highest quality standards."
+          }
+        },
+        "after": {
+          "radiantGlow": {
+            "title": "Radiant Glow",
+            "description": "Infused with natural oils for a luminous complexion."
+          },
+          "provenEffectiveness": {
+            "title": "Proven Effectiveness",
+            "description": "Every product is carefully crafted to meet the highest quality standards."
+          }
+        }
+      }
+    },
+    "SkincareShowcase": {
+      "title": "Where Science Meets Skincare",
+      "desc": "Every Glowmi product is backed by research and designed for results",
+      "skincareDetails": {
+        "aiPowered": {
+          "title": "AI-Powered Personalization",
+          "description": "Advanced algorithms analyze your unique skin profile"
+        },
+        "dermatologically": {
+          "title": "Dermatologically Guided",
+          "description": "Formulations developed with expert dermatologists"
+        },
+        "premium": {
+          "title": "Premium Ingredients",
+          "description": "Only the highest quality, ethically sourced actives"
+        },
+        "modernScience": {
+          "title": "Modern Skin Science",
+          "description": "Designed for the unique needs of today's skin"
+        }
+      }
+    },
+    "homeBottomCta": {
+      "title": "Your Glow Is Personal",
+      "desc": "Begin your personalized skincare journey with Glowmi.",
+      "cta_button_text": "STAY CONNECTED"
+    },
+    "footer": {
+      "tagline": "The Essence of Timeless Glow",
+      "copyright": "Glowmi. All rights reserved. Coming Soon."
+    }
   }
+
 }
