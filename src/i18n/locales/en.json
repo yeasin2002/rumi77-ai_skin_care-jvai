@@ -23,7 +23,22 @@
     "collection": {
       "subtitle": "THE COLLECTION",
       "title": "Unveiling Soon",
-      "desc": "Our carefully crafted collection of premium skincare essentials. Stay connected with us."
+      "desc": "Our carefully crafted collection of premium skincare essentials. Stay connected with us.",
+      "comingSoon": "Coming Soon",
+      "collectionList": {
+        "serum": {
+          "title": "Serum",
+          "description": "Brightening, barrier strengthening, hydration, texture improvement"
+        },
+        "sleepingMask": {
+          "title": "Sleeping Mask",
+          "description": "Deep hydration, overnight repair, Rejuvenating, glow restoration"
+        },
+        "lipOil": {
+          "title": "Lip Oil",
+          "description": "Brightening, barrier strengthening, hydration, texture improvement"
+        }
+      }
     },
     "understands": {
       "title": "How Glowmi Will Understands Your Skin",

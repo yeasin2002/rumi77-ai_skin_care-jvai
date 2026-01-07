@@ -12,22 +12,18 @@ import { VisualsResults } from './visuals-results'
 
 export default async function HomePage() {
   return (
-    <div>
+    <>
       <Nav />
       <Hero />
       <AboutGlowmi />
-
-      {/* <BestProductsList /> */}
       <CollectionProduct />
-
       <GlowmiStates />
       <GlowmiProductShowcase />
       <VisualsResults />
-
       <TransformationWrapper />
       <SkincareShowcase />
       <HomeBottomCta />
       <FooterSingle />
-    </div>
+    </>
   )
 }

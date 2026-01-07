@@ -6,23 +6,28 @@ import lockImage from '@/assets/image/lock.png'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
-const collectionList = [
-  {
-    title: 'Serum',
-    description: 'Brightening, barrier strengthening, hydration, texture improvement',
-  },
-  {
-    title: 'Sleeping Mask',
-    description: 'Deep hydration, overnight repair, Rejuvenating, glow restoration',
-  },
-  {
-    title: 'Lip Oil',
-    description: 'Brightening, barrier strengthening, hydration, texture improvement',
-  },
-]
+
 
 export const CollectionProduct = async () => {
   const t = await getTranslations('home.collection')
+
+  const collectionList = [
+    {
+      key: 'serum',
+      title: t('collectionList.serum.title'),
+      description: t('collectionList.serum.description'),
+    },
+    {
+      key: 'sleepingMask',
+      title: t('collectionList.sleepingMask.title'),
+      description: t('collectionList.sleepingMask.description'),
+    },
+    {
+      key: 'lipOil',
+      title: t('collectionList.lipOil.title'),
+      description: t('collectionList.lipOil.description'),
+    },
+  ]
 
   return (
     <section className="px-4 py-16 sm:px-8">
@@ -36,7 +41,7 @@ export const CollectionProduct = async () => {
       <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {collectionList.map((item) => (
           <div
-            key={item.title}
+            key={item.key}
             className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm"
           >
             {/* Image with Coming Soon overlay */}
@@ -53,7 +58,7 @@ export const CollectionProduct = async () => {
                   <Image src={lockImage} alt="Lock" />
                 </div>
                 <span className="text-main-primary-base_medium mt-2 text-xs tracking-widest uppercase">
-                  Coming Soon
+                  {t('comingSoon')}
                 </span>
               </div>
             </div>
