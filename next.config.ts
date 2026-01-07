@@ -10,9 +10,7 @@ const nextConfig: NextConfig = {
   // output: 'standalone',
   typedRoutes: true,
 
-  eslint: {
-    ignoreDuringBuilds: process.env.NODE_ENV === 'production',
-  },
+
 
   typescript: {
     ignoreBuildErrors: process.env.NODE_ENV === 'production',
