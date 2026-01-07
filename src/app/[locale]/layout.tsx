@@ -7,8 +7,7 @@ import '../../styles/globals.css'
 import { rootMetadata } from '#/config/root-metadata'
 import { routing } from '@/i18n/routing'
 import { fonts } from '@/lib/fonts'
-import { hasLocale } from 'next-intl'
-import { notFound } from 'next/navigation'
+import { getMessages } from 'next-intl/server'
 import { RootWrapper } from './root-wrapper'
 
 export default async function RootLayout({
@@ -19,14 +18,18 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  if (!hasLocale(routing.locales, locale)) {
-    notFound()
-  }
+  // if (!hasLocale(routing.locales, locale)) {
+  //   notFound()
+  // }
+
+  const messages = await getMessages()
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${fonts}`}>
-        <RootWrapper locale={locale}>{children}</RootWrapper>
+        <RootWrapper locale={locale} messages={messages}>
+          {children}
+        </RootWrapper>
         <Toaster />
       </body>
     </html>
