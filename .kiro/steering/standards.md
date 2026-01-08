@@ -16,8 +16,11 @@ const users: User[] = []
 import type { User } from '@/types'
 
 // ❌ Don't
-enum UserRole { Customer, Admin }  // Use union types
-const users: any = []              // Use proper types
+enum UserRole {
+  Customer,
+  Admin,
+} // Use union types
+const users: any = [] // Use proper types
 ```
 
 - Use `as const` for literals, `T[]` for arrays
@@ -123,14 +126,14 @@ const { data, isLoading, error } = useQuery({
 
 ### API Endpoints (Frontend calls)
 
-| Feature   | Endpoints                                      |
-| --------- | ---------------------------------------------- |
-| Auth      | POST /auth/login, /auth/register, /auth/logout |
-| Products  | GET /products, /products/:id                   |
-| Cart      | GET/POST/PUT/DELETE /cart                      |
-| Orders    | GET/POST /orders                               |
-| AI        | POST /ai/analyze, /ai/chat                     |
-| User      | GET/PUT /user/profile, /user/addresses         |
+| Feature  | Endpoints                                      |
+| -------- | ---------------------------------------------- |
+| Auth     | POST /auth/login, /auth/register, /auth/logout |
+| Products | GET /products, /products/:id                   |
+| Cart     | GET/POST/PUT/DELETE /cart                      |
+| Orders   | GET/POST /orders                               |
+| AI       | POST /ai/analyze, /ai/chat                     |
+| User     | GET/PUT /user/profile, /user/addresses         |
 
 ### Error Handling
 

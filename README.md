@@ -36,7 +36,7 @@ Premium bilingual (EN + AR with RTL) frontend for AI-powered skincare e-commerce
 - ⚡ **Vitest** for unit testing
 - 🎭 **Playwright** for E2E testing
 - 🧪 **Testing Library** for React components
-- �  **Storybook** for component development
+- � **Storybook** for component development
 
 ### 🔧 Development Tools
 
@@ -161,11 +161,13 @@ NEXT_PUBLIC_APP_URL=    # Frontend app URL
 ## 📱 Implementation Status
 
 **✅ Implemented:**
+
 - Homepage (hero, about, products showcase, contact, footer)
 - i18n routing (en/ar), navigation with language toggle
 - UI components: button, card, carousel, dropdown-menu, sheet
 
 **🔲 To Implement:**
+
 - Shop pages (PLP, PDP), cart, checkout flow
 - User authentication UI and account pages
 - AI Skin Analyzer and Chat UI

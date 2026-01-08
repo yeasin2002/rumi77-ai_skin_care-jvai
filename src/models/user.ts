@@ -89,7 +89,7 @@ export interface UserActivity {
   action: string
   resource: string
   resourceId?: string
-  metadata?: Record<string, any>
+  metadata?: Record<string, string>
   ipAddress?: string
   userAgent?: string
   createdAt: Date

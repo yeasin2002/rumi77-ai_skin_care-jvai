@@ -79,16 +79,16 @@ Browse → Add to Cart → Checkout → Address Form → Payment Selection → C
 
 ## API Integration Points
 
-| Feature  | API Calls                                |
-| -------- | ---------------------------------------- |
-| Auth     | Login, Register, Logout, Refresh token   |
-| Products | List, Detail, Search, Filter             |
-| Cart     | Get, Add, Update, Remove items           |
-| Checkout | Create order, Payment intent             |
-| Orders   | List, Detail, Track                      |
-| AI       | Analyze skin, Chat, Get history          |
-| User     | Profile, Addresses, Preferences          |
-| Admin    | Orders, Products, Customers, Analytics   |
+| Feature  | API Calls                              |
+| -------- | -------------------------------------- |
+| Auth     | Login, Register, Logout, Refresh token |
+| Products | List, Detail, Search, Filter           |
+| Cart     | Get, Add, Update, Remove items         |
+| Checkout | Create order, Payment intent           |
+| Orders   | List, Detail, Track                    |
+| AI       | Analyze skin, Chat, Get history        |
+| User     | Profile, Addresses, Preferences        |
+| Admin    | Orders, Products, Customers, Analytics |
 
 ## Brand Guidelines
 

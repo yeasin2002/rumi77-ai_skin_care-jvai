@@ -46,60 +46,75 @@ The project aims to develop a comprehensive AI-powered skincare platform that of
 ## Core Features for Phase 1 (AI Integration)
 
 ### 1. AI Skin Analyzer
+
 - User input via text or optional photo upload to describe skincare issues.
 - AI analyzes the issue and provides recommendations from the available product range.
 - Ability for AI to provide personalized skincare routines.
 
 ### 2. AI Chat Assistant
+
 - Real-time conversation with the AI to assist with skincare advice and recommendations.
 - Optional feature for users to opt-in for image-based analysis.
 
 ### 3. Personalized User Account
+
 - Users can create an account to save preferences, history, and product suggestions.
 - Account allows users to track their past issues and recommended products.
 
 ### 4. Product Recommendation
+
 - Based on AI analysis, recommend products from the website's range.
 - Option to recommend skincare routines rather than individual products.
 
 ### 5. Admin Dashboard
+
 - **Data Tracking:** Track user interactions, common skin issues, and the frequency of product searches.
 - **User Issue Categorization:** Organize user-reported issues based on popularity or frequency.
 - **Real-time Analytics:** Display the most common skincare concerns users have in real-time, to help improve the product offering.
 
 ### 6. Data Insights for R&D
+
 - Use data from user interactions to create a "Formulation Radar" for future product development based on the most common skin concerns.
 - Generate product development ideas based on user data and trending skincare issues.
 
 ### 7. Back-End Database
+
 - Store user data, interaction logs, and issue descriptions.
 - Keep a detailed record of each user's interactions for future use.
 
 ### 8. Multi-Device Compatibility
+
 - Ensure that users can interact with the AI on different devices (desktop, mobile, tablet).
 
 ### 9. Security & Authentication
+
 - Ensure user data security with encrypted login/signup, and secure storage of personal data.
 - Implement privacy features for users who want to remain anonymous or choose not to upload photos.
 
 ### 10. Admin Access
+
 - Admins will have access to analytics and be able to review popular skin issues and the effectiveness of recommended products.
 - Admins can also monitor AI performance and ensure the recommendations are consistent and accurate.
 
 ### 11. Disclaimers and Authenticity
+
 - Add clear disclaimers about AI-generated recommendations and include warnings about the accuracy of the suggestions (e.g., similar to ChatGPT's disclaimer).
 - Ensure the AI recommendations are consistent for the same issue every time, and backed up by research to prevent inconsistency.
 
 ### 12. Integration with Website's E-commerce Platform
+
 - Link the product recommendations directly to the website's product pages for easy purchasing.
 
 ### 13. User Feedback Collection
+
 - Allow users to provide feedback on AI recommendations, which can help improve the system's performance over time.
 
 ### 14. Customizable Interface
+
 - Design a user-friendly interface for the AI chat, skincare analysis form, and product recommendation page.
 
 ### 15. Phase 2 Prep (Optional)
+
 - Prepare the structure for the future integration of packaging design, e-commerce pages, and product catalog for future phases.
 
 ---
@@ -125,6 +140,7 @@ The project aims to develop a comprehensive AI-powered skincare platform that of
 Developer must implement the full data intelligence structure:
 
 **Core Tables:**
+
 - `users`
 - `sessions`
 - `skin_profiles`
@@ -136,6 +152,7 @@ Developer must implement the full data intelligence structure:
 - `feedback`
 
 **R&D Dashboard Requirements:**
+
 - Top skin concerns by region/city
 - Ingredient usage/avoidance trends
 - Heatmap of "demand clusters"
@@ -150,6 +167,7 @@ Developer must implement the full data intelligence structure:
 ### 3. AI Logic, Safety & Technical Requirements
 
 AI must be built with:
+
 - **Retrieval-Augmented Generation (RAG)** using Glowmi product/INCI database.
 - **Rule-based safety engine:**
   - Pregnancy warnings (retinoids, strong acids)
@@ -168,9 +186,10 @@ AI must be built with:
 ### 4. Legal, PDPL & Compliance Requirements
 
 Must include:
+
 - PDPL-compliant consent modal (English & Arabic).
 - **Non-medical disclaimer:**  
-  *"Glowmi AI provides educational skincare guidance only and does not diagnose, treat, or prescribe."*
+  _"Glowmi AI provides educational skincare guidance only and does not diagnose, treat, or prescribe."_
 - Data deletion function in user profile.
 - Data retention automation (e.g., delete after 12–18 months of inactivity).
 - Storage location must be region-defined (GCC/EU preferred).
@@ -179,16 +198,19 @@ Must include:
 ### 5. Performance, SEO & Technical Delivery Requirements
 
 **Performance Targets:**
+
 - Mobile Lighthouse score ≥ 85
 - Page load under 3 seconds
 - API response under 5 seconds average
 
 **SEO Requirements:**
+
 - Proper meta tags, alt tags, structured data (Product schema)
 - Clean semantic HTML for ranking
 - Fast-loading bilingual pages
 
 **DevOps Requirements:**
+
 - Source code delivered in Git repository.
 - Clear documentation for:
   - DB schema
@@ -211,6 +233,7 @@ Must include:
 ### 7. Deliverables & Acceptance Criteria
 
 **The developer must deliver:**
+
 - Fully functioning bilingual AI system
 - All dashboards and reports
 - All safety checks
@@ -219,6 +242,7 @@ Must include:
 - Documentation for handover
 
 **Acceptance:**
+
 - Glowmi reviews 400 AI test cases
 - Glowmi validates dashboard accuracy
 - Glowmi approves UI/UX polish
@@ -228,36 +252,38 @@ Must include:
 
 ## Platform Development Process
 
-| Phase | Tasks/Activities | Responsible Party | Expected Output/Result |
-|-------|------------------|-------------------|------------------------|
-| **Phase 1: AI Integration** | | | |
-| 1.1 Requirements Gathering | Gather and confirm project scope | Client, Development Team | Clear understanding of AI integration requirements |
-| 1.2 Design UI/UX | Create wireframes and UI mockups for AI skin analyzer, chat assistant, and dashboard | UI/UX Designer, Client | Finalized design mockups and user flow |
-| 1.3 Backend Architecture | Develop the backend system for AI analysis, user management, and data collection | Backend Developer | Working backend system capable of handling AI interactions |
-| 1.4 AI Integration | Integrate AI for skin issue analysis, product recommendations, and routine generation | AI Developer, Backend Developer | AI system integrated with website, capable of analyzing user input |
-| 1.5 Database Setup | Design and implement database for storing user interactions, AI data, and product info | Backend Developer, Database Admin | Database with secure storage and structured data |
-| 1.6 Admin Dashboard | Develop admin panel for tracking user behavior, common issues, and trending products | Backend Developer | Fully functional admin dashboard with real-time analytics |
-| 1.7 Security & Authentication | Implement user authentication, data encryption, and privacy features | Security Expert, Backend Dev | Secure login/signup process, encrypted user data |
-| 1.8 Testing | Test AI functionality, user flow, data collection, and security features | QA Engineer, Development Team | Completed testing, bug fixing, and optimizations |
-| 1.9 Deployment | Deploy AI integration on the website, ensure functionality and performance | DevOps Engineer, Development Team | AI system live on the website with real-time user interaction |
-| **Phase 2: Future Enhancements** | | | |
-| 2.1 E-commerce Integration | Develop product pages, integrate product recommendations from AI, and enable purchasing options | Frontend Developer, Backend Developer | E-commerce platform integrated with AI-driven product suggestions |
-| 2.2 Packaging & Product Updates | Integrate packaging designs, finalize product catalog, and update product pages accordingly | Client, Designer, Frontend Developer | Complete product catalog with packaging visuals |
-| 2.3 Marketing & SEO | Implement SEO strategies for better visibility on search engines and integrate marketing tools | Marketing Team, SEO Specialist | SEO-optimized website with improved search engine rankings |
-| 2.4 Launch & Feedback | Launch Phase 2, gather user feedback, and adjust features based on feedback | Client, Development Team | Official product launch, user feedback collection |
-| 2.5 Ongoing Maintenance & Updates | Monitor website performance, security, and AI suggestions; release updates based on customer feedback | Development Team | Continuous updates and improvements based on user input and data |
+| Phase                             | Tasks/Activities                                                                                      | Responsible Party                     | Expected Output/Result                                             |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------ |
+| **Phase 1: AI Integration**       |                                                                                                       |                                       |                                                                    |
+| 1.1 Requirements Gathering        | Gather and confirm project scope                                                                      | Client, Development Team              | Clear understanding of AI integration requirements                 |
+| 1.2 Design UI/UX                  | Create wireframes and UI mockups for AI skin analyzer, chat assistant, and dashboard                  | UI/UX Designer, Client                | Finalized design mockups and user flow                             |
+| 1.3 Backend Architecture          | Develop the backend system for AI analysis, user management, and data collection                      | Backend Developer                     | Working backend system capable of handling AI interactions         |
+| 1.4 AI Integration                | Integrate AI for skin issue analysis, product recommendations, and routine generation                 | AI Developer, Backend Developer       | AI system integrated with website, capable of analyzing user input |
+| 1.5 Database Setup                | Design and implement database for storing user interactions, AI data, and product info                | Backend Developer, Database Admin     | Database with secure storage and structured data                   |
+| 1.6 Admin Dashboard               | Develop admin panel for tracking user behavior, common issues, and trending products                  | Backend Developer                     | Fully functional admin dashboard with real-time analytics          |
+| 1.7 Security & Authentication     | Implement user authentication, data encryption, and privacy features                                  | Security Expert, Backend Dev          | Secure login/signup process, encrypted user data                   |
+| 1.8 Testing                       | Test AI functionality, user flow, data collection, and security features                              | QA Engineer, Development Team         | Completed testing, bug fixing, and optimizations                   |
+| 1.9 Deployment                    | Deploy AI integration on the website, ensure functionality and performance                            | DevOps Engineer, Development Team     | AI system live on the website with real-time user interaction      |
+| **Phase 2: Future Enhancements**  |                                                                                                       |                                       |                                                                    |
+| 2.1 E-commerce Integration        | Develop product pages, integrate product recommendations from AI, and enable purchasing options       | Frontend Developer, Backend Developer | E-commerce platform integrated with AI-driven product suggestions  |
+| 2.2 Packaging & Product Updates   | Integrate packaging designs, finalize product catalog, and update product pages accordingly           | Client, Designer, Frontend Developer  | Complete product catalog with packaging visuals                    |
+| 2.3 Marketing & SEO               | Implement SEO strategies for better visibility on search engines and integrate marketing tools        | Marketing Team, SEO Specialist        | SEO-optimized website with improved search engine rankings         |
+| 2.4 Launch & Feedback             | Launch Phase 2, gather user feedback, and adjust features based on feedback                           | Client, Development Team              | Official product launch, user feedback collection                  |
+| 2.5 Ongoing Maintenance & Updates | Monitor website performance, security, and AI suggestions; release updates based on customer feedback | Development Team                      | Continuous updates and improvements based on user input and data   |
 
 ---
 
 ## Technology Stack
 
 ### Technology
+
 - **UX/UI** for the platform using **Figma** and Admin Dashboard
 - **Frontend development** of your platform using **Next.js** or **React.js** for an Admin Dashboard
 - **Backend development** (**Python || Django || PostgreSQL**)
 - **QA Testing** with our Engineer
 
 ### You have to provide me
+
 - Your Color preference
 - All the necessary APIs
 - OpenAI APIs
@@ -287,17 +313,17 @@ This approach ensures a future-ready, adaptable, and high-performing ecosystem b
 
 ### Price, Timeline and Technology
 
-| Step | Task | Technology | Time | Price |
-|------|------|------------|------|-------|
-| **1st Phase** | UI/UX Design for website and Admin Panel | Figma tools for the UI design | 15 days | **$1,000 (USD)** |
-| **2nd Phase** | Frontend Development - Website and Admin Dashboard | Next JS \| React JS | 15 days | **$1,000 (USD)** |
+| Step          | Task                                               | Technology                                                                         | Time    | Price            |
+| ------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------------- |
+| **1st Phase** | UI/UX Design for website and Admin Panel           | Figma tools for the UI design                                                      | 15 days | **$1,000 (USD)** |
+| **2nd Phase** | Frontend Development - Website and Admin Dashboard | Next JS \| React JS                                                                | 15 days | **$1,000 (USD)** |
 | **3rd Phase** | AI Training, API Integration & Backend Development | Python, Langchain, Tensorflow, Pytorch, Django \| Python, PostgreSQL as a Database | 30 Days | **$1,800 (USD)** |
-| **4th Phase** | DevOps QA Testing | As per policy | - | **$200 (USD)** |
+| **4th Phase** | DevOps QA Testing                                  | As per policy                                                                      | -       | **$200 (USD)**   |
 
 **Total Timeline:** 60 Days  
 **Total Cost:** $4,000 USD
 
-*"After development, we'll provide 120 days of ongoing support, free."*
+_"After development, we'll provide 120 days of ongoing support, free."_
 
 **Weekly progress meeting**
 
@@ -307,10 +333,10 @@ This approach ensures a future-ready, adaptable, and high-performing ecosystem b
 
 ### Additional Costs For Website:
 
-| Service | Cost |
-|---------|------|
-| Domain Registration | $15 - $30/year |
-| Hosting (Basic) | $10 - $50/month |
+| Service             | Cost            |
+| ------------------- | --------------- |
+| Domain Registration | $15 - $30/year  |
+| Hosting (Basic)     | $10 - $50/month |
 
 ---
 
@@ -328,7 +354,7 @@ This approach ensures a future-ready, adaptable, and high-performing ecosystem b
 
 We believe in providing a one-stop solution to our clients. After the development is completed, we will let you test the platform thoroughly.
 
-After we get the final version of the platform, we will deploy or publish it. 
+After we get the final version of the platform, we will deploy or publish it.
 
 **We will provide you with free post-project support for bug fixing for 4 months after the system goes live.**
 
@@ -352,7 +378,7 @@ We will provide you with free post-project support for bug fixing for 4 months a
 
 Upon project completion, full ownership of the source code, design, and all related assets will be transferred to the client. The client will hold exclusive rights to modify, distribute, and use the project as they see fit.
 
-All intellectual property created will belong solely to the client after final payment. The client can use the source code without any restrictions. Any third-party licenses or tools used will be transferred with proper attribution. 
+All intellectual property created will belong solely to the client after final payment. The client can use the source code without any restrictions. Any third-party licenses or tools used will be transferred with proper attribution.
 
 **The client will have complete control and ownership over the project and its future development.**
 
@@ -361,16 +387,20 @@ All intellectual property created will belong solely to the client after final p
 ## Payment by Milestones
 
 ### Milestone 1: UI Design
+
 - Develop the user website and admin dashboards, focusing on a seamless, user-friendly experience and an intuitive interface.
 
 ### Milestone 2: Design Implementation
+
 - Build the front end of websites, precisely adhering to the design principles and ensuring responsiveness and cross-browser compatibility.
 
 ### Milestone 3: Backend Development & API Integration
+
 - Develop the backend architecture, ensuring alignment with the approved design specifications and project goals.
 - Integrate APIs for the admin panel to enable smooth functionality and communication between all components.
 
 ### Milestone 4: Testing and Deployment
+
 - Thoroughly test and deploy on your domain, hosting, and website. I'll handle publishing your website to the server.
 
 ---
@@ -405,7 +435,7 @@ My ultimate goal is to create a trusted, forward-thinking, and globally adaptabl
 
 ## Conclusion
 
-This project represents a strategic move towards a data-driven, AI-powered skincare ecosystem that will revolutionize how users approach skincare. By combining personalized AI-driven recommendations with real-time data analytics, the platform will empower users to make more informed decisions about their skincare routine. 
+This project represents a strategic move towards a data-driven, AI-powered skincare ecosystem that will revolutionize how users approach skincare. By combining personalized AI-driven recommendations with real-time data analytics, the platform will empower users to make more informed decisions about their skincare routine.
 
 The insights generated from user data will also help the business develop more targeted products, ensuring that the brand stays relevant in a competitive market. Through a clear focus on authenticity and user privacy, this platform promises to provide a trustworthy and valuable service that meets both consumer needs and business goals.
 
