@@ -1,4 +1,4 @@
-import { type ClassValue, clsx } from 'clsx'
+import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 // Utility function for merging Tailwind classes
@@ -104,7 +104,7 @@ export function shuffle<T>(array: T[]): T[] {
 }
 
 // Object utilities
-export function omit<T extends Record<string, any>, K extends keyof T>(
+export function omit<T extends Record<string, unknown>, K extends keyof T>(
   obj: T,
   keys: K[]
 ): Omit<T, K> {
@@ -113,7 +113,7 @@ export function omit<T extends Record<string, any>, K extends keyof T>(
   return result
 }
 
-export function pick<T extends Record<string, any>, K extends keyof T>(
+export function pick<T extends Record<string, unknown>, K extends keyof T>(
   obj: T,
   keys: K[]
 ): Pick<T, K> {
@@ -191,7 +191,7 @@ export function removeFromLocalStorage(key: string): void {
 }
 
 // Debounce utility
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -204,7 +204,7 @@ export function debounce<T extends (...args: any[]) => any>(
 }
 
 // Throttle utility
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
