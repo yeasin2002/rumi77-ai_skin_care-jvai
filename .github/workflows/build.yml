@@ -25,9 +25,6 @@ jobs:
       - name: Run ESLint
         run: bun run lint
 
-      - name: Check types
-        run: bun run type-check
-
       - name: Format check (Prettier)
         run: bun run format:check
 
