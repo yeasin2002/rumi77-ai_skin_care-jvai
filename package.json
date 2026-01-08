@@ -1,6 +1,7 @@
 {
-  "name": "nextjs-boilerplate",
+  "name": "glowmi-ai-skincare",
   "version": "1.0.0",
+  "description": "AI-powered skincare platform with personalized routines and product recommendations for Glowmi (KSA market)",
   "private": true,
   "author": {
     "name": "Yeasin",
@@ -9,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yeasin2002/nextjs-starter-template"
+    "url": "https://github.com/yeasin2002/rumi77-ai_skin_care-jvai"
   },
-  "homepage": "https://github.com/yeasin2002/nextjs-starter-template",
+  "homepage": "https://github.com/yeasin2002/rumi77-ai_skin_care-jvai",
   "bugs": {
-    "url": "https://github.com/yeasin2002/nextjs-starter-template/issues"
+    "url": "https://github.com/yeasin2002/rumi77-ai_skin_care-jvai/issues"
   },
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",

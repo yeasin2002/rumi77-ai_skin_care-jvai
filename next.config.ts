@@ -6,11 +6,9 @@ const withNextIntl = createNextIntlPlugin()
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
 
 const nextConfig: NextConfig = {
-  // standalone output for Docker
-  // output: 'standalone',
+  // standalone output for Docker (required for containerized deployments)
+  output: 'standalone',
   typedRoutes: true,
-
-
 
   typescript: {
     ignoreBuildErrors: process.env.NODE_ENV === 'production',
