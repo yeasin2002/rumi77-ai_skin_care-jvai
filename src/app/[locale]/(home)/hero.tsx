@@ -16,7 +16,7 @@ export const Hero = async () => {
           {t('cta')}
         </Button>
       </div>
-      <NavList className="absolute top-5 right-2 justify-around md:w-full" />
+      <NavList className="navList-parent" />
     </main>
   )
 }

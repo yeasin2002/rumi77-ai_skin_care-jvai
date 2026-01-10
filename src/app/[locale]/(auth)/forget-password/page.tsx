@@ -48,7 +48,7 @@ const ForgetPassword = () => {
           {...register('email')}
         />
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button type="submit" className="auth-action-btn" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send OTP'}
         </Button>
       </form>

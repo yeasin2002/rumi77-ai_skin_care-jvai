@@ -64,7 +64,7 @@ const ResetPassword = () => {
           {...register('confirmPassword')}
         />
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button type="submit" className="auth-action-btn" disabled={isSubmitting}>
           {isSubmitting ? 'Updating...' : 'Update Password'}
         </Button>
       </form>

@@ -61,7 +61,7 @@ const SignUp = () => {
           {...register('password')}
         />
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button type="submit" className="auth-action-btn" disabled={isSubmitting}>
           {isSubmitting ? 'Creating account...' : 'Sign Up'}
         </Button>
 
