@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "button_text": "قريباً",
+    "navItems": {
+      "home": "الرئيسية",
+      "ingredients": "المكونات",
+      "analyzeSkin": "تحليل البشرة",
+      "aboutUs": "من نحن",
+      "contactUs": "تواصل معنا"
+    }
+  }
+}

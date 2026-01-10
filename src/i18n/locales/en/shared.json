@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "button_text": "COMING",
+    "navItems": {
+      "home": "Home",
+      "ingredients": "Ingredients",
+      "analyzeSkin": "Analyze Skin",
+      "aboutUs": "About Us",
+      "contactUs": "Contact US"
+    }
+  }
+}
