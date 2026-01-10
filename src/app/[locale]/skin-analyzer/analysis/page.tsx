@@ -6,17 +6,13 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
-import {
-  Brain,
-  FileText,
-  Sparkles,
-  Stethoscope,
-  Sun,
-  Upload,
-  UserCircle,
-  Users,
-} from 'lucide-react'
+import { FileText, Sparkles, Sun, Upload, UserCircle } from 'lucide-react'
+import Image from 'next/image'
 import { useState } from 'react'
+
+import AiPowered from '@/assets/icons/AI-Powered.png'
+import ExpertBacked from '@/assets/icons/Expert-Backed.png'
+import Personalized from '@/assets/icons/Personalized.png'
 
 const skinTypes = ['Oily', 'Dry', 'Combination', 'Normal', 'Sensitive'] as const
 const skinConcerns = [
@@ -30,6 +26,24 @@ const skinConcerns = [
   'Large Pores',
   'Others',
 ] as const
+
+const features = [
+  {
+    image: AiPowered,
+    title: 'AI-Powered',
+    subtitle: 'Advanced algorithms analyze your unique skin needs',
+  },
+  {
+    image: Personalized,
+    title: 'Personalized',
+    subtitle: 'Custom routines based on your specific concerns',
+  },
+  {
+    image: ExpertBacked,
+    title: 'Expert-Backed',
+    subtitle: 'Recommendations based on dermatological research',
+  },
+]
 
 type SkinType = (typeof skinTypes)[number]
 type SkinConcern = (typeof skinConcerns)[number]
@@ -57,7 +71,7 @@ const Analysis = () => {
       </div>
 
       {/* Form Card */}
-      <div className="mx-auto max-w-2xl px-6 pb-20">
+      <div className="mx-auto max-w-4xl px-6 pb-20">
         <div className="bg-main-foreground rounded-2xl p-8">
           {/* Skin Type */}
           <div className="mb-8">
@@ -161,30 +175,14 @@ const Analysis = () => {
 
       {/* Features Section */}
       <div className="border-main-button/10 border-t bg-[#f5f0eb] py-16">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 md:grid-cols-3">
-          <div className="flex flex-col items-center text-center">
-            <Brain className="text-main-button mb-4 size-10" />
-            <h3 className="font-caudex text-main-button mb-2 text-xl">AI-Powered</h3>
-            <p className="font-open-sans text-main-button/70 text-sm">
-              Advanced algorithms analyze your unique skin needs
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center text-center">
-            <Users className="text-main-button mb-4 size-10" />
-            <h3 className="font-caudex text-main-button mb-2 text-xl">Personalized</h3>
-            <p className="font-open-sans text-main-button/70 text-sm">
-              Custom routines based on your specific concerns
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center text-center">
-            <Stethoscope className="text-main-button mb-4 size-10" />
-            <h3 className="font-caudex text-main-button mb-2 text-xl">Expert-Backed</h3>
-            <p className="font-open-sans text-main-button/70 text-sm">
-              Recommendations based on dermatological research
-            </p>
-          </div>
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 md:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.title} className="flex flex-col items-center text-center">
+              <Image src={feature.image} alt={feature.title} className="mb-4 size-10" />
+              <h3 className="font-caudex text-main-button mb-2 text-xl">{feature.title}</h3>
+              <p className="font-open-sans text-main-button/70 text-sm">{feature.subtitle}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
