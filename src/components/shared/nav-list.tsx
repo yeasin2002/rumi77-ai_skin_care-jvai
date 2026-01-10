@@ -14,9 +14,10 @@ import Link from 'next/link'
 
 interface Props {
   className?: string
+  wrapperClassName?: string
 }
 
-export const NavList = async ({ className, ...props }: Props) => {
+export const NavList = async ({ wrapperClassName, className, ...props }: Props) => {
   const t = await getTranslations('shared.nav.navItems')
 
   const navItems = [
@@ -28,12 +29,12 @@ export const NavList = async ({ className, ...props }: Props) => {
   ]
   return (
     <>
-      <nav className={cn(`hidden justify-between md:flex`, className)} {...props}>
+      <nav className={cn(`hidden justify-between md:flex`, wrapperClassName)} {...props}>
         {navItems.map((item) => (
           <Link
             key={item.name}
             href={{ pathname: item.url }}
-            className={`font-caudex text-2xl font-bold text-white`}
+            className={cn(`font-caudex text-2xl font-bold text-white`, className)}
           >
             {item.name}
           </Link>

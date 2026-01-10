@@ -16,7 +16,7 @@ export const Hero = async () => {
           {t('cta')}
         </Button>
       </div>
-      <NavList className="navList-parent" />
+      <NavList wrapperClassName="navList-parent" />
     </main>
   )
 }

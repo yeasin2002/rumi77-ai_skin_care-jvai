@@ -11,6 +11,7 @@ import {
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { useLocale } from 'next-intl'
+import { cn } from '../../lib/utils'
 
 const localeNames: Record<string, string> = {
   en: 'English',
@@ -37,7 +38,7 @@ export function LanguageToggle() {
           <DropdownMenuItem
             key={loc}
             onClick={() => handleLocaleChange(loc)}
-            className={locale === loc ? 'bg-accent' : ''}
+            className={cn(`cursor-pointer`, locale === loc ? 'bg-accent' : '')}
           >
             {localeNames[loc]}
           </DropdownMenuItem>
