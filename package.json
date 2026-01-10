@@ -40,7 +40,8 @@
     "test:watch": "vitest --watch",
     "type-check": "tsc --noEmit",
     "knip": "knip",
-    "codehawk": "codehawk src"
+    "codehawk": "codehawk src",
+    "prepare": "husky"
   },
   "dependencies": {
     "@aws-sdk/client-rds-data": "latest",
@@ -111,8 +112,10 @@
     "eslint-config-next": "^16.1.1",
     "eslint-config-prettier": "latest",
     "happy-dom": "latest",
+    "husky": "^9.1.7",
     "jsdom": "latest",
     "knip": "^5.62.0",
+    "lint-staged": "^16.2.7",
     "playwright": "^1.54.1",
     "postcss": "^8.5.6",
     "prettier": "latest",
@@ -124,6 +127,15 @@
     "typescript": "^5.8.3",
     "vite": "latest",
     "vitest": "latest"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{json,css,md}": [
+      "prettier --write"
+    ]
   },
   "ignoreScripts": [
     "sharp",
