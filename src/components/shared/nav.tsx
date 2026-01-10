@@ -1,25 +1,34 @@
 'use client'
 
 import Logo from '@/assets/logo.svg'
-import { Button } from '@/components/ui'
-import { openSans } from '@/lib/fonts'
+import { buttonVariants } from '@/components/ui'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
+import { cn } from '../../lib/utils'
 import { LanguageToggle } from './language-toggle'
 
-export const Nav = () => {
+type Props = {
+  className?: string
+}
+
+export const Nav = ({ className }: Props) => {
   const t = useTranslations('shared.nav')
 
   return (
-    <header className="flex items-center justify-between px-2 py-4">
+    <header className={cn('flex items-center justify-between px-2 py-4', className)}>
       <Link href={{ pathname: '/' }}>
         <Image src={Logo} alt="Logo" className="max-w-32 md:max-w-60" />
       </Link>
 
       <div className="flex items-center justify-center gap-x-4">
         <LanguageToggle />
-        <Button className={openSans.className}>{t('button_text')}</Button>
+        <Link
+          href={{ pathname: '/login' }}
+          className={buttonVariants({ className: 'font-open-sans' })}
+        >
+          {t('button_text')}
+        </Link>
       </div>
     </header>
   )
