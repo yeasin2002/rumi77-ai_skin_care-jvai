@@ -52,8 +52,8 @@ const VerifyOTP = () => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div>
-            <p className="mb-3 text-sm font-medium">Enter pin</p>
+          <div className="flex flex-col items-center">
+            <p className="mb-3 w-full text-sm font-medium">Enter pin</p>
             <Controller
               name="otp"
               control={control}
@@ -64,13 +64,31 @@ const VerifyOTP = () => {
                   value={field.value}
                   onChange={field.onChange}
                 >
-                  <InputOTPGroup>
-                    <InputOTPSlot index={0} />
-                    <InputOTPSlot index={1} />
-                    <InputOTPSlot index={2} />
-                    <InputOTPSlot index={3} />
-                    <InputOTPSlot index={4} />
-                    <InputOTPSlot index={5} />
+                  <InputOTPGroup className="gap-2">
+                    <InputOTPSlot
+                      index={0}
+                      className="size-12 rounded-lg border-none bg-[#F7F8F9] text-lg"
+                    />
+                    <InputOTPSlot
+                      index={1}
+                      className="size-12 rounded-lg border-none bg-[#F7F8F9] text-lg"
+                    />
+                    <InputOTPSlot
+                      index={2}
+                      className="size-12 rounded-lg border-none bg-[#F7F8F9] text-lg"
+                    />
+                    <InputOTPSlot
+                      index={3}
+                      className="size-12 rounded-lg border-none bg-[#F7F8F9] text-lg"
+                    />
+                    <InputOTPSlot
+                      index={4}
+                      className="size-12 rounded-lg border-none bg-[#F7F8F9] text-lg"
+                    />
+                    <InputOTPSlot
+                      index={5}
+                      className="size-12 rounded-lg border-none bg-[#F7F8F9] text-lg"
+                    />
                   </InputOTPGroup>
                 </InputOTP>
               )}
