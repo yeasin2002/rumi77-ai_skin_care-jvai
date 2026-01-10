@@ -21,11 +21,11 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
   const t = await getTranslations('shared.nav.navItems')
 
   const navItems = [
-    { name: t('home'), url: '/coming-soon' },
-    { name: t('ingredients'), url: 'coming-soon' },
-    { name: t('analyzeSkin'), url: 'coming-soon' },
-    { name: t('aboutUs'), url: 'coming-soon' },
-    { name: t('contactUs'), url: 'coming-soon' },
+    { name: t('home'), url: '/' },
+    { name: t('ingredients'), url: '/ingredients' },
+    { name: t('analyzeSkin'), url: '/analyze-skin' },
+    { name: t('aboutUs'), url: '/about-us' },
+    { name: t('contactUs'), url: '/contact-us' },
   ]
   return (
     <>

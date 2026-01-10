@@ -1,7 +1,7 @@
 import ingredientsBg from '@/assets/image/ingredients-bg.jpg'
 import { NavList } from '@/components/shared'
+import { Footer } from '@/components/shared/footer'
 import Image from 'next/image'
-import { Footer } from '../(home)/footer'
 
 const Ingredients = () => {
   return (

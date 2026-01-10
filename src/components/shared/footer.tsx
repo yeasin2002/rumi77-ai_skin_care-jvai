@@ -1,8 +1,8 @@
 import logoCompact from '@/assets/image/logo-compact.png'
+import { cn } from '@/lib/utils'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import React from 'react'
-import { cn } from '../../../lib/utils'
 
 const contactEmail = 'hello.hafsabinte@gmail.com'
 type Props = {} & React.ComponentPropsWithRef<'footer'>

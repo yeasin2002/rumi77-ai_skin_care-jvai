@@ -1,7 +1,5 @@
-import { Nav } from '@/components/shared/nav'
 import { AboutGlowmi } from './about-glowmi'
 import { CollectionProduct } from './collection-product'
-import { FooterSingle } from './footer-single'
 import { GlowmiProductShowcase } from './glowmi-product-showcase'
 import { GlowmiStates } from './glowmi-states'
 import { Hero } from './hero'
@@ -13,7 +11,6 @@ import { VisualsResults } from './visuals-results'
 export default async function HomePage() {
   return (
     <>
-      <Nav />
       <Hero />
       <AboutGlowmi />
       <CollectionProduct />
@@ -23,7 +20,6 @@ export default async function HomePage() {
       <TransformationWrapper />
       <SkincareShowcase />
       <HomeBottomCta />
-      <FooterSingle />
     </>
   )
 }
