@@ -23,11 +23,12 @@ export default async function RootLayout({
   // }
 
   const messages = await getMessages()
+  const timeZone = 'Asia/Riyadh'
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fonts}`}>
-        <RootWrapper locale={locale} messages={messages}>
+        <RootWrapper locale={locale} messages={messages} timeZone={timeZone}>
           {children}
         </RootWrapper>
         <Toaster />
