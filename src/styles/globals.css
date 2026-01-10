@@ -1,4 +1,9 @@
-@import './tailwind.css';
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@source '../../*.{js,ts,jsx,tsx,mdx}';
+
+@import './shadcn-ui.css';
 @import './custom.css';
 
 
@@ -8,5 +13,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .auth-container {
+    @apply bg-card w-full max-w-md rounded-2xl border p-8 shadow-sm;
+  }
+  .auth-back-btn {
+    @apply bg-muted mb-8 inline-flex size-10 items-center justify-center rounded-full;
   }
 }

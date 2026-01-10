@@ -9,7 +9,7 @@ type AuthInputProps = {
   type?: string
   className?: string
   error?: string
-} & React.InputHTMLAttributes<HTMLInputElement>
+} & React.ComponentPropsWithRef<'input'>
 
 export const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
   ({ icon: Icon, placeholder, type = 'text', className, error, ...props }, ref) => {
