@@ -19,7 +19,7 @@ const Ingredients = () => {
 
         <NavList
           wrapperClassName="absolute top-5 right-2 z-20 justify-around md:w-full"
-          className="text-black"
+          className="text-main-button"
         />
       </div>
 
