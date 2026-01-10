@@ -43,8 +43,8 @@ const VerifyOTP = () => {
         </Link>
 
         <div className="mb-8 text-center">
-          <h1 className="font-serif text-4xl italic">Verify OTP</h1>
-          <p className="text-muted-foreground mt-2">
+          <h1 className="auth-heading">Verify OTP</h1>
+          <p className="auth-subheading">
             We&apos;ve sent a 6-digit code to your email.
             <br />
             Enter the code below to continue

@@ -39,8 +39,8 @@ const Login = () => {
       </Link>
 
       <div className="mb-8 text-center">
-        <h1 className="font-serif text-4xl italic">Welcome Back</h1>
-        <p className="text-muted-foreground mt-2">
+        <h1 className="auth-heading">Welcome Back</h1>
+        <p className="auth-subheading">
           Log in to access your personalized skincare routine, expert recommendations, and more.
         </p>
       </div>

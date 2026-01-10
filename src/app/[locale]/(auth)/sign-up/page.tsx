@@ -39,8 +39,8 @@ const SignUp = () => {
       </Link>
 
       <div className="mb-8 text-center">
-        <h1 className="font-serif text-4xl italic">Create Account</h1>
-        <p className="text-muted-foreground mt-2">
+        <h1 className="auth-heading">Create Account</h1>
+        <p className="auth-subheading">
           Join Glowmi to discover your personalized skincare routine and expert recommendations.
         </p>
       </div>

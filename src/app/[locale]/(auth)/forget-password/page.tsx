@@ -35,8 +35,8 @@ const ForgetPassword = () => {
       </Link>
 
       <div className="mb-8 text-center">
-        <h1 className="font-serif text-4xl italic">Forget Password</h1>
-        <p className="text-muted-foreground mt-2">Enter your email to reset password</p>
+        <h1 className="auth-heading">Forget Password</h1>
+        <p className="auth-subheading">Enter your email to reset password</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

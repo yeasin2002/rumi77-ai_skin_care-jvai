@@ -44,8 +44,8 @@ const ResetPassword = () => {
       </Link>
 
       <div className="mb-8 text-center">
-        <h1 className="font-serif text-4xl italic">Reset Password</h1>
-        <p className="text-muted-foreground mt-2">Create a new one</p>
+        <h1 className="auth-heading">Reset Password</h1>
+        <p className="auth-subheading">Create a new one</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
