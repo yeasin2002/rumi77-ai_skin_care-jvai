@@ -33,7 +33,7 @@ export const NavList = async ({ className, ...props }: Props) => {
           <Link
             key={item.name}
             href={{ pathname: item.url }}
-            className={`${caudex.className} text-2xl font-bold text-white`}
+            className={`font-caudex text-2xl font-bold text-white`}
           >
             {item.name}
           </Link>
