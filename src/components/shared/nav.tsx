@@ -16,7 +16,7 @@ export const Nav = ({ className }: Props) => {
   const t = useTranslations('shared.nav')
 
   return (
-    <header className={cn('flex items-center justify-between px-2 py-4', className)}>
+    <header className={cn('flex items-center justify-between px-2 py-4 lg:px-20', className)}>
       <Link href={{ pathname: '/' }}>
         <Image src={Logo} alt="Logo" className="max-w-32 md:max-w-60" />
       </Link>

@@ -136,6 +136,10 @@ const Analysis = () => {
                 </button>
               ))}
             </div>
+            <Input
+              placeholder="Input others skin concern"
+              className="border-main-button mt-4 rounded-md bg-transparent"
+            />
           </div>
 
           {/* Additional Details */}
