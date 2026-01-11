@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "button_text": "BIENTÔT",
+    "navItems": {
+      "home": "Accueil",
+      "ingredients": "Ingrédients",
+      "analyzeSkin": "Analyser la Peau",
+      "aboutUs": "À Propos",
+      "contactUs": "Contactez-nous"
+    }
+  }
+}

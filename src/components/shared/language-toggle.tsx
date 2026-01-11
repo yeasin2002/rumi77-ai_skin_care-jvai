@@ -9,14 +9,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { usePathname, useRouter } from '@/i18n/navigation'
-import { routing } from '@/i18n/routing'
+import { localeNames, routing } from '@/i18n/routing'
 import { useLocale } from 'next-intl'
 import { cn } from '../../lib/utils'
-
-const localeNames: Record<string, string> = {
-  en: 'English',
-  ar: 'العربية',
-}
 
 export function LanguageToggle() {
   const locale = useLocale()
