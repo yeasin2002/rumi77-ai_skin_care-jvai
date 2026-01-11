@@ -7,7 +7,7 @@ const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'tr
 
 const nextConfig: NextConfig = {
   // standalone output for Docker (required for containerized deployments)
-  output: 'standalone',
+  // output: 'standalone',
   typedRoutes: true,
 
   typescript: {

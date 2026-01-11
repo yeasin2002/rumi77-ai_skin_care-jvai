@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui'
 import { X } from 'lucide-react'
-import { CheckoutItems } from './checkout-items'
+import { CheckoutItems } from '../../../../components/shared/checkout-items'
 
 const Checkout = () => {
   return (

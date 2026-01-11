@@ -7,9 +7,9 @@ import { usePathname } from 'next/navigation'
 
 const tabsLists = [
   { id: 1, icon: LayoutGrid, label: 'Overview', href: '/profile' },
-  { id: 2, icon: Heart, label: 'Save Routine', href: '/profile/saved-routines' },
-  { id: 3, icon: ShoppingBag, label: 'My Cart', href: '/profile/cart' },
-  { id: 4, icon: Package, label: 'Order History', href: '/profile/orders' },
+  { id: 2, icon: Heart, label: 'Save Routine', href: '/profile/save-routine' },
+  { id: 3, icon: ShoppingBag, label: 'My Cart', href: '/profile/my-cart' },
+  { id: 4, icon: Package, label: 'Order History', href: '/profile/order-history' },
   { id: 5, icon: Settings, label: 'Settings', href: '/profile/settings' },
 ]
 
@@ -27,7 +27,7 @@ export const ProfileTabList = () => {
   }
 
   return (
-    <div aria-label="tab-list" className="mt-8 border-b border-gray-300">
+    <div aria-label="tab-list" className="mt-8 mb-10 border-b border-gray-300">
       <nav className="flex gap-8">
         {tabsLists.map((tab) => (
           <Link
