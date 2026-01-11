@@ -112,7 +112,7 @@ const BeforeAfterComparison = () => {
   }
 
   return (
-    <div className="border-main-button relative h-[700px] w-full max-w-[500px] overflow-hidden rounded-3xl border-8">
+    <div className="border-main-button relative h-[500px] w-full max-w-[500px] overflow-hidden rounded-3xl border-8 lg:h-[700px]!">
       {/* After Image (Background) */}
       <Image src={afterImage} alt="After transformation" fill className="object-cover" priority />
 
