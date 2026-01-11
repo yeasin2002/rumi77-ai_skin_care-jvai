@@ -89,7 +89,7 @@ const DashboardLogin = () => {
               </label>
             </div>
             <Link
-              href={{ pathname: '/dashboard/forgot-password' }}
+              href={{ pathname: '/dashboard/forget-password' }}
               className="text-main-button text-sm hover:underline"
             >
               Forget Password?
