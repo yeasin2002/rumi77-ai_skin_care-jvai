@@ -1,5 +1,9 @@
+'use client'
+
+import { cn } from '@/lib/utils'
 import { Heart, LayoutGrid, Package, Settings, ShoppingBag } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const tabsLists = [
   { id: 1, icon: LayoutGrid, label: 'Overview', href: '/profile' },
@@ -10,22 +14,35 @@ const tabsLists = [
 ]
 
 export const ProfileTabList = () => {
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    // Remove locale prefix from pathname (e.g., /en/profile -> /profile)
+    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '')
+
+    if (href === '/profile') {
+      return pathWithoutLocale === '/profile'
+    }
+    return pathWithoutLocale.startsWith(href)
+  }
+
   return (
-    <>
-      <div aria-label="tab-list" className="mt-8 border-b border-gray-300">
-        <nav className="flex gap-8">
-          {tabsLists.map((tab) => (
-            <Link
-              key={tab.id}
-              href={{ pathname: tab.href }}
-              className="text-main-button hover:text-main-button/80 first:border-main-button flex items-center gap-2 border-b-2 border-transparent pb-3 text-sm transition-colors"
-            >
-              <tab.icon className="size-4" />
-              {tab.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </>
+    <div aria-label="tab-list" className="mt-8 border-b border-gray-300">
+      <nav className="flex gap-8">
+        {tabsLists.map((tab) => (
+          <Link
+            key={tab.id}
+            href={{ pathname: tab.href }}
+            className={cn(
+              'text-main-button hover:text-main-button/80 flex items-center gap-2 border-b-2 pb-3 text-sm transition-colors',
+              isActive(tab.href) ? 'border-main-button' : 'border-transparent'
+            )}
+          >
+            <tab.icon className="size-4" />
+            {tab.label}
+          </Link>
+        ))}
+      </nav>
+    </div>
   )
 }
