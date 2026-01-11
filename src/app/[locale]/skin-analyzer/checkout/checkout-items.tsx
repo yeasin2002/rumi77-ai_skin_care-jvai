@@ -1,5 +1,41 @@
 import productImage from '@/assets/image/serum-drop-product.jpg'
+import { Minus, Plus } from 'lucide-react'
+import Image from 'next/image'
 
 export const CheckoutItems = () => {
-  return <div>CheckoutItems</div>
+  return (
+    <div className="flex items-start gap-4 border-b border-gray-200 py-6">
+      {/* Product Image */}
+      <div className="relative size-24 shrink-0 overflow-hidden rounded-lg bg-[#e8e6e3]">
+        <Image
+          src={productImage}
+          alt="Deep nourishing day serum"
+          fill
+          className="object-contain p-2"
+        />
+      </div>
+
+      {/* Product Info */}
+      <div className="flex-1">
+        <h3 className="font-caudex text-main-button text-xl font-normal">
+          Deep nourishing day serum
+        </h3>
+        <p className="text-main-button mt-1 text-sm">$ 98.00 ( USD )</p>
+        <button type="button" className="text-main-button mt-2 text-sm underline">
+          Remove
+        </button>
+      </div>
+
+      {/* Quantity Controls */}
+      <div className="flex items-center gap-2 rounded-md border border-gray-300">
+        <button type="button" className="p-2 hover:bg-gray-100">
+          <Minus className="text-main-button size-4" />
+        </button>
+        <span className="text-main-button w-6 text-center text-sm">1</span>
+        <button type="button" className="p-2 hover:bg-gray-100">
+          <Plus className="text-main-button size-4" />
+        </button>
+      </div>
+    </div>
+  )
 }
