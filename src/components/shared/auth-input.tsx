@@ -9,7 +9,7 @@ const inputVariants = cva('', {
   variants: {
     variant: {
       auth: 'border-input h-12 rounded-none border-0 border-b shadow-none',
-      default: 'bg-muted/50 border-input h-12 rounded-lg border shadow-none',
+      default: 'bg-[#F8F5EE] border-input h-12 rounded-lg border shadow-none',
     },
   },
   defaultVariants: {
@@ -23,26 +23,36 @@ type IconInputProps = {
   placeholder: string
   type?: string
   className?: string
+  labelClassName?: string
   error?: string
 } & VariantProps<typeof inputVariants> &
   React.ComponentPropsWithRef<'input'>
 
 export const IconInput = forwardRef<HTMLInputElement, IconInputProps>(
-  ({ icon: Icon, label, placeholder, type = 'text', className, error, variant, ...props }, ref) => {
+  (
+    {
+      icon: Icon,
+      label,
+      placeholder,
+      type = 'text',
+      className,
+      labelClassName,
+      error,
+      variant,
+      ...props
+    },
+    ref
+  ) => {
     // Default variant with label (no icon)
     if (variant === 'default') {
       return (
         <div className="space-y-1.5">
-          {label && <label className="text-sm font-medium">{label}</label>}
+          {label && <label className={cn('text-sm font-medium', labelClassName)}>{label}</label>}
           <Input
             ref={ref}
             type={type}
             placeholder={placeholder}
-            className={cn(
-              'bg-muted/50 h-12 rounded-lg text-base',
-              error && 'border-destructive',
-              className
-            )}
+            className={cn('h-12 rounded-md text-base', error && 'border-destructive', className)}
             aria-invalid={!!error}
             {...props}
           />
