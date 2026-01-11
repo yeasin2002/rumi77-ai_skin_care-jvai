@@ -1,10 +1,13 @@
 import { SiteHeading } from '@/components/shared'
 import { caudex, openSans } from '@/lib/fonts'
 
-import CollectionProductImage from '@/assets/image/CollectionProduct-image.jpg'
 import lockImage from '@/assets/image/lock.png'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
+
+import product1 from '@/assets/products/Label/Cleanser-Label.jpg'
+import product2 from '@/assets/products/Label/Radiant-Satin-Lip Oil-Label.jpg'
+import product3 from '@/assets/products/Label/Serum-Dropper-Label.jpg'
 
 export const CollectionProduct = async () => {
   const t = await getTranslations('home.collection')
@@ -14,16 +17,19 @@ export const CollectionProduct = async () => {
       key: 'serum',
       title: t('collectionList.serum.title'),
       description: t('collectionList.serum.description'),
+      image: product1,
     },
     {
       key: 'sleepingMask',
       title: t('collectionList.sleepingMask.title'),
       description: t('collectionList.sleepingMask.description'),
+      image: product2,
     },
     {
       key: 'lipOil',
       title: t('collectionList.lipOil.title'),
       description: t('collectionList.lipOil.description'),
+      image: product3,
     },
   ]
 
@@ -45,10 +51,10 @@ export const CollectionProduct = async () => {
             {/* Image with Coming Soon overlay */}
             <div className="relative aspect-square w-full">
               <Image
-                src={CollectionProductImage}
+                src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover opacity-30 backdrop-blur-[184px]"
+                className="object-cover opacity-30 blur-[3px]"
               />
               {/* Coming Soon overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">
