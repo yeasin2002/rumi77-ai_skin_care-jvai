@@ -6,7 +6,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { caudex } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
@@ -42,7 +41,7 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
       </nav>
 
       <Sheet>
-        <SheetTrigger className={cn(`md:hidden`, className)}>
+        <SheetTrigger className={cn(`md:hidden`, wrapperClassName)}>
           <Menu className="text-white" />
         </SheetTrigger>
         <SheetContent>
@@ -55,7 +54,10 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
               <Link
                 key={item.name}
                 href={{ pathname: item.url }}
-                className={`${caudex.className} text-main-button text-lg font-medium transition-colors hover:opacity-80`}
+                className={cn(
+                  `font-caudex text-main-button text-lg font-medium transition-colors hover:opacity-80`,
+                  className
+                )}
               >
                 {item.name}
               </Link>
