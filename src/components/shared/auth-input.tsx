@@ -1,30 +1,68 @@
+import { Input } from '@/components/ui/input'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'
 import { cn } from '@/lib/utils'
+import { cva, type VariantProps } from 'class-variance-authority'
 import type { LucideIcon } from 'lucide-react'
 import { forwardRef } from 'react'
 
-type AuthInputProps = {
-  icon: LucideIcon
+const inputVariants = cva('', {
+  variants: {
+    variant: {
+      auth: 'border-input h-12 rounded-none border-0 border-b shadow-none',
+      default: 'bg-muted/50 border-input h-12 rounded-lg border shadow-none',
+    },
+  },
+  defaultVariants: {
+    variant: 'auth',
+  },
+})
+
+type IconInputProps = {
+  icon?: LucideIcon
+  label?: string
   placeholder: string
   type?: string
   className?: string
   error?: string
-} & React.ComponentPropsWithRef<'input'>
+} & VariantProps<typeof inputVariants> &
+  React.ComponentPropsWithRef<'input'>
 
-export const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
-  ({ icon: Icon, placeholder, type = 'text', className, error, ...props }, ref) => {
+export const IconInput = forwardRef<HTMLInputElement, IconInputProps>(
+  ({ icon: Icon, label, placeholder, type = 'text', className, error, variant, ...props }, ref) => {
+    // Default variant with label (no icon)
+    if (variant === 'default') {
+      return (
+        <div className="space-y-1.5">
+          {label && <label className="text-sm font-medium">{label}</label>}
+          <Input
+            ref={ref}
+            type={type}
+            placeholder={placeholder}
+            className={cn(
+              'bg-muted/50 h-12 rounded-lg text-base',
+              error && 'border-destructive',
+              className
+            )}
+            aria-invalid={!!error}
+            {...props}
+          />
+          {error && <p className="text-destructive text-sm">{error}</p>}
+        </div>
+      )
+    }
+
+    // Auth variant with icon and underline
     return (
       <div className="space-y-1">
+        {label && <label className="text-sm font-medium">{label}</label>}
         <InputGroup
-          className={cn(
-            'border-input h-12 rounded-none border-0 border-b shadow-none',
-            error && 'border-destructive',
-            className
-          )}
+          className={cn(inputVariants({ variant }), error && 'border-destructive', className)}
         >
-          <InputGroupAddon className={cn('text-muted-foreground', error && 'text-destructive')}>
-            <Icon className="size-5" />
-          </InputGroupAddon>
+          {Icon && (
+            <InputGroupAddon className={cn('text-muted-foreground', error && 'text-destructive')}>
+              <Icon className="size-5" />
+            </InputGroupAddon>
+          )}
           <InputGroupInput
             ref={ref}
             type={type}
@@ -40,4 +78,7 @@ export const AuthInput = forwardRef<HTMLInputElement, AuthInputProps>(
   }
 )
 
-AuthInput.displayName = 'AuthInput'
+IconInput.displayName = 'IconInput'
+
+// Backward compatibility alias
+export const AuthInput = IconInput
