@@ -34,11 +34,11 @@ export const ProfileTabList = () => {
             key={tab.id}
             href={{ pathname: tab.href }}
             className={cn(
-              'text-main-button hover:text-main-button/80 flex items-center gap-2 border-b-2 pb-3 text-sm transition-colors',
+              'text-main-button hover:text-main-button/80 flex items-center gap-2 border-b-2 pb-3 text-2xl leading-none font-normal transition-colors',
               isActive(tab.href) ? 'border-main-button' : 'border-transparent'
             )}
           >
-            <tab.icon className="size-4" />
+            <tab.icon className="size-6" />
             {tab.label}
           </Link>
         ))}
