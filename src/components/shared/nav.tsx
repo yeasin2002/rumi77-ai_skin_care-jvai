@@ -24,7 +24,7 @@ export const Nav = ({ className }: Props) => {
       <div className="flex items-center justify-center gap-x-4">
         <LanguageToggle />
         <Link
-          href={{ pathname: '/login' }}
+          href={{ pathname: '/coming-soon' }}
           className={buttonVariants({ className: 'font-open-sans' })}
         >
           {t('button_text')}
