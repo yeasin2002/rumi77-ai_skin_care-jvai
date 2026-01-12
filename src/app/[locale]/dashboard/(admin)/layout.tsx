@@ -1,6 +1,5 @@
 import { Nav } from '@/components/shared'
-import { NavLinkList } from '../../../components/shared/navlink-list'
-import { UserProfileAndStates } from './user-profile-and-states'
+import { NavLinkList } from '@/components/shared/navlink-list'
 
 import icon1 from '@/assets/icons/cloud-projects.svg'
 import icon2 from '@/assets/icons/heart.svg'
@@ -16,18 +15,14 @@ const tabsLists = [
   { id: 5, icon: icon5, label: 'Settings', href: '/profile/settings' },
 ]
 
-const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-background min-h-screen">
+    <>
       <Nav />
-
-      <div className="px-6 py-6 lg:px-20">
-        <UserProfileAndStates />
-        <NavLinkList items={tabsLists} />
-        {children}
-      </div>
-    </div>
+      <NavLinkList items={tabsLists} />
+      {children}
+    </>
   )
 }
 
-export default ProfileLayout
+export default DashboardLayout

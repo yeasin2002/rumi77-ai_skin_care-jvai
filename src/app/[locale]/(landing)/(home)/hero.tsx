@@ -1,6 +1,5 @@
 import { NavList } from '@/components/shared/nav-list'
 import { Button } from '@/components/ui'
-import { caudex, openSans } from '@/lib/fonts'
 import { getTranslations } from 'next-intl/server'
 
 export const Hero = async () => {
