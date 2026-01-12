@@ -1,4 +1,3 @@
-import { Nav } from '@/components/shared'
 import { NavLinkList } from '@/components/shared/navlink-list'
 
 import icon1 from '@/assets/icons/blocks.svg'
@@ -9,8 +8,9 @@ import icon8 from '@/assets/icons/settings-light.svg'
 import icon4 from '@/assets/icons/shop-bags.svg'
 import icon2 from '@/assets/icons/tags.svg'
 import icon5 from '@/assets/icons/users.svg'
+import { DashboardNav } from '../../../components/dashboard/dashboard-nav'
 
-const tabsLists = [
+const dashboardNavList = [
   { id: 1, icon: icon1, label: 'Dashboard', href: '/dashboard' },
   { id: 2, icon: icon2, label: 'Category', href: '/dashboard/category' },
   { id: 3, icon: icon3, label: 'Products', href: '/dashboard/products' },
@@ -25,9 +25,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className="bg-main-button min-h-screen">
-        <Nav />
+        <DashboardNav />
         <div className="px-6 py-6 lg:px-20">
-          <NavLinkList items={tabsLists} linkClassName="text-[#E6DFC2BF]" />
+          <NavLinkList
+            items={dashboardNavList}
+            linkClassName="text-[#E6DFC2BF] "
+            className="hidden lg:block"
+          />
           {children}
         </div>
       </div>
