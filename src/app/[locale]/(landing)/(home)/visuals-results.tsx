@@ -29,12 +29,10 @@ export const VisualsResults = async () => {
             <div className="mb-4 flex size-14 shrink-0 items-center justify-center overflow-visible rounded-xl bg-[#2447311A]">
               <Image src={iconMap[key]} alt="Icons" className="size-8" />
             </div>
-            <h3 className={`text-main-button text-3xl font-semibold ${caudex.className}`}>
+            <h3 className={`text-main-button font-caudex text-3xl font-semibold`}>
               {t(`states.${key}.title`)}
             </h3>
-            <p
-              className={`text-main-primary-base_medium mt-2 text-sm font-medium ${openSans.className}`}
-            >
+            <p className={`text-main-primary-base_medium font-open-sans mt-2 text-sm font-medium`}>
               <span>{t(`states.${key}.subtitle`)}</span>
               <br />
               <span className="mt-2 block">{t(`states.${key}.desc`)}</span>
@@ -42,7 +40,7 @@ export const VisualsResults = async () => {
           </div>
         ))}
       </div>
-      <p className={` ${openSans.className} text-main-primary-base_medium mt-8 text-center`}>
+      <p className={`font-open-sans text-main-primary-base_medium mt-8 text-center`}>
         {t('subtitle')}
       </p>
     </section>

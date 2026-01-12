@@ -8,5 +8,5 @@ export const routing = defineRouting({
 export const localeNames: Record<string, string> = {
   en: 'English',
   ar: 'العربية',
-  fr: 'Français',
+  // fr: 'Français',
 }

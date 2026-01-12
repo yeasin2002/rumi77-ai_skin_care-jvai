@@ -22,19 +22,14 @@ export const SiteHeading = ({
     <div className={cn('flex w-full flex-col items-center justify-center gap-4', wrapperClassname)}>
       <h2
         className={cn(
-          `${caudex.className} text-main-button text-2xl font-normal lg:text-5xl`,
+          `font-caudex text-main-button text-2xl font-normal lg:text-5xl`,
           headingClassName
         )}
       >
         {heading}
       </h2>
       {subHeading && (
-        <h3
-          className={cn(
-            ` ${openSans.className} text-main-primary-base_medium`,
-            subHeadingClassname
-          )}
-        >
+        <h3 className={cn(`font-open-sans text-main-primary-base_medium`, subHeadingClassname)}>
           {subHeading}
         </h3>
       )}

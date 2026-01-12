@@ -23,12 +23,12 @@ export const HomeBottomCta = async () => {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <h2 className={`${caudex.className} text-3xl text-white italic sm:text-4xl md:text-5xl`}>
+        <h2 className={`font-caudex text-3xl text-white italic sm:text-4xl md:text-5xl`}>
           {t('title')}
         </h2>
         <p className="mt-4 max-w-md text-sm text-white/90 sm:text-base">{t('desc')}</p>
         <Button
-          className={`${openSans.className} mt-4 rounded-full px-6 py-5 text-base font-semibold lg:px-10`}
+          className={`font-open-sans mt-4 rounded-full px-6 py-5 text-base font-semibold lg:px-10`}
         >
           {t('cta_button_text')}
         </Button>

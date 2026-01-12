@@ -34,10 +34,10 @@ export const SkincareShowcase = async () => {
                 className="size-8"
               />
             </div>
-            <h3 className={`text-main-button mt-4 text-xl font-bold ${caudex.className}`}>
+            <h3 className={`text-main-button font-caudex mt-4 text-xl font-bold`}>
               {t(`skincareDetails.${key}.title`)}
             </h3>
-            <p className={`text-main-primary-base_medium mt-2 text-sm ${openSans.className}`}>
+            <p className={`text-main-primary-base_medium font-open-sans mt-2 text-sm`}>
               {t(`skincareDetails.${key}.description`)}
             </p>
           </div>

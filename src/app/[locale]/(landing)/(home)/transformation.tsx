@@ -184,7 +184,7 @@ const BeforeAfterComparison = () => {
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <Card className="border-0 shadow-sm">
-      <CardContent className={`${openSans.className} p-5`}>
+      <CardContent className={`font-open-sans p-5`}>
         <Image src={icon} alt={title} width={24} height={24} className="w-4" />
         <h4 className="text-main-secondary mt-3 text-sm font-medium">{title}</h4>
         <p className={`text-main-primary-base_medium mt-1 text-sm leading-relaxed`}>
