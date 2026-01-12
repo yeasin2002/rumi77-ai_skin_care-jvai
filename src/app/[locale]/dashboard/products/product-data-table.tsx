@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils'
 import { Eye, Trash2 } from 'lucide-react'
 import Image from 'next/image'
 
+import { ProductView } from '@/components/dashboard'
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+
 type Product = {
   id: number
   name: string
@@ -128,9 +131,15 @@ export const ProductDataTable = () => {
               <TableCell className="text-main-button">{product.category}</TableCell>
               <TableCell>
                 <div className="flex items-center justify-end gap-2">
-                  <button type="button" className="text-main-button/60 hover:text-main-button p-1">
-                    <Eye className="size-4" />
-                  </button>
+                  <Dialog>
+                    <DialogTrigger className={`text-main-button/60 hover:text-main-button p-1`}>
+                      <Eye className="size-4" />
+                    </DialogTrigger>
+                    <DialogContent className={`bg-main-button max-w-7xl!`}>
+                      <ProductView />
+                    </DialogContent>
+                  </Dialog>
+
                   <button type="button" className="p-1 text-red-500 hover:text-red-600">
                     <Trash2 className="size-4" />
                   </button>
