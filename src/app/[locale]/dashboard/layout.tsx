@@ -7,7 +7,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex min-h-screen w-full justify-between">
         {children}
         <div className="relative hidden lg:block">
-          <Image src={sideImage} alt="Skincare model" className="object-cover" priority />
+          <Image
+            src={sideImage}
+            alt="Skincare model"
+            className="object-cover"
+            priority
+            quality={100}
+          />
         </div>
       </div>
     </>
