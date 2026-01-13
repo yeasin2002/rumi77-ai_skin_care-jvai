@@ -42,7 +42,13 @@ export const GlowmiProductShowcase = async () => {
         </video>
 
         {/* Text Overlay */}
-        <div className="absolute inset-0 flex items-center bg-black/20">
+        <div
+          className="absolute inset-0 flex items-center"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(36, 71, 49, 0.5) 36.54%, rgba(13, 49, 26, 0) 75.96%)',
+          }}
+        >
           <div className="px-6 py-8 sm:px-12 md:px-16 lg:px-24">
             <h2
               className={
