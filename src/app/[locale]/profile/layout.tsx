@@ -26,7 +26,8 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
         <NavLinkList
           items={tabsLists}
           inactiveClassName="text-[#58351B]"
-          activeClassName="text-[#244731]"
+          activeClassName="text-main-button font-semibold"
+          className=""
         />
         {children}
       </div>

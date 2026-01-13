@@ -20,6 +20,7 @@ type NavLinkListProps = {
   activeClassName?: string
   inactiveClassName?: string
   iconClassName?: string
+  wrapperClassName?: string
 }
 
 export const NavLinkList = ({

@@ -15,10 +15,12 @@
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
   },
+  "tailwindCSS.classAttributes": ["class", "className", "activeClassName", "inactiveClassName"],
   "tailwindCSS.experimental.classRegex": [
     ["cva\\$\\$([^)]*)\\$\\$", "[\"'`]([^\"'`]*)[\"'`]"],
     ["cx\\$\\$([^)]*)\\$\\$", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    ["cn\\$\\$([^)]*)\\$\\$", "(?:'|\"|`)([^'\"`]*)"]
+    ["cn\\$\\$([^)]*)\\$\\$", "(?:'|\"|`)([^'\"`]*)"],
+    ["\\w*[Cc]lassName[=:]\\s*[\"'`]([^\"'`]*)[\"'`]"]
   ],
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",

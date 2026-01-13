@@ -20,7 +20,9 @@ const routines = [
 const SaveRoutine = () => {
   return (
     <div className="space-y-4">
-      <h2 className="text-main-primary-base_medium text-xl font-medium">Your Saved Routine</h2>
+      <h2 className="text-main-primary-base_medium font-open-sans text-xl font-medium">
+        Your Saved Routine
+      </h2>
       <div className="space-y-3">
         {routines.map((routine) => (
           <Card key={routine.id} className="border-main-button/30 bg-background-secondary">
