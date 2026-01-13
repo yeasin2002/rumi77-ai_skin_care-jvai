@@ -72,17 +72,6 @@ const DashboardSettings = () => {
         <div className="flex justify-end">
           <Button className="text-main-button bg-[#f5f4f3] px-12 hover:bg-[#e8e6e3]">SAVE</Button>
         </div>
-
-        {/* Add new box */}
-        <div className="flex items-center gap-2">
-          <Input
-            placeholder="Add new box"
-            className="bg-main-button flex-1 border-white/30 text-white placeholder:text-white/50"
-          />
-          <Button size="icon" className="text-main-button bg-[#f5f4f3] hover:bg-[#e8e6e3]">
-            <Plus className="size-5" />
-          </Button>
-        </div>
       </div>
 
       {/* Terms & Conditions Section */}
