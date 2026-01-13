@@ -6,7 +6,7 @@ export const CheckoutItems = () => {
   return (
     <div className="flex items-start gap-4 border-b border-gray-200 py-6">
       {/* Product Image */}
-      <div className="relative size-24 shrink-0 overflow-hidden rounded-lg bg-[#e8e6e3]">
+      <div className="relative size-32! shrink-0 overflow-hidden rounded-lg">
         <Image
           src={productImage}
           alt="Deep nourishing day serum"

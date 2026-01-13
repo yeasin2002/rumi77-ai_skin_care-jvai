@@ -52,7 +52,6 @@ export const SaleCards = () => {
           <select className="text-muted-foreground border-none bg-transparent text-sm outline-none">
             <option>7 days</option>
             <option>30 days</option>
-            <option>90 days</option>
           </select>
         </div>
       </CardHeader>

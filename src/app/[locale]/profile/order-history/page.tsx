@@ -44,7 +44,7 @@ const OrderHistory = () => {
         {/* Product Card */}
         <div className="flex-1 rounded-lg border border-dashed border-white/30 p-4">
           <div className="flex gap-4">
-            <div className="relative size-24 shrink-0 overflow-hidden rounded-lg bg-[#e8e6e3]">
+            <div className="relative size-32! shrink-0 overflow-hidden rounded-lg">
               <Image
                 src={productImg}
                 alt="Deep nourishing day serum"
@@ -52,7 +52,7 @@ const OrderHistory = () => {
                 className="object-contain p-2"
               />
             </div>
-            <div className="font-open-sans space-y-1 font-semibold">
+            <div className="font-open-sans space-y-1 font-medium">
               <p className="font-open-sans text-sm font-semibold text-white">#12134</p>
               <h3 className="font-caudex text-3xl font-bold text-white">
                 Deep nourishing day serum

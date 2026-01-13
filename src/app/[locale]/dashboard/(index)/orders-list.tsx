@@ -70,7 +70,7 @@ export const OrdersList = () => {
       <CardContent>
         <table className="w-full">
           <thead>
-            <tr className="text-muted-foreground text-left text-sm">
+            <tr className="text-muted-foreground border-b border-gray-200 text-left text-sm">
               <th className="pb-4 font-normal">Id</th>
               <th className="pb-4 font-normal">Product</th>
               <th className="pb-4 font-normal">Qty</th>

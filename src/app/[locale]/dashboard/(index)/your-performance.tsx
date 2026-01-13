@@ -51,7 +51,7 @@ export const YourPerformance = () => {
         <p className="text-muted-foreground text-sm">Last 7 days</p>
       </CardHeader>
       <CardContent>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           {/* Left side - Order stats */}
           <div className="flex-1 space-y-4">
             {performanceData.map((item) => (

@@ -38,8 +38,8 @@ const Settings = () => {
   }
 
   return (
-    <div className="bg-main-button rounded-xl p-6">
-      <h2 className="font-open-sans mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!">
+    <div className="bg-main-button rounded-xl p-6" mt-1>
+      <h2 className="font-open-sans mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!" mt-1>
         Account Settings
       </h2>
 
@@ -48,8 +48,8 @@ const Settings = () => {
           label="Name"
           placeholder="Enter your name"
           variant="default"
-          labelClassName="text-white/70"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          labelClassName="text-[#E6DFC2BF] pb-4!"
+          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
           error={errors.name?.message}
           {...register('name')}
         />
@@ -57,8 +57,8 @@ const Settings = () => {
           label="Gender"
           placeholder="Enter your gender"
           variant="default"
-          labelClassName="text-white/70"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          labelClassName="text-[#E6DFC2BF] pb-4!"
+          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
           error={errors.gender?.message}
           {...register('gender')}
         />
@@ -67,8 +67,8 @@ const Settings = () => {
           placeholder="Enter your email"
           type="email"
           variant="default"
-          labelClassName="text-white/70"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          labelClassName="text-[#E6DFC2BF] pb-4!"
+          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
           error={errors.email?.message}
           {...register('email')}
         />
@@ -76,8 +76,8 @@ const Settings = () => {
           label="Skin Type"
           placeholder="Enter your skin type"
           variant="default"
-          labelClassName="text-white/70"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          labelClassName="text-[#E6DFC2BF] pb-4!"
+          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
           error={errors.skinType?.message}
           {...register('skinType')}
         />
@@ -85,10 +85,10 @@ const Settings = () => {
         <Button
           type="submit"
           variant="outline"
-          className="bg-background text-foreground mt-2 px-12 py-5"
+          className="text-main-button! mt-2 px-12 py-5 font-bold"
           disabled={isSubmitting}
         >
-          <Pencil className="size-4" />
+          <Pencil className="text-main-button! size-4" />
           {isSubmitting ? 'Saving...' : 'Edit Profile'}
         </Button>
       </form>
