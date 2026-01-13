@@ -4,7 +4,8 @@ import Logo from '@/assets/logo.svg'
 import { buttonVariants } from '@/components/ui'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
+
+import { Link } from '@/i18n/navigation'
 import { cn } from '../../lib/utils'
 import { LanguageToggle } from './language-toggle'
 
@@ -24,7 +25,7 @@ export const Nav = ({ className }: Props) => {
       <div className="flex items-center justify-center gap-x-4">
         <LanguageToggle />
         <Link
-          href={{ pathname: '/coming-soon' }}
+          href={{ pathname: '/login' }}
           className={buttonVariants({ className: 'font-open-sans' })}
         >
           {t('button_text')}

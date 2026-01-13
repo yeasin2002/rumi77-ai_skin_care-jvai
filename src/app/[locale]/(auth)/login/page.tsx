@@ -5,6 +5,7 @@ import { Button } from '@/components/ui'
 import { Link } from '@/i18n/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft, Lock, Mail } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -19,6 +20,7 @@ const loginSchema = z.object({
 type LoginFormData = z.infer<typeof loginSchema>
 
 const Login = () => {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -30,6 +32,7 @@ const Login = () => {
   const onSubmit = async (data: LoginFormData) => {
     // TODO: API integration
     console.log(data)
+    router.push('/skin-analyzer/analysis')
   }
 
   return (

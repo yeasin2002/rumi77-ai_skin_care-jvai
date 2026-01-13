@@ -1,7 +1,7 @@
 'use client'
 
 import { SiteHeading } from '@/components/shared'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
@@ -13,6 +13,7 @@ import { useState } from 'react'
 import AiPowered from '@/assets/icons/AI-Powered.png'
 import ExpertBacked from '@/assets/icons/Expert-Backed.png'
 import Personalized from '@/assets/icons/Personalized.png'
+import { Link } from '../../../../i18n/navigation'
 
 const skinTypes = ['Oily', 'Dry', 'Combination', 'Normal', 'Sensitive'] as const
 const skinConcerns = [
@@ -170,15 +171,20 @@ const Analysis = () => {
           </div>
 
           {/* Submit Button */}
-          <Button className="bg-main-button hover:bg-main-button/90 w-full gap-2 py-6 text-white">
+          <Link
+            href={'/skin-analyzer/your-routine'}
+            className={buttonVariants({
+              className: 'bg-main-button hover:bg-main-button/90 w-full gap-2 py-6 text-white',
+            })}
+          >
             <Sparkles className="size-4" />
             ANALYZE & GET RECOMMENDATIONS
-          </Button>
+          </Link>
         </div>
       </div>
 
       {/* Features Section */}
-      <div className="border-main-button/10 border-t bg-[#f5f0eb] py-16">
+      <div className="py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 md:grid-cols-3">
           {features.map((feature) => (
             <div key={feature.title} className="flex flex-col items-center text-center">
