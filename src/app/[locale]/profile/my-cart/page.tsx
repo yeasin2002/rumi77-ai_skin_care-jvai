@@ -7,13 +7,11 @@ const MyCart = () => {
       <CheckoutItems />
 
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="text-muted-foreground">Subtotal</span>
-          <span className="text-main-button font-medium">$98.99 USD</span>
+        <div className="flex items-center justify-between text-xl text-[#6D5534]">
+          <span>Subtotal</span>
+          <span className="font-medium">$98.99 USD</span>
         </div>
-        <Button className="w-full" size="lg">
-          Continue to Checkout
-        </Button>
+        <Button className="font-open-sans! w-full py-7 text-xl">Continue to Checkout</Button>
       </div>
     </div>
   )

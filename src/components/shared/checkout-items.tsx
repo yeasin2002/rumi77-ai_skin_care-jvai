@@ -17,11 +17,9 @@ export const CheckoutItems = () => {
 
       {/* Product Info */}
       <div className="flex-1">
-        <h3 className="font-caudex text-main-button text-xl font-normal">
-          Deep nourishing day serum
-        </h3>
-        <p className="text-main-button mt-1 text-sm">$ 98.00 ( USD )</p>
-        <button type="button" className="text-main-button mt-2 text-sm underline">
+        <h3 className="font-caudex text-xl font-bold text-[#58351B]">Deep nourishing day serum</h3>
+        <p className="mt-1 text-xl font-semibold text-[#6D5534]">$ 98.00 ( USD )</p>
+        <button type="button" className="underline-[#6D5534] mt-2 text-sm text-[#6D5534] underline">
           Remove
         </button>
       </div>
