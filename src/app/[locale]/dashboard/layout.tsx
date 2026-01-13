@@ -29,8 +29,10 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="px-6 py-6 lg:px-20">
           <NavLinkList
             items={dashboardNavList}
-            linkClassName="text-[#E6DFC2BF] "
+            linkClassName="text-[#E6DFC2BF] hover:text-[#E6DFC2BF]/70 text-xl"
             className="hidden lg:block"
+            // inactiveClassName="text-[#E6DFC2BF]"
+            activeClassName="text-[#F8F5EE]!"
           />
           {children}
         </div>

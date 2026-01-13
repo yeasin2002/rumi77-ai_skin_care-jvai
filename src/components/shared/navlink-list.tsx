@@ -45,7 +45,7 @@ export const NavLinkList = ({
   }
 
   return (
-    <div aria-label="tab-list" className={cn('mt-8 mb-10 border-b border-gray-300', className)}>
+    <div aria-label="tab-list" className={cn('mt-8 mb-10', className)}>
       <nav className="flex gap-8">
         {items.map((item) => (
           <Link

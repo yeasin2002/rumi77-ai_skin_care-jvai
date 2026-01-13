@@ -189,7 +189,7 @@ const Orders = () => {
       </div>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-xl bg-white">
+      <div className="overflow-hidden rounded-sm bg-white">
         <Table>
           <TableHeader className="bg-[#f5f4f3]">
             <TableRow className="border-b-0">
@@ -215,7 +215,7 @@ const Orders = () => {
                 <TableCell className="text-main-button">{order.dateTime}</TableCell>
                 <TableCell className="text-main-button">{order.customer}</TableCell>
                 <TableCell>
-                  <span className="rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs text-green-600">
+                  <span className="border border-green-200 bg-green-50 px-3 py-1 text-xs text-green-600">
                     Paid
                   </span>
                 </TableCell>
