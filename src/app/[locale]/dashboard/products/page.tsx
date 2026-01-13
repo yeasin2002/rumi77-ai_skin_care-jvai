@@ -1,3 +1,5 @@
+'use client'
+
 import { Button, buttonVariants } from '@/components/ui'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 

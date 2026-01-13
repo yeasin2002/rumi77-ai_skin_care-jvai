@@ -22,7 +22,7 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
   const navItems = [
     { name: t('home'), url: '/' },
     { name: t('ingredients'), url: '/ingredients' },
-    { name: t('analyzeSkin'), url: '/analyze-skin' },
+    { name: t('analyzeSkin'), url: '/skin-analyzer/analysis' },
     { name: t('aboutUs'), url: '/about-us' },
     { name: t('contactUs'), url: '/contact-us' },
   ]
