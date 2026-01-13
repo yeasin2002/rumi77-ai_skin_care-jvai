@@ -1,5 +1,4 @@
 import { SiteHeading } from '@/components/shared'
-import { caudex, openSans } from '@/lib/fonts'
 
 import image1 from '@/assets/image/skincare-showcase-icons/ai-brain.png'
 import image3 from '@/assets/image/skincare-showcase-icons/awards.png'

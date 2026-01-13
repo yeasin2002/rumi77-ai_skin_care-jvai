@@ -1,5 +1,5 @@
 import aboutImage from '@/assets/image/about-img.png'
-import { caudex, openSans } from '@/lib/fonts'
+
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 

@@ -1,11 +1,15 @@
 import Image from 'next/image'
 
-import showcase1 from '@/assets/image/product-showcase-comming.png'
+import showcase1 from '@/assets/products/Box/Cleanser-Box.png'
+import showcase2 from '@/assets/products/Box/Radiant-Satin Lip-Oil-Box.png'
+import showcase3 from '@/assets/products/Box/Serum-Dropper-box.png'
+import showcase4 from '@/assets/products/Box/Sleeping-Mask-Box.jpg'
+
 import { SiteHeading } from '@/components/shared'
-import { caudex, openSans } from '@/lib/fonts'
+import { caudex } from '@/lib/fonts'
 import { getTranslations } from 'next-intl/server'
 
-const imageList = [showcase1, showcase1, showcase1, showcase1]
+const imageList = [showcase1, showcase2, showcase3, showcase4]
 
 export const GlowmiProductShowcase = async () => {
   const t = await getTranslations('home.products_showcase')
@@ -16,7 +20,12 @@ export const GlowmiProductShowcase = async () => {
 
       <div className="grid grid-cols-1 items-center gap-1 lg:grid-cols-4">
         {imageList.map((im, index) => (
-          <Image key={index} src={im} alt="Product showcase" className="w-full" />
+          <Image
+            key={index}
+            src={im}
+            alt="Product showcase"
+            className="h-full w-full object-cover"
+          />
         ))}
       </div>
 

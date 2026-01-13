@@ -1,5 +1,5 @@
 import { SiteHeading } from '@/components/shared'
-import { caudex, openSans } from '@/lib/fonts'
+
 import { getTranslations } from 'next-intl/server'
 
 export const GlowmiStates = async () => {

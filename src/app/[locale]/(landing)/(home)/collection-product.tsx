@@ -1,5 +1,4 @@
 import { SiteHeading } from '@/components/shared'
-import { caudex, openSans } from '@/lib/fonts'
 
 import lockImage from '@/assets/image/lock.png'
 import { getTranslations } from 'next-intl/server'

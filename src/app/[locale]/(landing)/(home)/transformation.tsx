@@ -1,6 +1,5 @@
 'use client'
 
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
 import { useState } from 'react'
 
@@ -13,7 +12,6 @@ import beforeImage from '@/assets/image/Transformation-Before.png'
 import waterDrop from '@/assets/icons/water-drop.png'
 import waveImage from '@/assets/icons/wave.svg'
 import windFlow from '@/assets/icons/wind-flow.png'
-import { openSans } from '@/lib/fonts'
 
 type FeatureCardProps = {
   icon: StaticImageData
@@ -159,7 +157,7 @@ const BeforeAfterComparison = () => {
       />
 
       {/* Bottom Navigation Dots */}
-      <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/80 px-3 py-2 backdrop-blur-sm">
+      {/* <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/80 px-3 py-2 backdrop-blur-sm">
         <button
           type="button"
           className="flex h-6 w-6 items-center justify-center rounded-full text-gray-600 transition-colors hover:bg-gray-100"
@@ -176,7 +174,7 @@ const BeforeAfterComparison = () => {
         >
           <ChevronRight className="h-4 w-4" />
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }

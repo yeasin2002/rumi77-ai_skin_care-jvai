@@ -1,5 +1,6 @@
 import { AboutGlowmi } from './about-glowmi'
-import { CollectionProduct } from './collection-product'
+import { BestProductsList } from './best-products'
+import { ContactUs } from './contact-us'
 import { GlowmiProductShowcase } from './glowmi-product-showcase'
 import { GlowmiStates } from './glowmi-states'
 import { Hero } from './hero'
@@ -13,12 +14,14 @@ export default async function HomePage() {
     <>
       <Hero />
       <AboutGlowmi />
-      <CollectionProduct />
+      <BestProductsList />
+      {/* <CollectionProduct /> */}
       <GlowmiStates />
       <GlowmiProductShowcase />
       <VisualsResults />
       <TransformationWrapper />
       <SkincareShowcase />
+      <ContactUs />
       <HomeBottomCta />
     </>
   )

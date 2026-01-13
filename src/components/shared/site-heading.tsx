@@ -1,4 +1,3 @@
-import { caudex, openSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 
 type Props = {

@@ -1,5 +1,4 @@
 import { SiteHeading } from '@/components/shared'
-import { caudex, openSans } from '@/lib/fonts'
 
 import Icon4 from '@/assets/image/visuals-results/bx_leaf.png'
 import Icon1 from '@/assets/image/visuals-results/cil_drop.png'

@@ -17,7 +17,7 @@ export const ContactUs = () => {
 
         {/* Right - Contact Info */}
         <div className="flex flex-col">
-          <h2 className="text-main-button font-serif text-3xl italic md:text-4xl">Contact Us</h2>
+          <h2 className="text-main-button font-caudex text-3xl md:text-4xl">Contact Us</h2>
           <p className="mt-4 max-w-sm text-sm text-gray-600">
             If you have any questions, need assistance, or want to share feedback, we&apos;d love to
             hear from you!
