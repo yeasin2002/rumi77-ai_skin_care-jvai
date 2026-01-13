@@ -89,7 +89,7 @@ Consistency is key! Would you like specific product recommendations?`,
 
 export const AiChatContent = () => {
   return (
-    <div className="flex flex-col gap-4 py-6">
+    <div className="font-open-sans! *:font-open-sans flex flex-col gap-4 py-6">
       {messages.map((message) => (
         <div
           key={message.id}
@@ -98,8 +98,8 @@ export const AiChatContent = () => {
           <div
             className={`rounded-2xl px-5 py-4 ${
               message.type === 'user'
-                ? 'bg-main-secondary text-main-button ml-8'
-                : 'bg-main-button mr-8 text-white'
+                ? 'bg-main-secondary-base ml-8 text-[#58351B]'
+                : 'bg-main-button text-main-secondary mr-8'
             }`}
           >
             <p className="font-open-sans text-sm leading-relaxed whitespace-pre-line">
@@ -118,19 +118,14 @@ export const AiChatContent = () => {
                   />
                 </div>
                 <div className="p-3">
-                  <h4 className="text-main-button text-sm font-medium">{message.product.name}</h4>
+                  <h4 className="text-main-secondary text-sm font-medium">
+                    {message.product.name}
+                  </h4>
                   <div className="mt-1 flex items-center justify-between">
-                    <span className="text-main-button/70 text-xs">{message.product.brand}</span>
-                    <span className="text-main-button text-sm font-semibold">
-                      {message.product.price}
-                    </span>
+                    <span className="text-xs">{message.product.brand}</span>
+                    <span className="text-sm font-semibold">{message.product.price}</span>
                   </div>
-                  <Button
-                    variant="outline"
-                    className="border-main-button text-main-button mt-2 w-full text-xs"
-                  >
-                    View Details
-                  </Button>
+                  <Button className={`font-open-sans mt-3 w-full rounded-sm!`}>View Details</Button>
                 </div>
               </div>
             )}

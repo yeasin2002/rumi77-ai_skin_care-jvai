@@ -44,7 +44,9 @@ export const UserProfileAndStates = () => {
             />
           </div>
           <div>
-            <h2 className="font-caudex text-main-button text-2xl font-normal">Hafsa Binte Kalam</h2>
+            <h2 className="font-open-sans text-main-button text-2xl font-normal">
+              Hafsa Binte Kalam
+            </h2>
             <p className="text-main-button/70 text-sm">hello.hafsabinte@gmail.com</p>
             <span className="bg-main-button mt-2 inline-block rounded-full px-4 py-1 text-xs text-white">
               Acne & Breakouts

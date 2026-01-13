@@ -39,6 +39,6 @@
 
   /* nav  */
   .global-nav-link {
-    @apply hover:text-main-button text-xl text-[#6D5534] transition-colors;
+    @apply hover:text-main-button text-main-primary-base_light text-xl transition-colors;
   }
 }

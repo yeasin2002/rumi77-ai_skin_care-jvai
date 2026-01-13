@@ -23,7 +23,11 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
 
       <div className="px-6 py-6 lg:px-20">
         <UserProfileAndStates />
-        <NavLinkList items={tabsLists} />
+        <NavLinkList
+          items={tabsLists}
+          inactiveClassName="text-[#58351B]"
+          activeClassName="text-[#244731]"
+        />
         {children}
       </div>
     </div>
