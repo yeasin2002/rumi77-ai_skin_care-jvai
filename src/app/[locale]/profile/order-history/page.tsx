@@ -14,7 +14,7 @@ const OrderHistory = () => {
               <div className="h-16 w-px bg-white/30" />
             </div>
             <div>
-              <p className="font-caudex text-white italic">Order Placed</p>
+              <p className="font-caudex text-white">Order Placed</p>
               <p className="text-sm text-white">25.12.2025</p>
             </div>
           </div>
@@ -25,7 +25,7 @@ const OrderHistory = () => {
               <div className="h-16 w-px bg-white/30" />
             </div>
             <div>
-              <p className="font-caudex text-white italic">Shipped</p>
+              <p className="font-caudex text-white">Shipped</p>
               <p className="text-sm text-white/70">28.12.2025</p>
             </div>
           </div>
@@ -35,7 +35,7 @@ const OrderHistory = () => {
               <div className="size-3 rounded-full bg-white/70" />
             </div>
             <div>
-              <p className="font-caudex text-white italic">Delivered</p>
+              <p className="font-caudex text-white">Delivered</p>
               <p className="text-sm text-white/70">29.12.2025</p>
             </div>
           </div>
@@ -52,9 +52,11 @@ const OrderHistory = () => {
                 className="object-contain p-2"
               />
             </div>
-            <div className="space-y-1">
-              <p className="text-sm text-white">#12134</p>
-              <h3 className="font-caudex text-lg text-white">Deep nourishing day serum</h3>
+            <div className="font-open-sans space-y-1 font-semibold">
+              <p className="font-open-sans text-sm font-semibold text-white">#12134</p>
+              <h3 className="font-caudex text-3xl font-bold text-white">
+                Deep nourishing day serum
+              </h3>
               <p className="text-sm text-white">$ 98.00 ( USD )</p>
               <p className="text-sm text-white">
                 Order Location: 1901 Thornridge Cir.

@@ -39,7 +39,9 @@ const Settings = () => {
 
   return (
     <div className="bg-main-button rounded-xl p-6">
-      <h2 className="mb-6 text-4xl leading-none font-normal text-white">Account Settings</h2>
+      <h2 className="font-open-sans mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!">
+        Account Settings
+      </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <IconInput
@@ -47,6 +49,7 @@ const Settings = () => {
           placeholder="Enter your name"
           variant="default"
           labelClassName="text-white/70"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.name?.message}
           {...register('name')}
         />
@@ -55,6 +58,7 @@ const Settings = () => {
           placeholder="Enter your gender"
           variant="default"
           labelClassName="text-white/70"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.gender?.message}
           {...register('gender')}
         />
@@ -64,6 +68,7 @@ const Settings = () => {
           type="email"
           variant="default"
           labelClassName="text-white/70"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.email?.message}
           {...register('email')}
         />
@@ -72,6 +77,7 @@ const Settings = () => {
           placeholder="Enter your skin type"
           variant="default"
           labelClassName="text-white/70"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.skinType?.message}
           {...register('skinType')}
         />
@@ -79,7 +85,7 @@ const Settings = () => {
         <Button
           type="submit"
           variant="outline"
-          className="bg-background text-foreground mt-2"
+          className="bg-background text-foreground mt-2 px-12 py-5"
           disabled={isSubmitting}
         >
           <Pencil className="size-4" />
