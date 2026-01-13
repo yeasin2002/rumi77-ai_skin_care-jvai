@@ -62,7 +62,7 @@ const Login = () => {
             {...register('password')}
           />
           <div className="mt-2 text-end">
-            <Link href="/forgot-password" className="text-main-button text-sm hover:underline">
+            <Link href="/forget-password" className="text-main-button text-sm hover:underline">
               Forget Password?
             </Link>
           </div>
