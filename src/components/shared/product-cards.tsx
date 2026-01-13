@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui'
+import { Button, buttonVariants } from '@/components/ui'
 import Image from 'next/image'
+import { Link } from '../../i18n/navigation'
 
 export type Product = {
   id: number
@@ -31,9 +32,15 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <Button variant="outline" className="bg-background/20 border-black">
             Add to Cart
           </Button>
-          <Button className="w-full rounded-md bg-black py-2 text-sm text-white hover:bg-black/90">
+          <Link
+            href={'/skin-analyzer/product-details/1234'}
+            className={buttonVariants({
+              className: 'w-full rounded-md bg-black! py-2 text-sm text-white hover:bg-black/90',
+            })}
+            style={{ background: 'black' }}
+          >
             View Details
-          </Button>
+          </Link>
         </div>
       </div>
 

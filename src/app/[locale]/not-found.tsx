@@ -1,6 +1,5 @@
-import logoCompact from '@/assets/image/logo-compact.png'
+import logoCompact from '@/assets/image/logo-compact.svg'
 import { Button } from '@/components/ui/button'
-import { caudex, openSans } from '@/lib/fonts'
 import { ArrowLeft, Home } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

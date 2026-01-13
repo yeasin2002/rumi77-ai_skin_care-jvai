@@ -1,4 +1,4 @@
-import logoCompact from '@/assets/image/logo-compact.png'
+import logoCompact from '@/assets/image/logo-compact.svg'
 import { cn } from '@/lib/utils'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
@@ -21,21 +21,23 @@ export const Footer = async ({ className, ...props }: Props) => {
   ]
 
   return (
-    <footer className={cn('bg-[#f5f4f3] px-4 py-10 pt-20 sm:px-8', className)} {...props}>
-      <div className="mx-auto grid grid-cols-1 items-end gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <footer
+      className={cn(
+        'bg-background border-main-primary-base_light border-t px-4 py-10 pt-20 sm:px-8',
+        className
+      )}
+      {...props}
+    >
+      <div className="mx-auto grid grid-cols-1 items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col items-center sm:items-start">
-          <Image src={logoCompact} alt="Glowmi Logo" className="w-auto" />
-          <p className="mt-2 text-sm text-gray-500">{t('tagline')}</p>
+          <Image src={logoCompact} alt="Glowmi Logo" className="min-h-32 w-auto" />
+          <p className="mt-2 text-sm text-[#58351B]">{t('tagline')}</p>
         </div>
 
         {/* Navigation */}
         <div className="flex flex-col items-center gap-2 sm:items-start">
           {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="hover:text-main-button text-sm text-gray-700 transition-colors"
-            >
+            <a key={item.label} href={item.href} className="global-nav-link">
               {item.label}
             </a>
           ))}
@@ -44,11 +46,7 @@ export const Footer = async ({ className, ...props }: Props) => {
         {/* Legal */}
         <div className="flex flex-col items-center gap-2 sm:items-start">
           {legalItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="hover:text-main-button text-sm text-gray-700 transition-colors"
-            >
+            <a key={item.label} href={item.href} className="global-nav-link">
               {item.label}
             </a>
           ))}
@@ -56,11 +54,8 @@ export const Footer = async ({ className, ...props }: Props) => {
 
         {/* Contact */}
         <div className="flex flex-col items-center gap-2 sm:items-start">
-          <span className="text-sm font-medium text-gray-700">{t('contact.title')}</span>
-          <a
-            href={`mailto:${contactEmail}`}
-            className="hover:text-main-button text-sm text-gray-700 transition-colors"
-          >
+          <span className="global-nav-link">{t('contact.title')}</span>
+          <a href={`mailto:${contactEmail}`} className="global-nav-link">
             {t('contact.email')}: {contactEmail}
           </a>
         </div>

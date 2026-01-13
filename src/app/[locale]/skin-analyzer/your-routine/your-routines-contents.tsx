@@ -1,5 +1,6 @@
 import { Heart, Moon, Sun } from 'lucide-react'
 import Image from 'next/image'
+import { Link } from '../../../../i18n/navigation'
 import { Product, eveningProducts, morningProducts } from './your-routine.data'
 
 type ProductCardProps = {
@@ -58,7 +59,7 @@ export const YourRoutinesContents = () => {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <div className="flex items-start gap-4 pl-4">
+    <Link href={'/skin-analyzer/product-details/1234'} className="flex items-start gap-4 pl-4">
       <div className="bg-main-button flex size-6 shrink-0 items-center justify-center rounded-full text-xs text-white">
         {product.step}
       </div>
@@ -81,6 +82,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {product.price}
         </span>
       </div>
-    </div>
+    </Link>
   )
 }

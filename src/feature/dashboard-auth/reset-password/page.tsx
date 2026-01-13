@@ -1,6 +1,6 @@
 'use client'
 
-import logo from '@/assets/image/logo-compact.png'
+import logo from '@/assets/image/logo-compact.svg'
 import { IconInput } from '@/components/shared/auth-input'
 import { SiteHeading } from '@/components/shared/site-heading'
 import { Button } from '@/components/ui'

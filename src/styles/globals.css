@@ -36,4 +36,9 @@
   .auth-action-btn {
     @apply font-open-sans w-full py-6 text-[#FFFFFF] capitalize;
   }
+
+  /* nav  */
+  .global-nav-link {
+    @apply hover:text-main-button text-xl text-[#6D5534] transition-colors;
+  }
 }

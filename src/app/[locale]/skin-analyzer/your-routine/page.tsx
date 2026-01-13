@@ -2,8 +2,9 @@
 
 import CalendarCheck from '@/assets/icons/CalendarCheck.svg'
 import { SiteHeading } from '@/components/shared'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Link } from '@/i18n/navigation'
 import { MessageCircle, Package, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import { AllProductsContent } from './all-products-content'
@@ -76,10 +77,15 @@ const YourRoutine = () => {
           Our AI assistant is here to help! Get personalized advice, ask about specific products, or
           learn more about ingredients.
         </p>
-        <Button className="bg-main-button hover:bg-main-button/90 gap-2 px-8 py-6 text-white">
+        <Link
+          href={'/ai-chat-assistant'}
+          className={buttonVariants({
+            className: 'bg-main-button hover:bg-main-button/90 gap-2 px-8 py-6 text-white',
+          })}
+        >
           CHAT WITH AI
           <MessageCircle className="size-4" />
-        </Button>
+        </Link>
       </div>
     </div>
   )

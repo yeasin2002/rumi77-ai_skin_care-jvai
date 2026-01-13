@@ -7,11 +7,10 @@ export const RelatedProductsFromProductDetails = () => {
     <div className="mx-auto mt-8 max-w-5xl px-6">
       <SiteHeading heading="Related Product" />
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-        S
       </div>
     </div>
   )

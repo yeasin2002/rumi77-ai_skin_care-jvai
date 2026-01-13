@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import logoCompact from '@/assets/image/logo-compact.png'
+import logoCompact from '@/assets/image/logo-compact.svg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { caudex, openSans } from '@/lib/fonts'

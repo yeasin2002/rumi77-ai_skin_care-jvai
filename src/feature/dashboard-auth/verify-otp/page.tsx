@@ -1,6 +1,6 @@
 'use client'
 
-import logo from '@/assets/image/logo-compact.png'
+import logo from '@/assets/image/logo-compact.svg'
 import { SiteHeading } from '@/components/shared/site-heading'
 import { Button } from '@/components/ui'
 import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp'

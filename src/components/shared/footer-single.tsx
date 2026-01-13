@@ -1,4 +1,4 @@
-import logoCompact from '@/assets/image/logo-compact.png'
+import logoCompact from '@/assets/image/logo-compact.svg'
 import { openSans } from '@/lib/fonts'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
