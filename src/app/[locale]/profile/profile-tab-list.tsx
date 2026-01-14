@@ -1,7 +1,7 @@
 'use client'
 
+import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { Heart, LayoutGrid, Package, Settings, ShoppingBag } from 'lucide-react'

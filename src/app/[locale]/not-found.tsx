@@ -1,8 +1,8 @@
 import logoCompact from '@/assets/image/logo-compact.svg'
 import { Button } from '@/components/ui/button'
+import { Link } from '@/i18n/navigation'
 import { ArrowLeft, Home } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function NotFound() {
   return (

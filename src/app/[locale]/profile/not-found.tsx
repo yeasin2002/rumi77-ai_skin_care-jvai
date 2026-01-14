@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 const ProfileNotFound = () => {
   return (

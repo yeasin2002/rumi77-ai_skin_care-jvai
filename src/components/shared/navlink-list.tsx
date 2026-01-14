@@ -1,8 +1,8 @@
 'use client'
 
+import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 export type NavLinkItem = {

@@ -6,10 +6,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
-import Link from 'next/link'
 
 interface Props {
   className?: string

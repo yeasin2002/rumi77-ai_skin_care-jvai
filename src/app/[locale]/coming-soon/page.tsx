@@ -1,9 +1,9 @@
 'use client'
 
+import { Link } from '@/i18n/navigation'
 import { ArrowLeft } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
 
 import logoCompact from '@/assets/image/logo-compact.svg'
