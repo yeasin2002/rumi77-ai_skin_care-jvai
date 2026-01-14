@@ -1,9 +1,12 @@
 import contactUsBg from '@/assets/image/contact-image-trans.png'
 import { NavList } from '@/components/shared'
 import { Mail, Phone } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
-const ContactUs = () => {
+const ContactUs = async () => {
+  const t = await getTranslations('home.contactUs')
+
   return (
     <div className="relative min-h-screen bg-[#FBFAF6]">
       <NavList
@@ -15,29 +18,28 @@ const ContactUs = () => {
         {/* Left - Contact Info */}
         <div className="flex flex-col justify-center">
           <h1 className="font-caudex text-main-button mb-4 text-5xl leading-none font-normal tracking-normal">
-            Contact Us
+            {t('title')}
           </h1>
 
           <p className="font-open-sans text-main-primary-base_medium mb-8 text-lg leading-relaxed">
-            If you have any questions, need assistance, or want to share feedback, we&apos;d love to
-            hear from you!
+            {t('description')}
           </p>
 
           <div className="space-y-4">
             <a
-              href="mailto:glowmi@gmail.com"
+              href={`mailto:${t('email')}`}
               className="font-open-sans text-main-primary-base_medium flex items-center gap-3 text-lg hover:underline"
             >
               <Mail className="size-5" />
-              glowmi@gmail.com
+              {t('email')}
             </a>
 
             <a
-              href="tel:3251358133"
+              href={`tel:${t('phone')}`}
               className="font-open-sans text-main-primary-base_medium flex items-center gap-3 text-sm hover:underline"
             >
               <Phone className="size-5" />
-              3251358133
+              {t('phone')}
             </a>
           </div>
         </div>
@@ -46,7 +48,7 @@ const ContactUs = () => {
         <div className="relative flex items-center justify-center">
           <Image
             src={contactUsBg}
-            alt="GLOWMI Celestial Glow Brightening Serum product"
+            alt={t('imageAlt')}
             className="h-auto w-96 object-contain"
             priority
           />
