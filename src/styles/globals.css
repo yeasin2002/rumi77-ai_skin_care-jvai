@@ -42,3 +42,37 @@
     @apply hover:text-main-button text-main-primary-base_light text-xl transition-colors;
   }
 }
+
+.arabic-text {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: isolate;
+}
+
+/* RTL (Arabic) global styles */
+html[dir='rtl'] {
+  text-align: right;
+}
+
+html[dir='rtl'] p,
+html[dir='rtl'] h1,
+html[dir='rtl'] h2,
+html[dir='rtl'] h3,
+html[dir='rtl'] h4,
+html[dir='rtl'] h5,
+html[dir='rtl'] h6,
+html[dir='rtl'] span,
+html[dir='rtl'] div {
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+/* Ensure punctuation appears on the correct side for Arabic */
+html[dir='rtl'] {
+  unicode-bidi: bidi-override;
+}
+
+html[dir='rtl'] body {
+  unicode-bidi: embed;
+  direction: rtl;
+}
