@@ -135,6 +135,7 @@
   },
   "bestProducts": {
     "title": "Best Products",
+    "viewDetails": "View Details",
     "products": {
       "lipOil": {
         "alt": "Radiant Satin Lip Oil",

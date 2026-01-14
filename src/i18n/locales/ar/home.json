@@ -135,6 +135,7 @@
   },
   "bestProducts": {
     "title": "أفضل المنتجات",
+    "viewDetails": "عرض التفاصيل",
     "products": {
       "lipOil": {
         "alt": "زيت الشفاه الساتان المشرق",

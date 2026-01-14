@@ -55,7 +55,7 @@ export const BestProductsList = async () => {
       <SiteHeading heading={t('title')} />
 
       <div className="relative w-full bg-[#f5f4f3] py-8">
-        <ProductsCarousel products={products} loop={true} />
+        <ProductsCarousel products={products} loop={true} viewDetailsLabel={t('viewDetails')} />
       </div>
     </section>
   )
