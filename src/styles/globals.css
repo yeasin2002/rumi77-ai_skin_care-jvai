@@ -68,11 +68,16 @@
   unicode-bidi: embed;
 }
 
-/* Input and textarea RTL */
-.locale-rtl input,
+/* Input and textarea RTL - exclude range inputs */
+.locale-rtl input:not([type='range']),
 .locale-rtl textarea {
   direction: rtl;
   text-align: right;
+}
+
+/* Keep range inputs LTR to preserve slider behavior */
+.locale-rtl input[type='range'] {
+  direction: ltr;
 }
 
 /* Button text RTL */
