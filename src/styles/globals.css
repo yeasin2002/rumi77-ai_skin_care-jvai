@@ -46,7 +46,7 @@
 .arabic-text {
   direction: rtl;
   text-align: right;
-  unicode-bidi: isolate;
+  unicode-bidi: embed;
 }
 
 /* RTL text styles for Arabic - only affects text, not layout */
@@ -65,7 +65,7 @@
 .locale-rtl blockquote {
   direction: rtl;
   text-align: right;
-  unicode-bidi: plaintext;
+  unicode-bidi: embed;
 }
 
 /* Input and textarea RTL */
