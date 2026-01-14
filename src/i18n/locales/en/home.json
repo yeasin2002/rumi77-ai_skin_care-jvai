@@ -133,6 +133,47 @@
     "desc": "Begin your personalized skincare journey with Glowmi.",
     "cta_button_text": "STAY CONNECTED"
   },
+  "bestProducts": {
+    "title": "Best Products",
+    "products": {
+      "lipOil": {
+        "alt": "Radiant Satin Lip Oil",
+        "category": "Lip Oil",
+        "benefits": "Smoothing, natural shine",
+        "skinType": "All skin types"
+      },
+      "serum": {
+        "alt": "Celestial Glow Brightening Serum",
+        "category": "Serum",
+        "benefits": "Brightening, barrier strengthening, hydration, texture improvement",
+        "skinType": "All skin types, including sensitive"
+      },
+      "sleepingMask": {
+        "alt": "Lunar Restore Sleeping Mask",
+        "category": "Sleeping Mask",
+        "benefits": "Deep hydration, overnight repair, Rejuvenating, glow restoration",
+        "skinType": "All skin types, including sensitive"
+      },
+      "moisturizer": {
+        "alt": "Hydra Boost Moisturizer",
+        "category": "Moisturizer",
+        "benefits": "Intense hydration, skin barrier repair, long-lasting moisture",
+        "skinType": "Dry and combination skin"
+      },
+      "cleanser": {
+        "alt": "Gentle Cleansing Foam",
+        "category": "Cleanser",
+        "benefits": "Deep cleansing, pore minimizing, gentle exfoliation",
+        "skinType": "All skin types"
+      },
+      "eyeCream": {
+        "alt": "Vitamin C Eye Cream",
+        "category": "Eye Cream",
+        "benefits": "Dark circle reduction, firming, brightening",
+        "skinType": "All skin types"
+      }
+    }
+  },
   "footer": {
     "tagline": "The Essence of Timeless Glow",
     "copyright": "Glowmi. All rights reserved. Coming Soon.",
