@@ -5,16 +5,19 @@ import { Button } from '@/components/ui'
 import { Link } from '@/i18n/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft, Mail } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-const forgetPasswordSchema = z.object({
-  email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
-})
-
-type ForgetPasswordFormData = z.infer<typeof forgetPasswordSchema>
-
 const ForgetPassword = () => {
+  const t = useTranslations('auth.forgetPassword')
+
+  const forgetPasswordSchema = z.object({
+    email: z.string().min(1, t('validation.emailRequired')).email(t('validation.emailInvalid')),
+  })
+
+  type ForgetPasswordFormData = z.infer<typeof forgetPasswordSchema>
+
   const {
     register,
     handleSubmit,
@@ -35,21 +38,21 @@ const ForgetPassword = () => {
       </Link>
 
       <div className="mb-8 text-center">
-        <h1 className="auth-heading">Forget Password</h1>
-        <p className="auth-subheading">Enter your email to reset password</p>
+        <h1 className="auth-heading">{t('title')}</h1>
+        <p className="auth-subheading">{t('subtitle')}</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <AuthInput
           icon={Mail}
-          placeholder="Email"
+          placeholder={t('emailPlaceholder')}
           type="email"
           error={errors.email?.message}
           {...register('email')}
         />
 
         <Button type="submit" className="auth-action-btn" disabled={isSubmitting}>
-          {isSubmitting ? 'Sending...' : 'Send OTP'}
+          {isSubmitting ? t('submitting') : t('submitButton')}
         </Button>
       </form>
     </div>

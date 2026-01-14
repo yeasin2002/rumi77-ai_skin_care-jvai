@@ -6,16 +6,19 @@ import { Link } from '@/i18n/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { REGEXP_ONLY_DIGITS } from 'input-otp'
 import { ArrowLeft } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-const otpSchema = z.object({
-  otp: z.string().min(6, 'Please enter all 6 digits'),
-})
-
-type OtpFormData = z.infer<typeof otpSchema>
-
 const VerifyOTP = () => {
+  const t = useTranslations('auth.verifyOtp')
+
+  const otpSchema = z.object({
+    otp: z.string().min(6, t('validation.otpRequired')),
+  })
+
+  type OtpFormData = z.infer<typeof otpSchema>
+
   const {
     control,
     handleSubmit,
@@ -43,17 +46,17 @@ const VerifyOTP = () => {
         </Link>
 
         <div className="mb-8 text-center">
-          <h1 className="auth-heading">Verify OTP</h1>
+          <h1 className="auth-heading">{t('title')}</h1>
           <p className="auth-subheading">
-            We&apos;ve sent a 6-digit code to your email.
+            {t('subtitle')}
             <br />
-            Enter the code below to continue
+            {t('subtitleContinue')}
           </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="flex flex-col items-center">
-            <p className="mb-3 w-full text-sm font-medium">Enter pin</p>
+            <p className="mb-3 w-full text-sm font-medium">{t('enterPin')}</p>
             <Controller
               name="otp"
               control={control}
@@ -97,17 +100,17 @@ const VerifyOTP = () => {
           </div>
 
           <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? 'Verifying...' : 'Verify'}
+            {isSubmitting ? t('submitting') : t('submitButton')}
           </Button>
 
           <p className="text-muted-foreground text-center text-sm">
-            Don&apos;t get code?{' '}
+            {t('noCode')}{' '}
             <button
               type="button"
               onClick={handleResend}
               className="text-foreground font-semibold hover:underline"
             >
-              Resend
+              {t('resendLink')}
             </button>
           </p>
         </form>
