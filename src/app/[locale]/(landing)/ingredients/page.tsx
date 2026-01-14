@@ -1,8 +1,11 @@
 import ingredientsBg from '@/assets/image/ingredients-bg.jpg'
 import { NavList } from '@/components/shared'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
-const Ingredients = () => {
+const Ingredients = async () => {
+  const t = await getTranslations('ingredients')
+
   return (
     <main>
       <div className="relative">
@@ -14,7 +17,7 @@ const Ingredients = () => {
           quality={100}
         />
         <h1 className="font-caudex text-main-button absolute bottom-10 left-20 text-5xl leading-none font-normal tracking-normal">
-          Timeless Glow, Science- <br /> Backed Skincare
+          {t('title1')} <br /> {t('title2')}
         </h1>
 
         <NavList
