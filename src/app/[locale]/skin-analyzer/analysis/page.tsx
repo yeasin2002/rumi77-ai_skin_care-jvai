@@ -13,7 +13,7 @@ import { useState } from 'react'
 import AiPowered from '@/assets/icons/AI-Powered.png'
 import ExpertBacked from '@/assets/icons/Expert-Backed.png'
 import Personalized from '@/assets/icons/Personalized.png'
-import { Link } from '../../../../i18n/navigation'
+import { Link } from '@/i18n/navigation'
 
 const skinTypes = ['Oily', 'Dry', 'Combination', 'Normal', 'Sensitive'] as const
 const skinConcerns = [

@@ -1,6 +1,6 @@
+import { Link } from '@/i18n/navigation'
 import { Heart, Moon, Sun } from 'lucide-react'
 import Image from 'next/image'
-import { Link } from '../../../../i18n/navigation'
 import { Product, eveningProducts, morningProducts } from './your-routine.data'
 
 type ProductCardProps = {
