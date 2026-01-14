@@ -29,7 +29,9 @@ export const GlowmiStates = async () => {
             </span>
 
             <h3 className="text-main-button mt-4 text-3xl font-bold">{data.title}</h3>
-            <p className={`text-main-primary-base_medium font-open-sans mt-2 text-base`}>
+            <p
+              className={`text-main-primary-base_medium font-open-sans mt-2 text-center! text-base`}
+            >
               {data.subtitle}
             </p>
           </div>
