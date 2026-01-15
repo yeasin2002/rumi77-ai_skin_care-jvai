@@ -6,17 +6,29 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale
   const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale
 
-  const [shared, home, comingSoon, ingredients, aboutUs, auth, skinAnalyzerAnalysis, checkout] =
-    await Promise.all([
-      import(`./locales/${locale}/shared.json`),
-      import(`./locales/${locale}/home.json`),
-      import(`./locales/${locale}/comingSoon.json`),
-      import(`./locales/${locale}/ingredients.json`),
-      import(`./locales/${locale}/about-us.json`),
-      import(`./locales/${locale}/auth.json`),
-      import(`./locales/${locale}/skin-analyzer-analysis.json`),
-      import(`./locales/${locale}/checkout.json`),
-    ])
+  const [
+    shared,
+    home,
+    comingSoon,
+    ingredients,
+    aboutUs,
+    auth,
+    skinAnalyzerAnalysis,
+    checkout,
+    productDetails,
+    yourRoutine,
+  ] = await Promise.all([
+    import(`./locales/${locale}/shared.json`),
+    import(`./locales/${locale}/home.json`),
+    import(`./locales/${locale}/comingSoon.json`),
+    import(`./locales/${locale}/ingredients.json`),
+    import(`./locales/${locale}/about-us.json`),
+    import(`./locales/${locale}/auth.json`),
+    import(`./locales/${locale}/skin-analyzer-analysis.json`),
+    import(`./locales/${locale}/checkout.json`),
+    import(`./locales/${locale}/product-details.json`),
+    import(`./locales/${locale}/your-routine.json`),
+  ])
 
   return {
     locale,
@@ -29,6 +41,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
       auth: auth.default,
       skinAnalyzerAnalysis: skinAnalyzerAnalysis.default,
       checkout: checkout.default,
+      productDetails: productDetails.default,
+      yourRoutine: yourRoutine.default,
     },
     timeZone: 'Asia/Riyadh',
   }
