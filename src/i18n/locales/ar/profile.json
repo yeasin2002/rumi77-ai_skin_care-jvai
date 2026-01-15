@@ -1,0 +1,20 @@
+{
+  "tabs": {
+    "overview": "نظرة عامة",
+    "saveRoutine": "حفظ الروتين",
+    "myCart": "سلتي",
+    "orderHistory": "سجل الطلبات",
+    "settings": "الإعدادات"
+  },
+  "userProfile": {
+    "name": "حفصة بنت كلام",
+    "email": "hello.hafsabinte@gmail.com",
+    "skinConcern": "حب الشباب والبثور"
+  },
+  "stats": {
+    "analysis": "التحليلات",
+    "cartProduct": "منتج السلة",
+    "orderProduct": "منتج الطلب",
+    "daysActive": "أيام نشطة"
+  }
+}

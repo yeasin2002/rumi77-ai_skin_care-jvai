@@ -1,0 +1,20 @@
+{
+  "tabs": {
+    "overview": "Overview",
+    "saveRoutine": "Save Routine",
+    "myCart": "My Cart",
+    "orderHistory": "Order History",
+    "settings": "Settings"
+  },
+  "userProfile": {
+    "name": "Hafsa Binte Kalam",
+    "email": "hello.hafsabinte@gmail.com",
+    "skinConcern": "Acne & Breakouts"
+  },
+  "stats": {
+    "analysis": "Analysis",
+    "cartProduct": "Cart Product",
+    "orderProduct": "Order Product",
+    "daysActive": "Days Active"
+  }
+}

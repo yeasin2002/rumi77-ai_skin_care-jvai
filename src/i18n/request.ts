@@ -17,6 +17,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     checkout,
     productDetails,
     yourRoutine,
+    profile,
   ] = await Promise.all([
     import(`./locales/${locale}/shared.json`),
     import(`./locales/${locale}/home.json`),
@@ -28,6 +29,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     import(`./locales/${locale}/checkout.json`),
     import(`./locales/${locale}/product-details.json`),
     import(`./locales/${locale}/your-routine.json`),
+    import(`./locales/${locale}/profile.json`),
   ])
 
   return {
@@ -43,6 +45,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       checkout: checkout.default,
       productDetails: productDetails.default,
       yourRoutine: yourRoutine.default,
+      profile: profile.default,
     },
     timeZone: 'Asia/Riyadh',
   }
