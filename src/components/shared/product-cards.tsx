@@ -1,4 +1,7 @@
+'use client'
+
 import { Button, buttonVariants } from '@/components/ui'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Link } from '../../i18n/navigation'
 
@@ -15,6 +18,8 @@ type ProductCardProps = {
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const t = useTranslations('productDetails')
+
   return (
     <div className="flex flex-col">
       {/* Image Container */}
@@ -30,7 +35,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         {/* Buttons Overlay */}
         <div className="absolute right-0 bottom-0 left-0 flex flex-col gap-1 p-3">
           <Button variant="outline" className="bg-background/20 border-black">
-            Add to Cart
+            {t('addToCart')}
           </Button>
           <Link
             href={'/skin-analyzer/product-details/1234'}
@@ -39,7 +44,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             })}
             style={{ background: 'black' }}
           >
-            View Details
+            {t('viewDetails')}
           </Link>
         </div>
       </div>
