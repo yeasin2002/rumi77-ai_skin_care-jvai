@@ -1,35 +1,40 @@
+'use client'
+
 import { Card, CardContent } from '@/components/ui/card'
 import { CalendarDays, Package, Search, ShoppingBag } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
-const userStats = [
-  {
-    id: 1,
-    icon: Search,
-    value: '2',
-    label: 'Analysis',
-  },
-  {
-    id: 2,
-    icon: ShoppingBag,
-    value: '1',
-    label: 'Cart Product',
-  },
-  {
-    id: 3,
-    icon: Package,
-    value: '1',
-    label: 'Order Product',
-  },
-  {
-    id: 4,
-    icon: CalendarDays,
-    value: '19',
-    label: 'Days Active',
-  },
-]
-
 export const UserProfileAndStates = () => {
+  const t = useTranslations('profile')
+
+  const userStats = [
+    {
+      id: 1,
+      icon: Search,
+      value: '2',
+      label: t('stats.analysis'),
+    },
+    {
+      id: 2,
+      icon: ShoppingBag,
+      value: '1',
+      label: t('stats.cartProduct'),
+    },
+    {
+      id: 3,
+      icon: Package,
+      value: '1',
+      label: t('stats.orderProduct'),
+    },
+    {
+      id: 4,
+      icon: CalendarDays,
+      value: '19',
+      label: t('stats.daysActive'),
+    },
+  ]
+
   return (
     <div className="space-y-6">
       {/* User Profile Card */}
@@ -38,18 +43,18 @@ export const UserProfileAndStates = () => {
           <div className="relative size-20 shrink-0 overflow-hidden rounded-xl">
             <Image
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop"
-              alt="Hafsa Binte Kalam"
+              alt={t('userProfile.name')}
               fill
               className="object-cover"
             />
           </div>
           <div>
             <h2 className="font-open-sans text-main-button text-2xl font-normal">
-              Hafsa Binte Kalam
+              {t('userProfile.name')}
             </h2>
-            <p className="text-main-button/70 text-sm">hello.hafsabinte@gmail.com</p>
+            <p className="text-main-button/70 text-sm">{t('userProfile.email')}</p>
             <span className="bg-main-button mt-2 inline-block rounded-full px-4 py-1 text-xs text-white">
-              Acne & Breakouts
+              {t('userProfile.skinConcern')}
             </span>
           </div>
         </CardContent>
