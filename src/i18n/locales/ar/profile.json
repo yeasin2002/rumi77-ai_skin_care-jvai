@@ -16,5 +16,63 @@
     "cartProduct": "منتج السلة",
     "orderProduct": "منتج الطلب",
     "daysActive": "أيام نشطة"
+  },
+  "overview": {
+    "title": "ملف البشرة",
+    "skinType": "نوع البشرة",
+    "skinTypeValue": "مختلطة",
+    "primaryConcerns": "المشاكل الرئيسية",
+    "primaryConcernsValue": "حب الشباب، البقع الداكنة"
+  },
+  "saveRoutine": {
+    "title": "روتينك المحفوظ",
+    "routines": {
+      "personal": "روتين العناية بالبشرة الشخصي",
+      "acne": "روتين العناية بالبشرة لحب الشباب"
+    },
+    "daysAgo": "أيام مضت",
+    "deleteLabel": "حذف"
+  },
+  "myCart": {
+    "subtotal": "المجموع الفرعي",
+    "continueToCheckout": "متابعة إلى الدفع"
+  },
+  "orderHistory": {
+    "orderPlaced": "تم تقديم الطلب",
+    "shipped": "تم الشحن",
+    "delivered": "تم التسليم",
+    "productName": "سيروم مغذي عميق نهاري",
+    "orderLocation": "موقع الطلب"
+  },
+  "settings": {
+    "title": "إعدادات الحساب",
+    "name": "الاسم",
+    "namePlaceholder": "أدخل اسمك",
+    "gender": "الجنس",
+    "genderPlaceholder": "أدخل جنسك",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "skinType": "نوع البشرة",
+    "skinTypePlaceholder": "أدخل نوع بشرتك",
+    "editProfile": "تعديل الملف الشخصي",
+    "saving": "جاري الحفظ...",
+    "defaultValues": {
+      "name": "حفصة بنت كلام",
+      "gender": "أنثى",
+      "email": "hello.hafsabinte@gmail.com",
+      "skinType": "مختلطة"
+    },
+    "errors": {
+      "nameRequired": "الاسم مطلوب",
+      "genderRequired": "الجنس مطلوب",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال عنوان بريد إلكتروني صالح",
+      "skinTypeRequired": "نوع البشرة مطلوب"
+    }
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "backButton": "العودة إلى الملف الشخصي"
   }
 }

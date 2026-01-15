@@ -1,27 +1,30 @@
 import { Trash2 } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
 import { Card, CardContent } from '@/components/ui/card'
 
-const routines = [
-  {
-    id: 1,
-    title: 'Personal Skincare Routine',
-    date: '20 Nov, 2025',
-    daysAgo: '1 days ago',
-  },
-  {
-    id: 2,
-    title: 'Acne Skincare Routine',
-    date: '20 Nov, 2025',
-    daysAgo: '1 days ago',
-  },
-]
+const SaveRoutine = async () => {
+  const t = await getTranslations('profile.saveRoutine')
 
-const SaveRoutine = () => {
+  const routines = [
+    {
+      id: 1,
+      title: t('routines.personal'),
+      date: '20 Nov, 2025',
+      daysAgo: `1 ${t('daysAgo')}`,
+    },
+    {
+      id: 2,
+      title: t('routines.acne'),
+      date: '20 Nov, 2025',
+      daysAgo: `1 ${t('daysAgo')}`,
+    },
+  ]
+
   return (
     <div className="space-y-4">
       <h2 className="text-main-primary-base_medium font-open-sans text-xl font-medium">
-        Your Saved Routine
+        {t('title')}
       </h2>
       <div className="space-y-3">
         {routines.map((routine) => (
@@ -38,7 +41,7 @@ const SaveRoutine = () => {
               <button
                 type="button"
                 className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={`Delete ${routine.title}`}
+                aria-label={`${t('deleteLabel')} ${routine.title}`}
               >
                 <Trash2 className="size-5 text-[#58351B]" />
               </button>

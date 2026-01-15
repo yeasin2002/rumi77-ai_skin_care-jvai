@@ -2,22 +2,25 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Pencil } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { IconInput } from '@/components/shared/auth-input'
 import { Button } from '@/components/ui'
 
-const settingsSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  gender: z.string().min(1, 'Gender is required'),
-  email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
-  skinType: z.string().min(1, 'Skin type is required'),
-})
-
-type SettingsFormData = z.infer<typeof settingsSchema>
-
 const Settings = () => {
+  const t = useTranslations('profile.settings')
+
+  const settingsSchema = z.object({
+    name: z.string().min(1, t('errors.nameRequired')),
+    gender: z.string().min(1, t('errors.genderRequired')),
+    email: z.string().min(1, t('errors.emailRequired')).email(t('errors.emailInvalid')),
+    skinType: z.string().min(1, t('errors.skinTypeRequired')),
+  })
+
+  type SettingsFormData = z.infer<typeof settingsSchema>
+
   const {
     register,
     handleSubmit,
@@ -25,10 +28,10 @@ const Settings = () => {
   } = useForm<SettingsFormData>({
     resolver: zodResolver(settingsSchema),
     defaultValues: {
-      name: 'Hafsa Binte Kalam',
-      gender: 'Female',
-      email: 'hello.hafsabinte@gmail.com',
-      skinType: 'Combination',
+      name: t('defaultValues.name'),
+      gender: t('defaultValues.gender'),
+      email: t('defaultValues.email'),
+      skinType: t('defaultValues.skinType'),
     },
   })
 
@@ -38,46 +41,46 @@ const Settings = () => {
   }
 
   return (
-    <div className="bg-main-button rounded-xl p-6" mt-1>
-      <h2 className="font-open-sans mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!" mt-1>
-        Account Settings
+    <div className="bg-main-button rounded-xl p-6">
+      <h2 className="font-open-sans mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!">
+        {t('title')}
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <IconInput
-          label="Name"
-          placeholder="Enter your name"
+          label={t('name')}
+          placeholder={t('namePlaceholder')}
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.name?.message}
           {...register('name')}
         />
         <IconInput
-          label="Gender"
-          placeholder="Enter your gender"
+          label={t('gender')}
+          placeholder={t('genderPlaceholder')}
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.gender?.message}
           {...register('gender')}
         />
         <IconInput
-          label="Email"
-          placeholder="Enter your email"
+          label={t('email')}
+          placeholder={t('emailPlaceholder')}
           type="email"
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.email?.message}
           {...register('email')}
         />
         <IconInput
-          label="Skin Type"
-          placeholder="Enter your skin type"
+          label={t('skinType')}
+          placeholder={t('skinTypePlaceholder')}
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans mt-1 text-sm"
+          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
           error={errors.skinType?.message}
           {...register('skinType')}
         />
@@ -89,7 +92,7 @@ const Settings = () => {
           disabled={isSubmitting}
         >
           <Pencil className="text-main-button! size-4" />
-          {isSubmitting ? 'Saving...' : 'Edit Profile'}
+          {isSubmitting ? t('saving') : t('editProfile')}
         </Button>
       </form>
     </div>
