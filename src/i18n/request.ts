@@ -6,7 +6,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale
   const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale
 
-  const [shared, home, comingSoon, ingredients, aboutUs, auth, skinAnalyzerAnalysis] =
+  const [shared, home, comingSoon, ingredients, aboutUs, auth, skinAnalyzerAnalysis, checkout] =
     await Promise.all([
       import(`./locales/${locale}/shared.json`),
       import(`./locales/${locale}/home.json`),
@@ -15,6 +15,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       import(`./locales/${locale}/about-us.json`),
       import(`./locales/${locale}/auth.json`),
       import(`./locales/${locale}/skin-analyzer-analysis.json`),
+      import(`./locales/${locale}/checkout.json`),
     ])
 
   return {
@@ -27,6 +28,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       aboutUs: aboutUs.default,
       auth: auth.default,
       skinAnalyzerAnalysis: skinAnalyzerAnalysis.default,
+      checkout: checkout.default,
     },
     timeZone: 'Asia/Riyadh',
   }

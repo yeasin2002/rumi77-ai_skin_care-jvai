@@ -8,5 +8,10 @@
       "aboutUs": "من نحن",
       "contactUs": "تواصل معنا"
     }
+  },
+  "checkoutItem": {
+    "productName": "سيروم مغذي عميق نهاري",
+    "price": "٩٨٫٠٠ دولار أمريكي",
+    "remove": "إزالة"
   }
 }

@@ -8,5 +8,10 @@
       "aboutUs": "About Us",
       "contactUs": "Contact US"
     }
+  },
+  "checkoutItem": {
+    "productName": "Deep nourishing day serum",
+    "price": "$ 98.00 ( USD )",
+    "remove": "Remove"
   }
 }
