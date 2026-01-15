@@ -18,6 +18,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     productDetails,
     yourRoutine,
     profile,
+    aiChatAssistant,
   ] = await Promise.all([
     import(`./locales/${locale}/shared.json`),
     import(`./locales/${locale}/home.json`),
@@ -30,6 +31,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     import(`./locales/${locale}/product-details.json`),
     import(`./locales/${locale}/your-routine.json`),
     import(`./locales/${locale}/profile.json`),
+    import(`./locales/${locale}/ai-chat-assistant.json`),
   ])
 
   return {
@@ -46,6 +48,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       productDetails: productDetails.default,
       yourRoutine: yourRoutine.default,
       profile: profile.default,
+      aiChatAssistant: aiChatAssistant.default,
     },
     timeZone: 'Asia/Riyadh',
   }

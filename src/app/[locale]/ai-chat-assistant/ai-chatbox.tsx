@@ -1,14 +1,19 @@
+'use client'
+
 import { Button } from '@/components/ui'
 import { Camera, Send } from 'lucide-react'
-
-const quickPrompts = [
-  'How do I build a routine?',
-  'Best products for acne',
-  'Explain Vitamin C benefits',
-  'Sunscreen recommendations',
-]
+import { useTranslations } from 'next-intl'
 
 export const AiChatBox = () => {
+  const t = useTranslations('aiChatAssistant')
+
+  const quickPrompts = [
+    t('quickPrompts.buildRoutine'),
+    t('quickPrompts.acneProducts'),
+    t('quickPrompts.vitaminC'),
+    t('quickPrompts.sunscreen'),
+  ]
+
   return (
     <div className="w-full">
       {/* Input Area */}
@@ -16,7 +21,7 @@ export const AiChatBox = () => {
         <div className="border-main-secondary flex flex-1 items-center gap-2 rounded-full border bg-transparent px-5 py-3">
           <input
             type="text"
-            placeholder="Ask anything about your skincare......."
+            placeholder={t('inputPlaceholder')}
             className="text-main-button placeholder:text-main-secondary flex-1 bg-transparent text-sm outline-none"
           />
           <button type="button" className="text-main-secondary hover:text-main-button">

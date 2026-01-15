@@ -1,0 +1,18 @@
+{
+  "inputPlaceholder": "Ask anything about your skincare.......",
+  "quickPrompts": {
+    "buildRoutine": "How do I build a routine?",
+    "acneProducts": "Best products for acne",
+    "vitaminC": "Explain Vitamin C benefits",
+    "sunscreen": "Sunscreen recommendations"
+  },
+  "messages": {
+    "greeting": "Hi! I'm your AI skincare assistant. I'm here to help you with any questions about skincare, products, or routines. How can I assist you today?",
+    "acneAdvice": "For acne-prone skin, I recommend:\n\n• Use a gentle, non-comedogenic cleanser\n• Look for ingredients like salicylic acid, niacinamide, or benzoyl peroxide\n• Don't over exfoliate - 2-3 times per week is enough\n• Always moisturize, even with oily skin\n• Never skip sunscreen\n\nWould you like me to analyze your skin and recommend specific products?",
+    "sunscreenAdvice": "Sunscreen is crucial for protecting your skin! Apply SPF 30 or higher every morning, even on cloudy days. Reapply every 2 hours if you're outdoors. Here's a great option:",
+    "routineAdvice": "A basic skincare routine should follow this order:\n\n☀️ Morning:\n1. Cleanser\n2. Toner (optional)\n3. Serum (Vitamin C)\n4. Moisturizer\n5. Sunscreen\n\n🌙 Evening:\n1. Cleanser\n2. Toner (optional)\n3. Treatment (Retinal /AHA/BHA)\n4. Serum\n5. Moisturizer\n\nConsistency is key! Would you like specific product recommendations?"
+  },
+  "product": {
+    "viewDetails": "View Details"
+  }
+}
