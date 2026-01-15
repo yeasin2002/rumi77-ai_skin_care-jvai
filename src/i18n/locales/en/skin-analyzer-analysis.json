@@ -1,0 +1,61 @@
+{
+  "header": {
+    "title": "Ai Skin Analyzer",
+    "subtitle": "Tell us about your skin concerns and let our AI create a personalized skincare routine just for you."
+  },
+  "form": {
+    "skinType": {
+      "label": "What's your skin type?",
+      "options": {
+        "oily": "Oily",
+        "dry": "Dry",
+        "combination": "Combination",
+        "normal": "Normal",
+        "sensitive": "Sensitive"
+      }
+    },
+    "age": {
+      "label": "What's your age?",
+      "placeholder": "Type your age here"
+    },
+    "concerns": {
+      "label": "What are your main skin concerns? (Select all that apply)",
+      "options": {
+        "acne": "Acne & Breakouts",
+        "darkSpots": "Dark Spots",
+        "fineLines": "Fine Lines & Wrinkles",
+        "dryness": "Dryness",
+        "oilySkin": "Oily Skin",
+        "redness": "Redness & Sensitivity",
+        "dullness": "Dullness",
+        "largePores": "Large Pores",
+        "others": "Others"
+      },
+      "othersPlaceholder": "Input others skin concern"
+    },
+    "additionalDetails": {
+      "label": "Additional Details (Optional)",
+      "placeholder": "Tell us more about your skincare goals, allergies, or any specific products you'd like to avoid..."
+    },
+    "uploadPhoto": {
+      "label": "Upload Photo (Optional)",
+      "clickToUpload": "Click to upload or drag and drop",
+      "fileTypes": "PNG, JPG up to 10MB"
+    },
+    "submitButton": "ANALYZE & GET RECOMMENDATIONS"
+  },
+  "features": {
+    "aiPowered": {
+      "title": "AI-Powered",
+      "subtitle": "Advanced algorithms analyze your unique skin needs"
+    },
+    "personalized": {
+      "title": "Personalized",
+      "subtitle": "Custom routines based on your specific concerns"
+    },
+    "expertBacked": {
+      "title": "Expert-Backed",
+      "subtitle": "Recommendations based on dermatological research"
+    }
+  }
+}

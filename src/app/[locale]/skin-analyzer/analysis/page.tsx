@@ -7,68 +7,60 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 import { FileText, Sparkles, Sun, Upload, UserCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useState } from 'react'
 
 import AiPowered from '@/assets/icons/AI-Powered.png'
 import ExpertBacked from '@/assets/icons/Expert-Backed.png'
 import Personalized from '@/assets/icons/Personalized.png'
 import { Link } from '@/i18n/navigation'
 
-const skinTypes = ['Oily', 'Dry', 'Combination', 'Normal', 'Sensitive'] as const
-const skinConcerns = [
-  'Acne & Breakouts',
-  'Dark Spots',
-  'Fine Lines & Wrinkles',
-  'Dryness',
-  'Oily Skin',
-  'Redness & Sensitivity',
-  'Dullness',
-  'Large Pores',
-  'Others',
-] as const
-
-const features = [
-  {
-    image: AiPowered,
-    title: 'AI-Powered',
-    subtitle: 'Advanced algorithms analyze your unique skin needs',
-  },
-  {
-    image: Personalized,
-    title: 'Personalized',
-    subtitle: 'Custom routines based on your specific concerns',
-  },
-  {
-    image: ExpertBacked,
-    title: 'Expert-Backed',
-    subtitle: 'Recommendations based on dermatological research',
-  },
-]
-
-type SkinType = (typeof skinTypes)[number]
-type SkinConcern = (typeof skinConcerns)[number]
-
 const Analysis = () => {
-  const [selectedSkinType, setSelectedSkinType] = useState<SkinType | null>(null)
-  const [selectedConcerns, setSelectedConcerns] = useState<SkinConcern[]>([])
-  const [age, setAge] = useState('')
-  const [additionalDetails, setAdditionalDetails] = useState('')
+  const t = useTranslations('skinAnalyzerAnalysis')
 
-  const toggleConcern = (concern: SkinConcern) => {
-    setSelectedConcerns((prev) =>
-      prev.includes(concern) ? prev.filter((c) => c !== concern) : [...prev, concern]
-    )
-  }
+  const skinTypes = [
+    { key: 'oily', label: t('form.skinType.options.oily') },
+    { key: 'dry', label: t('form.skinType.options.dry') },
+    { key: 'combination', label: t('form.skinType.options.combination') },
+    { key: 'normal', label: t('form.skinType.options.normal') },
+    { key: 'sensitive', label: t('form.skinType.options.sensitive') },
+  ]
+
+  const skinConcerns = [
+    { key: 'acne', label: t('form.concerns.options.acne') },
+    { key: 'darkSpots', label: t('form.concerns.options.darkSpots') },
+    { key: 'fineLines', label: t('form.concerns.options.fineLines') },
+    { key: 'dryness', label: t('form.concerns.options.dryness') },
+    { key: 'oilySkin', label: t('form.concerns.options.oilySkin') },
+    { key: 'redness', label: t('form.concerns.options.redness') },
+    { key: 'dullness', label: t('form.concerns.options.dullness') },
+    { key: 'largePores', label: t('form.concerns.options.largePores') },
+    { key: 'others', label: t('form.concerns.options.others') },
+  ]
+
+  const features = [
+    {
+      image: AiPowered,
+      title: t('features.aiPowered.title'),
+      subtitle: t('features.aiPowered.subtitle'),
+    },
+    {
+      image: Personalized,
+      title: t('features.personalized.title'),
+      subtitle: t('features.personalized.subtitle'),
+    },
+    {
+      image: ExpertBacked,
+      title: t('features.expertBacked.title'),
+      subtitle: t('features.expertBacked.subtitle'),
+    },
+  ]
 
   return (
     <div className="bg-background min-h-screen">
       {/* Header */}
       <div className="py-12">
-        <SiteHeading
-          heading="Ai Skin Analyzer"
-          subHeading="Tell us about your skin concerns and let our AI create a personalized skincare routine just for you."
-        />
+        <SiteHeading heading={t('header.title')} subHeading={t('header.subtitle')} />
       </div>
 
       {/* Form Card */}
@@ -78,22 +70,19 @@ const Analysis = () => {
           <div className="mb-8">
             <Label className="text-main-button mb-4 flex items-center gap-2 text-sm font-medium">
               <Sun className="size-4" />
-              What&apos;s your skin type?
+              {t('form.skinType.label')}
             </Label>
             <div className="flex flex-wrap gap-2">
               {skinTypes.map((type) => (
                 <button
-                  key={type}
+                  key={type.key}
                   type="button"
-                  onClick={() => setSelectedSkinType(type)}
                   className={cn(
                     'rounded-md border px-4 py-2 text-sm transition-colors',
-                    selectedSkinType === type
-                      ? 'border-main-button bg-main-button text-white'
-                      : 'border-main-button/30 text-main-button hover:border-main-button bg-white'
+                    'border-main-button/30 text-main-button hover:border-main-button bg-white'
                   )}
                 >
-                  {type}
+                  {type.label}
                 </button>
               ))}
             </div>
@@ -103,13 +92,11 @@ const Analysis = () => {
           <div className="mb-8">
             <Label className="text-main-button mb-4 flex items-center gap-2 text-sm font-medium">
               <UserCircle className="size-4" />
-              What&apos;s your age?
+              {t('form.age.label')}
             </Label>
             <Input
               type="text"
-              placeholder="Type your age here"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
+              placeholder={t('form.age.placeholder')}
               className="border-main-button/30 bg-white"
             />
           </div>
@@ -118,27 +105,24 @@ const Analysis = () => {
           <div className="mb-8">
             <Label className="text-main-button mb-4 flex items-center gap-2 text-sm font-medium">
               <Sparkles className="size-4" />
-              What are your main skin concerns? (Select all that apply)
+              {t('form.concerns.label')}
             </Label>
             <div className="flex flex-wrap gap-2">
               {skinConcerns.map((concern) => (
                 <button
-                  key={concern}
+                  key={concern.key}
                   type="button"
-                  onClick={() => toggleConcern(concern)}
                   className={cn(
                     'rounded-md border px-4 py-2 text-sm transition-colors',
-                    selectedConcerns.includes(concern)
-                      ? 'border-main-button bg-main-button text-white'
-                      : 'border-main-button/30 text-main-button hover:border-main-button bg-white'
+                    'border-main-button/30 text-main-button hover:border-main-button bg-white'
                   )}
                 >
-                  {concern}
+                  {concern.label}
                 </button>
               ))}
             </div>
             <Input
-              placeholder="Input others skin concern"
+              placeholder={t('form.concerns.othersPlaceholder')}
               className="border-main-button mt-4 rounded-md bg-transparent"
             />
           </div>
@@ -147,12 +131,10 @@ const Analysis = () => {
           <div className="mb-8">
             <Label className="text-main-button mb-4 flex items-center gap-2 text-sm font-medium">
               <FileText className="size-4" />
-              Additional Details (Optional)
+              {t('form.additionalDetails.label')}
             </Label>
             <Textarea
-              placeholder="Tell us more about your skincare goals, allergies, or any specific products you'd like to avoid..."
-              value={additionalDetails}
-              onChange={(e) => setAdditionalDetails(e.target.value)}
+              placeholder={t('form.additionalDetails.placeholder')}
               className="border-main-button/30 min-h-[120px] bg-white"
             />
           </div>
@@ -161,12 +143,12 @@ const Analysis = () => {
           <div className="mb-8">
             <Label className="text-main-button mb-4 flex items-center gap-2 text-sm font-medium">
               <Upload className="size-4" />
-              Upload Photo (Optional)
+              {t('form.uploadPhoto.label')}
             </Label>
             <div className="border-main-button/30 hover:border-main-button flex min-h-[100px] cursor-pointer flex-col items-center justify-center rounded-md border border-dashed bg-white p-6 transition-colors">
               <Upload className="text-main-button/50 mb-2 size-6" />
-              <p className="text-main-button text-sm">Click to upload or drag and drop</p>
-              <p className="text-main-button/60 text-xs">PNG, JPG up to 10MB</p>
+              <p className="text-main-button text-sm">{t('form.uploadPhoto.clickToUpload')}</p>
+              <p className="text-main-button/60 text-xs">{t('form.uploadPhoto.fileTypes')}</p>
             </div>
           </div>
 
@@ -178,7 +160,7 @@ const Analysis = () => {
             })}
           >
             <Sparkles className="size-4" />
-            ANALYZE & GET RECOMMENDATIONS
+            {t('form.submitButton')}
           </Link>
         </div>
       </div>
