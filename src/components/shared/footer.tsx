@@ -29,9 +29,9 @@ export const Footer = async ({ className, ...props }: Props) => {
       {...props}
     >
       <div className="mx-auto grid grid-cols-1 items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="flex flex-col items-center sm:items-start">
-          <Image src={logoCompact} alt="Glowmi Logo" className="min-h-32 w-auto" />
-          <p className="mt-2 text-sm text-[#58351B]">{t('tagline')}</p>
+        <div className="flex w-full flex-col items-center sm:items-start">
+          <Image src={logoCompact} alt="Glowmi Logo" className="ml-6 min-h-32 w-auto" />
+          <p className="text-main-button text-sm">{t('tagline')}</p>
         </div>
 
         {/* Navigation */}
