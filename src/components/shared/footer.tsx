@@ -53,7 +53,7 @@ export const Footer = async ({ className, ...props }: Props) => {
         </div>
 
         {/* Contact */}
-        <div className="flex flex-col items-center gap-2 sm:items-start">
+        <div className="flex flex-col items-center gap-2 sm:items-end">
           <span className="global-nav-link">{t('contact.title')}</span>
           <a href={`mailto:${contactEmail}`} className="global-nav-link">
             {t('contact.email')}: {contactEmail}
