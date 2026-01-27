@@ -28,13 +28,13 @@ const slides: Slide[] = [
 // Carousel configuration
 const CAROUSEL_CONFIG = {
   // Animation settings
-  transitionDuration: 0.5, // seconds
+  transitionDuration: 0.3, // seconds
   initialOpacity: 0,
-  animateOpacity: 0.5,
+  animateOpacity: 1,
   slideDistance: 100, // pixels for slide animation
 
   // Swipe/drag settings
-  swipeThreshold: 75, // minimum pixels to trigger slide change
+  swipeThreshold: 100, // minimum pixels to trigger slide change
 
   // Height settings (Tailwind classes)
   mobileHeight: 'h-[400px]',
