@@ -1,18 +1,17 @@
 import newLogo from '@/assets/icons/logo.svg'
 import { Link } from '@/i18n/navigation'
 import { Info, MapPin, Phone } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
-import { LanguageToggle } from './language-toggle'
+import { LanguageToggle } from '../language-toggle'
 
-export const NewNav = async () => {
-  const t = await getTranslations('shared.nav.navItems')
-  const navItems = [
-    { name: t('home'), url: '/' },
-    { name: t('ingredients'), url: '/ingredients' },
-    { name: t('analyzeSkin'), url: '/skin-analyzer/analysis' },
-  ]
+type Props = {
+  navItems: {
+    name: string
+    url: string
+  }[]
+}
 
+export const NewNavLarge = ({ navItems }: Props) => {
   return (
     <header className="w-full bg-white py-4">
       <div className="container mx-auto px-4">
