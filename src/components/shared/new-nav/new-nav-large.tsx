@@ -13,7 +13,7 @@ type Props = {
 
 export const NewNavLarge = ({ navItems }: Props) => {
   return (
-    <header className="w-full bg-white py-4">
+    <header className="hidden w-full bg-white py-4 lg:block">
       <div className="container mx-auto px-4">
         {/* Logo - Top Center */}
         <div className="flex justify-center pb-6">
