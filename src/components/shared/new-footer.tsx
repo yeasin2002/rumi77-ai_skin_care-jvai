@@ -15,15 +15,19 @@ import twitter from '@/assets/icons/social/skill-icons_twitter.svg'
 import snapchat from '@/assets/icons/social/snapchat-logo.svg'
 
 const socialLinks = [
-  { name: 'Facebook', url: 'https://facebook.com', icon: facebook },
-  { name: 'Instagram', url: 'https://instagram.com', icon: instagram },
-  { name: 'linkedin', url: 'https://instagram.com', icon: linkedin },
-  { name: 'TikTok', url: 'https://tiktok.com', icon: tiktok },
-  { name: 'twitter', url: 'https://tiktok.com', icon: twitter },
-  { name: 'Snapchat', url: 'https://snapchat.com', icon: snapchat },
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/profile.php?id=100075629982720',
+    icon: facebook,
+  },
+  { name: 'Instagram', url: 'https://www.instagram.com/glowmiarabia', icon: instagram },
+  { name: 'linkedin', url: 'https://sa.linkedin.com/company/glowmi-arabial', icon: linkedin },
+  { name: 'TikTok', url: 'https://www.tiktok.com/@glowmiarabia', icon: tiktok },
+  { name: 'twitter', url: 'https://x.com/glowmiarabial', icon: twitter },
+  { name: 'Snapchat', url: 'https://snapchat.com/t/7eLns0fy', icon: snapchat },
 ] as const
 
-const contactEmail = 'hello.hafsabinte@gmail.com'
+const contactEmail = 'Email: info@glowmi.net'
 type Props = {} & React.ComponentPropsWithRef<'footer'>
 
 export const NewFooter = async ({ className, ...props }: Props) => {
