@@ -1,8 +1,14 @@
 import newLogo from '@/assets/icons/logo.svg'
 import { Link } from '@/i18n/navigation'
-import { Info, MapPin, Phone } from 'lucide-react'
+import { Info, Mail, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { LanguageToggle } from '../language-toggle'
+
+const navActions = [
+  { icon: Info, label: 'Information', href: '/coming-soon' },
+  { icon: Mail, label: 'Contact', href: '/coming-soon' },
+  { icon: MapPin, label: 'Location', href: '/coming-soon' },
+] as const
 
 type Props = {
   navItems: {
@@ -46,27 +52,19 @@ export const NewNavLarge = ({ navItems }: Props) => {
           {/* Icon Actions - Absolute Right */}
           <div className="absolute right-0 flex items-center gap-3">
             <LanguageToggle />
-            <button
-              type="button"
-              className="rounded-full p-2 transition-colors hover:bg-gray-100"
-              aria-label="Information"
-            >
-              <Info className="size-7 text-black" />
-            </button>
-            <button
-              type="button"
-              className="rounded-full p-2 transition-colors hover:bg-gray-100"
-              aria-label="Contact"
-            >
-              <Phone className="size-7 text-black" />
-            </button>
-            <button
-              type="button"
-              className="rounded-full p-2 transition-colors hover:bg-gray-100"
-              aria-label="Location"
-            >
-              <MapPin className="size-7 text-black" />
-            </button>
+            {navActions.map((action) => {
+              const Icon = action.icon
+              return (
+                <Link
+                  key={action.label}
+                  href={action.href}
+                  className="rounded-full p-2 transition-colors hover:bg-gray-100"
+                  aria-label={action.label}
+                >
+                  <Icon className="size-7 font-semibold" strokeWidth="1.5" />
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>

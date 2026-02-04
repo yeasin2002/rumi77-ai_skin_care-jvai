@@ -14,11 +14,7 @@ import instagram from '@/assets/icons/social/mynaui_instagram.svg'
 import linkedin from '@/assets/icons/social/ri_linkedin-fill.svg'
 
 const socialLinks = [
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/profile.php?id=100075629982720',
-    icon: facebook,
-  },
+  { name: 'Facebook', url: 'https://www.facebook.com/glowmiarabia', icon: facebook },
   { name: 'Instagram', url: 'https://www.instagram.com/glowmiarabia', icon: instagram },
   { name: 'linkedin', url: 'https://sa.linkedin.com/company/glowmi-arabial', icon: linkedin },
   { name: 'TikTok', url: 'https://www.tiktok.com/@glowmiarabia', icon: tiktok },
@@ -30,7 +26,8 @@ const contactEmail = 'info@glowmi.net'
 type Props = {} & React.ComponentPropsWithRef<'footer'>
 
 export const NewFooter = async ({ className, ...props }: Props) => {
-  const t = await getTranslations('home.footer')
+  const tHome = await getTranslations('home.footer')
+  const tShared = await getTranslations('shared.footer')
 
   return (
     <footer
@@ -47,25 +44,25 @@ export const NewFooter = async ({ className, ...props }: Props) => {
             href="/"
             className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
           >
-            {t('nav.home')}
+            {tHome('nav.home')}
           </Link>
           <Link
             href="/about-us"
             className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
           >
-            {t('nav.aboutUs')}
+            {tHome('nav.aboutUs')}
           </Link>
           <Link
             href="/privacy-policy"
             className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
           >
-            {t('legal.privacyPolicy')}
+            {tHome('legal.privacyPolicy')}
           </Link>
           <Link
             href="/terms-conditions"
             className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
           >
-            {t('legal.termsConditions')}
+            {tHome('legal.termsConditions')}
           </Link>
         </nav>
 
@@ -73,12 +70,12 @@ export const NewFooter = async ({ className, ...props }: Props) => {
         <div className="mb-12 grid grid-cols-1 items-end gap-8 md:mb-16 md:grid-cols-3 md:gap-12 lg:mb-20 lg:gap-47">
           {/* Left Contact */}
           <div className="flex flex-col gap-4 text-center md:text-left">
-            <p className="text-lg font-normal md:text-xl lg:text-xl">{t('contact.title')}</p>
+            <p className="text-lg font-normal md:text-xl lg:text-xl">{tHome('contact.title')}</p>
             <a
               href={`mailto:${contactEmail}`}
               className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-xl"
             >
-              {t('contact.email')}: {contactEmail}
+              {tHome('contact.email')}: {contactEmail}
             </a>
           </div>
 
@@ -91,24 +88,24 @@ export const NewFooter = async ({ className, ...props }: Props) => {
               height={80}
               className="h-16 w-16 md:h-20 md:w-20"
             />
-            <p className="text-xl font-normal md:text-2xl lg:text-[28px]">Science with Soul</p>
+            <p className="text-xl font-normal md:text-2xl lg:text-[28px]">{tShared('heading')}</p>
           </div>
 
           {/* Right Contact */}
           <div className="flex flex-col gap-4 text-center md:text-right">
-            <p className="text-lg font-normal md:text-xl lg:text-xl">{t('contact.title')}</p>
+            <p className="text-lg font-normal md:text-xl lg:text-xl">{tHome('contact.title')}</p>
             <a
               href={`mailto:${contactEmail}`}
               className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-xl"
             >
-              {t('contact.email')}: {contactEmail}
+              {tHome('contact.email')}: {contactEmail}
             </a>
           </div>
         </div>
 
         {/* Bottom Section - Follow Us */}
         <div className="flex flex-col items-center gap-6">
-          <p className="text-lg font-bold md:text-xl lg:text-xl">Follow Us</p>
+          <p className="text-lg font-bold md:text-xl lg:text-xl">{tShared('cta')}</p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
               <a
