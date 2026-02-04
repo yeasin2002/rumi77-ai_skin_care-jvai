@@ -1,9 +1,10 @@
-import { ComingSoonHero } from './coming-soon-hero'
+import { NewComingSoonHero } from './new-coming-soon-hero'
 
 export default async function HomePage() {
   return (
     <>
-      <ComingSoonHero />
+      {/* <ComingSoonHero /> */}
+      <NewComingSoonHero />
     </>
   )
 }
