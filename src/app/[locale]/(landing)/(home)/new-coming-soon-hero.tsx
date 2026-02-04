@@ -1,4 +1,4 @@
-import heroBg from '@/assets/image/coming-soon-hero-bg.png'
+import heroBg from '@/assets/image/new-coming-soon.png'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
@@ -12,6 +12,7 @@ export const NewComingSoonHero = async ({ className, ...props }: Props) => {
       className={cn('relative flex min-h-[600px] w-full items-center md:min-h-[700px]', className)}
       {...props}
     >
+      <div className="absolute inset-0 z-0 min-h-screen w-full"></div>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

@@ -35,7 +35,7 @@ export const NewFooter = async ({ className, ...props }: Props) => {
   return (
     <footer
       className={cn(
-        'font-caudex relative w-full border-t border-white bg-black py-12 text-white md:py-16 lg:py-20',
+        'font-caudex relative w-full bg-black py-12 text-white md:py-16 lg:py-20',
         className
       )}
       {...props}
