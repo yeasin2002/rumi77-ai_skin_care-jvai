@@ -1,23 +1,52 @@
 'use client'
 
 import createProfileBg from '@/assets/image/modals/complete-profile-image.png'
-import { AlertDialogContent } from '@/components/ui/alert-dialog'
 import { ChevronDown, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import type { Dispatch, SetStateAction } from 'react'
+import { useEffect } from 'react'
 
 type CreateAccountModalProps = {
   setOpen: Dispatch<SetStateAction<boolean>>
   open: boolean
+  onSubmit?: () => void
 }
 
-export const CreateAccountModal = ({ setOpen }: CreateAccountModalProps) => {
+export const CreateAccountModal = ({ setOpen, open, onSubmit }: CreateAccountModalProps) => {
   const t = useTranslations('home.createAccountDialog')
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [open])
+
+  if (!open) return null
+
+  const handleSubmit = () => {
+    setOpen(false)
+    onSubmit?.()
+  }
+
   return (
-    <AlertDialogContent className="max-w-[850px] gap-0 overflow-hidden border-none bg-transparent p-0">
-      <div style={{ backgroundImage: `url${createProfileBg.src}` }}>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      onClick={() => setOpen(false)}
+    >
+      <div
+        className="relative w-full max-w-[850px] overflow-hidden rounded-lg shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          backgroundImage: `url(${createProfileBg.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         {/* Close Button */}
         <button
           type="button"
@@ -130,16 +159,13 @@ export const CreateAccountModal = ({ setOpen }: CreateAccountModalProps) => {
           {/* CTA Button */}
           <button
             type="button"
-            onClick={() => {
-              // Handle form submission
-              setOpen(false)
-            }}
+            onClick={handleSubmit}
             className="mx-auto mt-4 flex h-[38px] w-64 items-center justify-center rounded-full bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-gray-900"
           >
             {t('cta')}
           </button>
         </div>
       </div>
-    </AlertDialogContent>
+    </div>
   )
 }

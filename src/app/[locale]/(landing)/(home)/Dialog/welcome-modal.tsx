@@ -1,19 +1,38 @@
 'use client'
 
 import logoImg from '@/assets/icons/logo/logo-mini-dark.svg'
-import { AlertDialogContent } from '@/components/ui/alert-dialog'
 import { X } from 'lucide-react'
 import Image from 'next/image'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useEffect } from 'react'
 
 type WelcomeModalProps = {
   setOpen: Dispatch<SetStateAction<boolean>>
   open: boolean
 }
 
-export const WelcomeModal = ({ setOpen }: WelcomeModalProps) => {
+export const WelcomeModal = ({ setOpen, open }: WelcomeModalProps) => {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [open])
+
+  if (!open) return null
+
   return (
-    <AlertDialogContent className="w-[92vw] max-w-245 gap-0 border-none bg-white p-0 ring-0">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      onClick={() => setOpen(false)}
+    >
+      <div
+        className="relative w-[92vw] max-w-[980px] overflow-hidden rounded-lg bg-white shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+      >
       <div className="relative flex flex-col items-center bg-white px-6 pt-14 pb-12 text-center sm:px-12 sm:pt-16 sm:pb-14">
         <button
           type="button"
@@ -60,6 +79,6 @@ export const WelcomeModal = ({ setOpen }: WelcomeModalProps) => {
           <p className="font-caudex text-sm text-black/70 sm:text-base">Thank You</p>
         </div>
       </div>
-    </AlertDialogContent>
+    </div>
   )
 }
