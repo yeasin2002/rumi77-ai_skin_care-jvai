@@ -14,7 +14,7 @@ export const BeMemberModal = ({ setOpen }: BeMemberProps) => {
   const t = useTranslations('home.beMemberDialog')
 
   return (
-    <AlertDialogContent className="max-w-[850px] gap-0 overflow-hidden border-none p-0">
+    <AlertDialogContent className="gap-0 overflow-hidden border-none p-0">
       <div className="relative flex min-h-[484px] flex-col items-stretch bg-white md:flex-row">
         {/* Close Button */}
         <button
@@ -27,7 +27,7 @@ export const BeMemberModal = ({ setOpen }: BeMemberProps) => {
         </button>
 
         {/* Left Side - Video */}
-        <div className="relative h-[250px] w-full overflow-hidden rounded-full md:h-auto md:w-[377px] md:rounded-none">
+        <div className="relative w-full overflow-hidden rounded-full md:h-auto md:w-[377px] md:rounded-none">
           <video
             src="/dialog/be-member-video.mp4"
             autoPlay
