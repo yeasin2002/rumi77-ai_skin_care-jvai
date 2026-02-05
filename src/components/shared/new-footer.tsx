@@ -13,8 +13,15 @@ import facebook from '@/assets/icons/social/lucide_facebook.svg'
 import instagram from '@/assets/icons/social/mynaui_instagram.svg'
 import linkedin from '@/assets/icons/social/ri_linkedin-fill.svg'
 
+const footerLinks = [
+  { href: '/', label: 'nav.home' },
+  { href: '/coming-soon', label: 'nav.aboutUs' },
+  { href: '/coming-soon', label: 'legal.privacyPolicy' },
+  { href: '/coming-soon', label: 'legal.termsConditions' },
+] as const
+
 const socialLinks = [
-  { name: 'Facebook', url: 'https://www.facebook.com/glowmiarabia', icon: facebook },
+  { name: 'Facebook', url: 'https://www.facebook.com', icon: facebook },
   { name: 'Instagram', url: 'https://www.instagram.com/glowmiarabia', icon: instagram },
   { name: 'linkedin', url: 'https://sa.linkedin.com/company/glowmi-arabial', icon: linkedin },
   { name: 'TikTok', url: 'https://www.tiktok.com/@glowmiarabia', icon: tiktok },
@@ -40,30 +47,15 @@ export const NewFooter = async ({ className, ...props }: Props) => {
       <div className="container mx-auto px-4 md:px-6 lg:px-20">
         {/* Top Navigation Links - Centered */}
         <nav className="mb-12 flex flex-wrap items-center justify-center gap-6 text-center md:mb-16 md:gap-12 lg:mb-20 lg:gap-37.5">
-          <Link
-            href="/"
-            className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
-          >
-            {tHome('nav.home')}
-          </Link>
-          <Link
-            href="/about-us"
-            className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
-          >
-            {tHome('nav.aboutUs')}
-          </Link>
-          <Link
-            href="/privacy-policy"
-            className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
-          >
-            {tHome('legal.privacyPolicy')}
-          </Link>
-          <Link
-            href="/terms-conditions"
-            className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
-          >
-            {tHome('legal.termsConditions')}
-          </Link>
+          {footerLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-2xl"
+            >
+              {tHome(link.label)}
+            </Link>
+          ))}
         </nav>
 
         {/* Middle Section - Contact, Logo, Contact */}

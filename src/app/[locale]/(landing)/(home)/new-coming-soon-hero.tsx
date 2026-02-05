@@ -12,7 +12,7 @@ export const NewComingSoonHero = async ({ className, ...props }: Props) => {
   const t = await getTranslations('home.hero')
   return (
     <section
-      className={cn('relative flex min-h-[600px] w-full items-center md:min-h-[700px]', className)}
+      className={cn('relative flex min-h-150 w-full items-center md:min-h-screen', className)}
       {...props}
     >
       <div className="absolute inset-0 z-0 min-h-screen w-full"></div>
@@ -29,16 +29,15 @@ export const NewComingSoonHero = async ({ className, ...props }: Props) => {
       </div>
 
       {/* Content - Right Side */}
-      <div className="relative z-10 ml-auto flex w-full flex-col items-center justify-center gap-8 px-6 text-center md:w-1/2 md:items-start md:px-12 md:text-left lg:gap-10 lg:px-20">
+      <div className="relative z-10 ml-auto flex w-full flex-col items-center justify-center gap-8 px-6 text-center whitespace-nowrap md:w-2xl md:px-12 lg:gap-10 lg:pr-32">
         {/* Title */}
-        <h1 className="font-caudex text-3xl font-normal text-black md:text-4xl">{t('title')}</h1>
+        <h1 className="font-caudex text-3xl font-normal text-black md:text-5xl">{t('title')}</h1>
 
         {/* CTA Button */}
         <Link
           href={'/'}
           className={buttonVariants({
-            className:
-              'bg-black px-12 py-6 text-base font-normal text-white transition-opacity hover:bg-black hover:opacity-90 md:text-lg xl:ml-32',
+            className: 'font-caudex bg-black! px-12 py-6 text-lg md:text-lg',
           })}
         >
           {t('cta')}
