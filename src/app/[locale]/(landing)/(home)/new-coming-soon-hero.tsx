@@ -39,9 +39,20 @@ export const NewComingSoonHero = async ({ className, ...props }: Props) => {
       </div>
 
       {/* Content - Right Side */}
-      <div className="relative z-10 ml-auto flex w-full flex-col items-end justify-center gap-8 px-6 whitespace-nowrap md:w-2xl md:items-center md:px-12 lg:gap-10 lg:pr-32 lg:text-center">
+      <div
+        className={cn(
+          'relative z-10 ml-auto flex w-full flex-col items-end justify-center gap-8 px-6 whitespace-nowrap',
+          'md:w-3xl md:items-center lg:gap-14'
+        )}
+      >
         {/* Title */}
-        <h1 className="font-caudex whip max-w-4/5 items-end justify-end text-center text-xl font-normal whitespace-pre-wrap text-black md:text-5xl">
+        <h1
+          className={cn(
+            'font-caudex text-xl font-normal text-black',
+            'max-w-4/5 items-end justify-end text-center whitespace-pre-wrap',
+            'md:max-w-full md:text-5xl md:whitespace-nowrap'
+          )}
+        >
           {t('title')}
         </h1>
 
