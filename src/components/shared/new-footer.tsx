@@ -46,7 +46,7 @@ export const NewFooter = async ({ className, ...props }: Props) => {
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-20">
         {/* Top Navigation Links - Centered */}
-        <nav className="mb-12 flex flex-wrap items-center justify-center gap-6 text-center md:mb-16 md:gap-12 lg:mb-20 lg:gap-37.5">
+        <nav className="mb-12 flex flex-col flex-wrap items-center justify-center gap-6 text-center md:mb-16 md:flex-row md:gap-12 lg:mb-20 lg:gap-37.5">
           {footerLinks.map((link) => (
             <Link
               key={link.href}
