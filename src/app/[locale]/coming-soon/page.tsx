@@ -1,6 +1,7 @@
 import logoCompact from '@/assets/icons/logo/logo-mini-dark.svg'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function ComingSoonPage() {
   const t = await getTranslations('comingSoon')
@@ -9,7 +10,7 @@ export default async function ComingSoonPage() {
     <div className="flex min-h-screen items-center justify-center bg-[#f5f4f3] px-4 py-16">
       <div className="flex max-w-2xl flex-col items-center text-center">
         {/* Logo */}
-        <div className="mb-12">
+        <Link className="mb-12" href={'/'}>
           <Image
             src={logoCompact}
             alt="Glowmi Logo"
@@ -18,7 +19,7 @@ export default async function ComingSoonPage() {
             className="h-20 w-20"
             priority
           />
-        </div>
+        </Link>
 
         {/* Title */}
         <h1 className="font-caudex mb-8 text-4xl font-normal text-black md:text-5xl lg:text-6xl">
@@ -43,9 +44,7 @@ export default async function ComingSoonPage() {
         </div>
 
         {/* Bottom Tagline */}
-        <p className="font-caudex text-sm text-black/70 md:text-base">
-          The Essence of Timeless Glow
-        </p>
+        <p className="font-caudex text-sm text-black/70 md:text-base">{t('tagline')}</p>
       </div>
     </div>
   )
