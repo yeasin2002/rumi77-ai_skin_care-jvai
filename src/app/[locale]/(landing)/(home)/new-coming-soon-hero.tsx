@@ -2,15 +2,15 @@ import heroBgForMobile from '@/assets/image/new-coming-soon-mobile.jpg'
 import heroBg from '@/assets/image/new-coming-soon.png'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { getTranslations } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 type Props = {} & React.ComponentPropsWithRef<'section'>
 
-export const NewComingSoonHero = async ({ className, ...props }: Props) => {
-  const t = await getTranslations('home.hero')
+export const NewComingSoonHero = ({ className, ...props }: Props) => {
+  const t = useTranslations('home.hero')
   return (
     <section
       className={cn('relative flex min-h-61.25 w-full items-center md:min-h-[120vh]', className)}

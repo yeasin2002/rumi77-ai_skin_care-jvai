@@ -182,6 +182,33 @@
     "email": "glowmi@gmail.com",
     "phone": "3251358133"
   },
+  "beMemberDialog": {
+    "title": "Join Glowmi Circle",
+    "subtitle": "Become an exclusive member of Glowmi's skincare community.",
+    "firstOffer": "The first 500 members will receive their first order complimentary.",
+    "benefits": "All members enjoy a lifetime 20% privilege by using their membership ID on every Glowmi protocol, along with early access to launches, exclusive rewards, and personalized skincare guidance.",
+    "cta": "Join the Circle"
+  },
+  "createAccountDialog": {
+    "title": "Your skin decoded",
+    "subtitle": "Complete your profile to unlock.",
+    "offer": "Join the Glowmi Circle and receive your first order complimentary",
+    "fields": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Name",
+      "email": "Email",
+      "emailPlaceholder": "Address",
+      "contactNumber": "Contact Number",
+      "contactNumberPlaceholder": "Contact number",
+      "skinType": "Skin Type",
+      "skinTypePlaceholder": "Select",
+      "birthday": "Birthday",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
+    },
+    "cta": "Enter the Circle"
+  },
   "footer": {
     "tagline": "The Essence of Timeless Glow",
     "copyright": "Glowmi. All rights reserved. Coming Soon.",
