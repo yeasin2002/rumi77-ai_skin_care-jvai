@@ -3,6 +3,7 @@
 import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { ReactNode, useEffect } from 'react'
+import { cn } from '../../../../../lib/utils'
 
 type ModalContainerProps = {
   isOpen: boolean
@@ -16,7 +17,7 @@ export const ModalContainer = ({
   isOpen,
   onClose,
   children,
-  maxWidth = 'max-w-[900px]',
+  maxWidth = 'max-w-[56.25rem]',
   showCloseButton = true,
 }: ModalContainerProps) => {
   useEffect(() => {
@@ -46,7 +47,9 @@ export const ModalContainer = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className={`relative w-full ${maxWidth} overflow-hidden rounded-lg bg-white shadow-xl`}
+            className={cn(
+              `relative w-full ${maxWidth} overflow-hidden rounded-lg bg-white shadow-xl`
+            )}
             onClick={(e) => e.stopPropagation()}
           >
             {showCloseButton && (

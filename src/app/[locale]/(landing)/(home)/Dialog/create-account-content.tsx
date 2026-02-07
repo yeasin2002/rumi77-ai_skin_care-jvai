@@ -13,15 +13,16 @@ export const CreateAccountContent = ({ onSubmit }: CreateAccountContentProps) =>
 
   return (
     <div
-      className="relative min-h-[484px]"
+      className="relative grid min-h-[484px] grid-cols-2"
       style={{
         backgroundImage: `url(${createProfileBg.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+      <div></div>
       {/* Form Content */}
-      <div className="flex flex-col gap-6 bg-white/20 p-6 backdrop-blur-sm md:p-12">
+      <div className="flex flex-col gap-6 bg-white/20 p-6 backdrop-blur-[1px] md:p-12">
         {/* Header */}
         <div className="flex flex-col gap-8 text-center text-black">
           <div className="text-xl">

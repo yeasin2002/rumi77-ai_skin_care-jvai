@@ -1,6 +1,9 @@
 'use client'
 
+import joinModalIcon from '@/assets/image/Join-modal-icon.png'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+import { Button } from '../../../../../components/ui'
 
 type BeMemberContentProps = {
   onJoinClick: () => void
@@ -10,9 +13,9 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
   const t = useTranslations('home.beMemberDialog')
 
   return (
-    <div className="relative flex min-h-[484px] flex-col items-stretch md:flex-row">
+    <div className="relative grid grid-cols-2">
       {/* Left Side - Video */}
-      <div className="relative w-full overflow-hidden md:h-auto md:w-[377px]">
+      <div className="relative w-full overflow-hidden md:h-auto">
         <video
           src="/dialog/be-member-video.mp4"
           autoPlay
@@ -20,6 +23,9 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
           muted
           playsInline
           className="size-full object-cover"
+          style={{
+            clipPath: 'ellipse(50% 50% at 50% 50%)',
+          }}
         />
       </div>
 
@@ -27,8 +33,8 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
       <div className="flex flex-1 flex-col items-center justify-center gap-12 px-6 py-8 md:px-12 md:py-16">
         {/* Header */}
         <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="text-4xl font-normal text-black">{t('title')}</h2>
-          <p className="max-w-[348px] text-base text-[#3e4259]">{t('subtitle')}</p>
+          <h2 className="font-leto text-4xl font-normal text-black">{t('title')}</h2>
+          <p className="max-w-[348px] text-base text-[#3E4259]">{t('subtitle')}</p>
         </div>
 
         {/* Benefits Section */}
@@ -37,20 +43,7 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
             {/* First Offer with Icon */}
             <div className="flex items-start gap-2">
               <div className="relative size-8 shrink-0">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <circle cx="16" cy="16" r="16" fill="#1a2e1a" />
-                  <path
-                    d="M16 8L18.5 13L24 14L20 18L21 24L16 21L11 24L12 18L8 14L13.5 13L16 8Z"
-                    fill="white"
-                  />
-                </svg>
+                <Image src={joinModalIcon} alt="Image" />
               </div>
               <p className="text-base text-[#3e4259]">{t('firstOffer')}</p>
             </div>
