@@ -9,7 +9,7 @@ type ModalContainerProps = {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
-  maxWidth?: string
+  className?: string
   showCloseButton?: boolean
 }
 
@@ -17,7 +17,7 @@ export const ModalContainer = ({
   isOpen,
   onClose,
   children,
-  maxWidth = 'max-w-[56.25rem]',
+  className = '',
   showCloseButton = true,
 }: ModalContainerProps) => {
   useEffect(() => {
@@ -48,7 +48,8 @@ export const ModalContainer = ({
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className={cn(
-              `relative w-full ${maxWidth} overflow-hidden rounded-lg bg-white shadow-xl`
+              `relative w-full max-w-225 overflow-hidden rounded-lg bg-white shadow-xl`,
+              className
             )}
             onClick={(e) => e.stopPropagation()}
           >

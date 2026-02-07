@@ -8,7 +8,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 font-leto;
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
@@ -40,5 +40,10 @@
   /* nav  */
   .global-nav-link {
     @apply hover:text-main-button text-main-primary-base_light text-xl transition-colors;
+  }
+
+  /* coming-soon page */
+  .coming-create-modal-input {
+    @apply h-[38px] w-64 rounded-full bg-white! px-5 py-2 text-sm text-black placeholder:text-black focus:ring-2 focus:ring-black/20 focus:outline-none;
   }
 }
