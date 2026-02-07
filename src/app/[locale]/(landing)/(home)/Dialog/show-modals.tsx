@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { BeMemberModal } from './Dialog/be-member'
-import { CreateAccountModal } from './Dialog/create-account'
-import { WelcomeModal } from './Dialog/welcome-modal'
+import { BeMemberModal } from './be-member'
+import { CreateAccountModal } from './create-account'
+import { WelcomeModal } from './welcome-modal'
 
 export const ShowModals = () => {
   const [beMemberOpen, setBeMemberOpen] = useState(false)

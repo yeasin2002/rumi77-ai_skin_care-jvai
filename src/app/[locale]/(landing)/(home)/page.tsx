@@ -1,7 +1,7 @@
 'use client'
 
+import { ShowModals } from './Dialog/show-modals'
 import { NewComingSoonHero } from './new-coming-soon-hero'
-import { ShowModals } from './show-modals'
 
 export default function HomePage() {
   return (
