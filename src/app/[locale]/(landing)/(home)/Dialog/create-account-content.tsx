@@ -1,13 +1,16 @@
 'use client'
 
+import { useCreateTempInfo } from '@/api/api-hooks/member.api-hook'
 import createProfileBg from '@/assets/image/modals/complete-profile-image.png'
 import { lato } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ChevronDown } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { Dispatch, SetStateAction } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { ModalStep } from '../show-modals'
 
 const createAccountSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
@@ -44,10 +47,10 @@ const createAccountSchema = z.object({
 type CreateAccountFormData = z.infer<typeof createAccountSchema>
 
 type CreateAccountContentProps = {
-  onSubmit: (data: CreateAccountFormData) => void
+  setCurrentStep: Dispatch<SetStateAction<ModalStep>>
 }
 
-export const CreateAccountContent = ({ onSubmit }: CreateAccountContentProps) => {
+export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentProps) => {
   const t = useTranslations('home.createAccountDialog')
 
   const {
@@ -59,8 +62,28 @@ export const CreateAccountContent = ({ onSubmit }: CreateAccountContentProps) =>
     mode: 'onBlur',
   })
 
+  const { mutate: createTempInfo, isPending } = useCreateTempInfo()
+
   const onFormSubmit = (data: CreateAccountFormData) => {
-    onSubmit(data)
+    // Format birthday as YYYY-MM-DD
+    const birthday = `${data.year}-${data.month.padStart(2, '0')}-${data.day.padStart(2, '0')}`
+
+    // Map form data to API format
+    createTempInfo(
+      {
+        full_name: data.fullName,
+        email: data.email,
+        contact_number: data.contactNumber,
+        skin_type: data.skinType,
+        birthday: birthday,
+        lean: 'EN', // Default language, you can make this dynamic based on locale
+      },
+      {
+        onSuccess: () => {
+          setCurrentStep('welcome')
+        },
+      }
+    )
   }
 
   return (
@@ -234,9 +257,10 @@ export const CreateAccountContent = ({ onSubmit }: CreateAccountContentProps) =>
         {/* CTA Button */}
         <button
           type="submit"
-          className="mx-auto mt-4 flex h-[38px] w-64 items-center justify-center rounded-full bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-gray-900"
+          disabled={isPending}
+          className="mx-auto mt-4 flex h-[38px] w-64 cursor-pointer items-center justify-center rounded-full bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {t('cta')}
+          {isPending ? t('submitting') || 'Submitting...' : t('cta')}
         </button>
       </div>
     </form>

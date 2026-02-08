@@ -6,7 +6,7 @@ import { CreateAccountContent } from './Dialog/create-account-content'
 import { ModalContainer } from './Dialog/modal-container'
 import { WelcomeContent } from './Dialog/welcome-content'
 
-type ModalStep = 'be-member' | 'create-account' | 'welcome' | null
+export type ModalStep = 'be-member' | 'create-account' | 'welcome' | null
 
 export const ShowModals = () => {
   const [currentStep, setCurrentStep] = useState<ModalStep>(null)
@@ -28,13 +28,12 @@ export const ShowModals = () => {
     setCurrentStep('create-account')
   }
 
-  const handleFormSubmit = async () => {
-    // TODO: Add API call here in the future
-    // const response = await api.createAccount(formData)
-    // if (response.success) {
-    setCurrentStep('welcome')
-    // }
-  }
+  // const handleFormSubmit = async () => {
+  // const response = await api.createAccount(formData)
+  // if (response.success) {
+  // setCurrentStep('welcome')
+  // }
+  // }
 
   return (
     <ModalContainer
@@ -43,7 +42,7 @@ export const ShowModals = () => {
       // maxWidth={currentStep === 'welcome' ? 'max-w-[980px]' : 'max-w-[900px]'}
     >
       {currentStep === 'be-member' && <BeMemberContent onJoinClick={handleJoinClick} />}
-      {currentStep === 'create-account' && <CreateAccountContent onSubmit={handleFormSubmit} />}
+      {currentStep === 'create-account' && <CreateAccountContent setCurrentStep={setCurrentStep} />}
       {currentStep === 'welcome' && <WelcomeContent />}
     </ModalContainer>
   )

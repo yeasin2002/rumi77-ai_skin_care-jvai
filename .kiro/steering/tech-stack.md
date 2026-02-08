@@ -123,7 +123,7 @@ npm run knip          # Unused code check
 - Use TanStack Query's `useQuery` for GET requests
 - Use TanStack Query's `useMutation` for POST/PUT/PATCH/DELETE
 - Implement query keys for caching
-- Handle success/error with Sonner toast notifications
+- Handle success/error with react-hot-toast notifications
 - Invalidate related queries on mutations
 
 ### Form Handling
