@@ -1,11 +1,12 @@
 'use client'
 
-// import { useScan } from 'react-scan'
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import type { AbstractIntlMessages } from 'next-intl'
 import { NextIntlClientProvider } from 'next-intl'
 import React from 'react'
 
+const queryClient = new QueryClient()
 export const RootWrapper = ({
   children,
   locale,
@@ -17,13 +18,13 @@ export const RootWrapper = ({
   messages: AbstractIntlMessages
   timeZone: string
 }) => {
-  // uncomment if you  want to use react-scan, this can be annoying sometimes - so by default it's disabled
-  //   useScan({ enabled: process.env.NODE_ENV === 'development' })
   return (
     <>
-      {/* <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange> */}
       <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
       </NextIntlClientProvider>
     </>
   )

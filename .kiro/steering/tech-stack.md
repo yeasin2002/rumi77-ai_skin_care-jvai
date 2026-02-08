@@ -98,14 +98,6 @@ npm run start         # Production server
 npm run type-check    # TypeScript check
 ```
 
-### Testing
-
-```bash
-npm run test          # Unit tests
-npm run test:coverage # With coverage
-npm run test:e2e      # E2E tests
-npm run test:e2e:ui   # E2E with UI
-```
 
 ### Quality
 
@@ -116,16 +108,27 @@ npm run format        # Prettier format
 npm run knip          # Unused code check
 ```
 
-### Storybook
 
-```bash
-npm run storybook       # Dev server
-npm run build-storybook # Build
-```
 
-## Environment Variables
+## API Integration Patterns
 
-```env
-NEXT_PUBLIC_API_URL=    # Backend API base URL
-NEXT_PUBLIC_APP_URL=    # Frontend app URL
-```
+### Query List Files (`src/api/query-list/`)
+
+- Define TypeScript interfaces for API responses
+- Create API functions using axiosClient
+- Export interfaces and API object
+
+### API Hooks (`src/api/api-hooks/`)
+
+- Use TanStack Query's `useQuery` for GET requests
+- Use TanStack Query's `useMutation` for POST/PUT/PATCH/DELETE
+- Implement query keys for caching
+- Handle success/error with Sonner toast notifications
+- Invalidate related queries on mutations
+
+### Form Handling
+
+- Use React Hook Form with Zod resolver
+- Define validation schemas in `src/validations/`
+- Use FormInput component for consistent form fields
+- Handle loading states during form submission

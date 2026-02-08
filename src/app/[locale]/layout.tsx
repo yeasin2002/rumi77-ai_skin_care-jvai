@@ -5,11 +5,10 @@ import type React from 'react'
 import '../../styles/globals.css'
 
 import { routing } from '@/i18n/routing'
-import { fonts, lato } from '@/lib/fonts'
+import { lato } from '@/lib/fonts'
 import { hasLocale } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { cn } from '../../lib/utils'
 import { RootWrapper } from './root-wrapper'
 
 export default async function RootLayout({

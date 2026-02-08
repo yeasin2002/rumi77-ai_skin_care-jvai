@@ -1,13 +1,13 @@
 'use client'
 
 import createProfileBg from '@/assets/image/modals/complete-profile-image.png'
+import { lato } from '@/lib/fonts'
+import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ChevronDown } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { lato } from '../../../../../lib/fonts'
-import { cn } from '../../../../../lib/utils'
 
 const createAccountSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
