@@ -1,6 +1,6 @@
 'use client'
 
-import logoLight from '@/assets/icons/logo-light.png'
+import logoLight from '@/assets/icons/logo-full-dark.png'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Link } from '@/i18n/navigation'
 import { LogOut, Menu } from 'lucide-react'
@@ -28,11 +28,11 @@ const dashboardNavList = [
 
 export const DashboardNav = () => {
   return (
-    <header className="bg-main-button flex items-center justify-between border-b-2 border-white/40 px-4 py-4 lg:px-20">
+    <header className="bg-main-button flex items-center justify-between border-b-2 border-white/40 px-4 py-4 text-white lg:px-20">
       {/* Logo and tagline */}
       <div className="flex flex-col gap-1 lg:gap-3">
         <Image src={logoLight} alt="Logo" className="max-w-24 lg:max-w-none" />
-        <p className="hidden text-sm text-white/60 lg:ml-10 lg:block">
+        <p className="hidden text-sm text-black/60 lg:ml-10 lg:block">
           Monitor user interactions and skincare analytics
         </p>
       </div>
@@ -92,6 +92,9 @@ export const DashboardNav = () => {
               >
                 <LogOut className="size-5" />
                 <span>Logout</span>
+              </button>
+              <button>
+                <LogOut />
               </button>
             </div>
           </SheetContent>

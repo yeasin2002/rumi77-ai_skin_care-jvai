@@ -1,17 +1,34 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type { AxiosError } from 'axios'
-import { memberApi, type CreateTempInfoData } from '../query-list/member.query'
+import {
+  memberApi,
+  type CreateTempInfoData,
+  type TempInfoFilters,
+} from '../query-list/member.query'
 
 // ============================================
 // 1. Query Keys (Centralized)
 // ============================================
 
 const MEMBER_KEYS = {
+  all: (filters?: TempInfoFilters) => ['temp-info', filters] as const,
   tempInfo: () => ['temp-info'] as const,
 }
 
 // ============================================
-// 2. Mutation Hooks (POST)
+// 2. Query Hooks (GET)
+// ============================================
+
+export const useTempInfoList = (filters?: TempInfoFilters) => {
+  return useQuery({
+    queryKey: MEMBER_KEYS.all(filters),
+    queryFn: () => memberApi.getAll(filters),
+    select: (response) => response.data,
+  })
+}
+
+// ============================================
+// 3. Mutation Hooks (POST)
 // ============================================
 
 export const useCreateTempInfo = () => {
@@ -21,7 +38,7 @@ export const useCreateTempInfo = () => {
     mutationFn: (data: CreateTempInfoData) => memberApi.createTempInfo(data),
 
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: MEMBER_KEYS.tempInfo() })
+      queryClient.invalidateQueries({ queryKey: ['temp-info'] })
     },
 
     onError: (error: AxiosError<{ message?: string; detail?: string }>) => {

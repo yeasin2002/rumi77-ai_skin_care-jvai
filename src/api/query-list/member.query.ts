@@ -12,6 +12,8 @@ export interface TempInfo {
   skin_type: string
   birthday?: string
   lean?: string
+  created_at?: string
+  updated_at?: string
 }
 
 export interface CreateTempInfoData {
@@ -35,11 +37,35 @@ export interface TempInfoResponse {
   updated_at?: string
 }
 
+export interface TempInfoFilters {
+  page?: number
+  lean?: string
+}
+
+export interface TempInfoListResponse {
+  count: number
+  next: string | null
+  previous: string | null
+  results: TempInfoResponse[]
+}
+
 // ============================================
 // 2. API Object
 // ============================================
 
 export const memberApi = {
+  // GET - Fetch all temp info with pagination
+  getAll: (filters?: TempInfoFilters) => {
+    const params = new URLSearchParams()
+    if (filters?.page) params.append('page', filters.page.toString())
+    if (filters?.lean) params.append('lean', filters.lean)
+
+    const queryString = params.toString()
+    const url = queryString ? `/temp-info/?${queryString}` : '/temp-info/'
+
+    return axiosClient.get<TempInfoListResponse>(url)
+  },
+
   // POST - Create temp info
   createTempInfo: (data: CreateTempInfoData) => {
     const formData = new FormData()
