@@ -22,7 +22,7 @@ const MemberPage = () => {
   const { data, isLoading, error } = useTempInfoList({ page: currentPage })
 
   // Filter data based on search query
-  const filteredMembers = data?.results.filter((member) =>
+  const filteredMembers = data?.results?.data?.filter((member) =>
     member.full_name.toLowerCase().includes(searchQuery.toLowerCase())
   )
 

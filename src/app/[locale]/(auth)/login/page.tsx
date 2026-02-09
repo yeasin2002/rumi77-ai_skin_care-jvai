@@ -35,17 +35,21 @@ const Login = () => {
   })
 
   const { mutateAsync: login } = useLogin()
-  const setAuth = useAuthStore((state) => state.setAuth)
+  const setUser = useAuthStore((state) => state.setUser)
+  const setToken = useAuthStore((state) => state.setToken)
 
   const onSubmit = async (data: LoginFormData) => {
     try {
       const response = await login(data)
       const loginData = response.data?.data
+      console.log('🚀 ~ onSubmit ~ loginData:', loginData)
 
       if (loginData) {
-        setAuth(loginData)
+        setUser(loginData.user ?? null)
+        setToken({ accessToken: loginData.access, refreshToken: loginData.refresh })
+
         if (loginData.user?.role === 'admin') {
-          router.push('/admin/dashboard')
+          router.push('/dashboard')
         } else {
           router.push('/skin-analyzer/analysis')
         }

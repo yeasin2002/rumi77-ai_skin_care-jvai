@@ -35,7 +35,8 @@ const SignUp = () => {
   })
 
   const { mutateAsync: registerUser } = useRegister()
-  const setAuth = useAuthStore((state) => state.setAuth)
+  const setUser = useAuthStore((state) => state.setUser)
+  const setToken = useAuthStore((state) => state.setToken)
 
   const onSubmit = async (data: SignUpFormData) => {
     try {
@@ -43,7 +44,11 @@ const SignUp = () => {
       const registerData = response.data?.data
 
       if (registerData) {
-        setAuth(registerData)
+        setUser(registerData.user ?? null)
+        setToken({
+          accessToken: registerData.access_token,
+          refreshToken: registerData.refresh_token,
+        })
         router.push('/skin-analyzer/analysis')
       }
     } catch (error) {

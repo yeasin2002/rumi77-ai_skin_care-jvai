@@ -49,7 +49,7 @@ export const NavLinkList = ({
       <nav className="flex gap-8">
         {items.map((item) => (
           <Link
-            key={item.id}
+            key={crypto.randomUUID()}
             href={{ pathname: item.href }}
             className={cn(
               'text-main-button hover:text-main-button/80 font-open-sans flex items-center gap-2 border-b-2 pb-3 text-2xl leading-none font-normal transition-colors',

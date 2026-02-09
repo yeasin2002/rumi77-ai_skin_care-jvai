@@ -26,6 +26,14 @@ export interface RegisterQueryParams {
   lean?: string
 }
 
+export interface RefreshTokenRequestData {
+  refresh: string
+}
+
+export interface RefreshTokenQueryParams {
+  lean?: string
+}
+
 export interface LoginUser {
   id?: number
   email?: string
@@ -38,8 +46,8 @@ export interface LoginUser {
 }
 
 export interface LoginSuccessData {
-  access_token: string
-  refresh_token: string
+  access: string
+  refresh: string
   user: LoginUser
 }
 
@@ -53,6 +61,14 @@ export interface RegisterResponse {
   success: boolean
   message: string
   data: LoginSuccessData
+}
+
+export interface RefreshTokenResponse {
+  success: boolean
+  message: string
+  data: {
+    access: string
+  }
 }
 
 // ============================================
@@ -96,6 +112,24 @@ export const authApi = {
     const url = queryString ? `/register/?${queryString}` : '/register/'
 
     return axiosClient.post<RegisterResponse>(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+  },
+
+  // POST - Refresh Token
+  refresh: (data: RefreshTokenRequestData, params?: RefreshTokenQueryParams) => {
+    const formData = new FormData()
+    formData.append('refresh', data.refresh)
+
+    const queryParams = new URLSearchParams()
+    if (params?.lean) queryParams.append('lean', params.lean)
+
+    const queryString = queryParams.toString()
+    const url = queryString ? `/refresh/?${queryString}` : '/refresh/'
+
+    return axiosClient.post<RefreshTokenResponse>(url, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

@@ -46,7 +46,11 @@ export interface TempInfoListResponse {
   count: number
   next: string | null
   previous: string | null
-  results: TempInfoResponse[]
+  results: {
+    data?: TempInfoResponse[]
+    message: string
+    success: true
+  }
 }
 
 // ============================================
