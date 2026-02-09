@@ -1,8 +1,10 @@
 'use client'
 
+import { useLogin } from '@/api/api-hooks/auth.api-hook'
 import { AuthInput } from '@/components/shared'
 import { Button } from '@/components/ui'
 import { Link } from '@/i18n/navigation'
+import { useAuthStore } from '@/store/auth.store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft, Lock, Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -32,10 +34,25 @@ const Login = () => {
     resolver: zodResolver(loginSchema),
   })
 
+  const { mutateAsync: login } = useLogin()
+  const setAuth = useAuthStore((state) => state.setAuth)
+
   const onSubmit = async (data: LoginFormData) => {
-    // TODO: API integration
-    console.log(data)
-    router.push('/skin-analyzer/analysis')
+    try {
+      const response = await login(data)
+      const loginData = response.data?.data
+
+      if (loginData) {
+        setAuth(loginData)
+        if (loginData.user?.role === 'admin') {
+          router.push('/admin/dashboard')
+        } else {
+          router.push('/skin-analyzer/analysis')
+        }
+      }
+    } catch (error) {
+      console.log('🚀 ~ onSubmit ~ error:', error)
+    }
   }
 
   return (
