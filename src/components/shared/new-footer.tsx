@@ -66,8 +66,9 @@ export const NewFooter = async ({ className, ...props }: Props) => {
             <a
               href={`mailto:${contactEmail}`}
               className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-xl"
+              style={{ direction: 'ltr' }}
             >
-              {tHome('contact.email')}: {contactEmail}
+              <span>{tHome('contact.email')}:</span> <span> {contactEmail}</span>
             </a>
           </div>
 
@@ -90,7 +91,7 @@ export const NewFooter = async ({ className, ...props }: Props) => {
               href={`mailto:${contactEmail}`}
               className="text-lg font-normal transition-opacity hover:opacity-70 md:text-xl lg:text-xl"
             >
-              {tHome('contact.email')}: {contactEmail}
+              <span>{tHome('contact.email')}:</span> <span> {contactEmail}</span>
             </a>
           </div>
         </div>
