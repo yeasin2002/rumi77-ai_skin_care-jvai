@@ -9,13 +9,13 @@ import icon8 from '@/assets/icons/settings-light.svg'
 import icon4 from '@/assets/icons/shop-bags.svg'
 import icon2 from '@/assets/icons/tags.svg'
 import icon5 from '@/assets/icons/users.svg'
-import { DashboardNav } from '../../../components/dashboard/dashboard-nav'
+import { DashboardNav } from '@/components/dashboard/dashboard-nav'
 import { DashboardGuards } from './dashboard-guards'
 
 const dashboardNavList = [
   { id: 1, icon: icon1, label: 'Dashboard', href: '/dashboard' },
-  { id: 2, icon: icon9, label: 'Category', href: '/dashboard/category' },
-  { id: 2, icon: icon2, label: 'Member', href: '/dashboard/member' },
+  { id: 2, icon: icon2, label: 'Category', href: '/dashboard/category' },
+  { id: 2, icon: icon9, label: 'Member', href: '/dashboard/member' },
   { id: 3, icon: icon3, label: 'Products', href: '/dashboard/products' },
   { id: 4, icon: icon4, label: 'Orders', href: '/dashboard/orders' },
   { id: 5, icon: icon5, label: 'Customer', href: '/dashboard/customer' },
