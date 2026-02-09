@@ -34,8 +34,7 @@
     "test:watch": "vitest --watch",
     "type-check": "tsc --noEmit",
     "knip": "knip",
-    "codehawk": "codehawk src",
-    "prepare": "lefthook install"
+    "codehawk": "codehawk src"
   },
   "dependencies": {
     "@aws-sdk/client-rds-data": "latest",
