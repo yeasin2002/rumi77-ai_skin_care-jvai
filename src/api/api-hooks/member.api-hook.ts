@@ -51,3 +51,24 @@ export const useCreateTempInfo = () => {
     },
   })
 }
+
+export const useDeleteTempInfo = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: (id: number | string) => memberApi.deleteTempInfo(id),
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['temp-info'] })
+    },
+
+    onError: (error: AxiosError<{ message?: string; detail?: string }>) => {
+      const message =
+        error.response?.data?.message ||
+        error.response?.data?.detail ||
+        'Failed to delete information'
+      console.log('🚀 ~ useDeleteTempInfo ~ message:', message)
+      // toast.error(message)
+    },
+  })
+}

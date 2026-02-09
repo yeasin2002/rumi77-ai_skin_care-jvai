@@ -11,8 +11,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { Search, Trash2 } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { useState } from 'react'
+import { ShowMemberList } from './show-member-list'
 
 const MemberPage = () => {
   const [searchQuery, setSearchQuery] = useState('')
@@ -28,7 +29,7 @@ const MemberPage = () => {
 
   if (error) {
     return (
-      <div className="flex min-h-[400px] items-center justify-center">
+      <div className="flex min-h-100 items-center justify-center">
         <p className="text-red-500">Error loading members. Please try again.</p>
       </div>
     )
@@ -77,31 +78,7 @@ const MemberPage = () => {
                 </TableCell>
               </TableRow>
             ) : filteredMembers && filteredMembers.length > 0 ? (
-              filteredMembers.map((member) => (
-                <TableRow key={member.id} className="border-b border-gray-100">
-                  <TableCell>
-                    <Checkbox />
-                  </TableCell>
-                  <TableCell>
-                    <span className="text-main-button font-medium">{member.full_name}</span>
-                  </TableCell>
-                  <TableCell className="text-main-button">{member.email}</TableCell>
-                  <TableCell className="text-main-button">{member.contact_number}</TableCell>
-                  <TableCell className="text-main-button capitalize">{member.skin_type}</TableCell>
-                  <TableCell className="text-main-button">{member.birthday || 'N/A'}</TableCell>
-                  <TableCell>
-                    <div className="flex items-center justify-end gap-2">
-                      <button
-                        type="button"
-                        className="p-1 text-red-500 transition-colors hover:text-red-600"
-                        aria-label="Delete member"
-                      >
-                        <Trash2 className="size-4" />
-                      </button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))
+              filteredMembers.map((member) => <ShowMemberList key={member.id} member={member} />)
             ) : (
               <TableRow>
                 <TableCell colSpan={7} className="h-32 text-center text-gray-500">

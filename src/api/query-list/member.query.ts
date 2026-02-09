@@ -53,6 +53,10 @@ export interface TempInfoListResponse {
   }
 }
 
+export interface DeleteTempInfoResponse {
+  detail?: string
+}
+
 // ============================================
 // 2. API Object
 // ============================================
@@ -85,5 +89,10 @@ export const memberApi = {
         'Content-Type': 'multipart/form-data',
       },
     })
+  },
+
+  // DELETE - Remove temp info by id
+  deleteTempInfo: (id: number | string) => {
+    return axiosClient.delete<DeleteTempInfoResponse>(`/temp-info/${id}/`)
   },
 }
