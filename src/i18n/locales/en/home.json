@@ -209,6 +209,14 @@
     },
     "cta": "Enter the Circle"
   },
+  "welcomeDialog": {
+    "logoAlt": "Glowmi logo",
+    "title": "Welcome to the inner circle",
+    "messagePrimary": "Your profile has been created and your Welcome Privilege has been automatically applied to your bag.",
+    "messageSecondary": "We look forward to building your skin's resilience.",
+    "tagline": "The Essence of Timeless Glow",
+    "thanks": "Thank You"
+  },
   "footer": {
     "tagline": "The Essence of Timeless Glow",
     "copyright": "Glowmi. All rights reserved. Coming Soon.",

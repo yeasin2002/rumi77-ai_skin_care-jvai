@@ -3,7 +3,6 @@
 import joinModalIcon from '@/assets/image/Join-modal-icon.png'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { Button } from '../../../../../components/ui'
 
 type BeMemberContentProps = {
   onJoinClick: () => void
@@ -34,7 +33,7 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
         {/* Header */}
         <div className="flex flex-col items-center gap-2 text-center">
           <h2 className="font-leto text-4xl font-normal text-black">{t('title')}</h2>
-          <p className="max-w-[348px] text-base text-[#3E4259]">{t('subtitle')}</p>
+          <p className="max-w-87 text-base text-[#3E4259]">{t('subtitle')}</p>
         </div>
 
         {/* Benefits Section */}
@@ -56,7 +55,7 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
           <button
             type="button"
             onClick={onJoinClick}
-            className="mx-auto flex h-12 w-fit items-center justify-center rounded bg-black px-12 py-5 text-xl text-white transition-colors hover:bg-gray-900"
+            className="mx-auto flex h-12 w-fit cursor-pointer items-center justify-center rounded bg-black px-12 py-5 text-xl text-white transition-colors hover:bg-gray-900"
           >
             {t('cta')}
           </button>

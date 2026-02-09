@@ -57,7 +57,7 @@ export const ModalContainer = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="absolute top-3 right-3 z-20 flex size-8 items-center justify-center rounded-full transition-colors hover:bg-gray-100"
+                className="absolute top-3 right-3 z-20 flex size-8 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-gray-100"
                 aria-label="Close dialog"
               >
                 <X className="size-5 text-gray-700" />

@@ -58,9 +58,9 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
 
         {/* CTA Button */}
         <Link
-          href={'/'}
+          href={'/coming-soon'}
           className={buttonVariants({
-            className: 'font-caudex! bg-black! px-12 py-6 text-lg md:text-lg',
+            className: 'font-caudex! cursor-pointer bg-black! px-12 py-6 text-lg md:text-lg',
           })}
         >
           {t('cta')}

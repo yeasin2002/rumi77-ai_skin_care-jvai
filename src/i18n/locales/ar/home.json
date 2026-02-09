@@ -209,6 +209,14 @@
     },
     "cta": "ادخل إلى الدائرة"
   },
+  "welcomeDialog": {
+    "logoAlt": "شعار غلومي",
+    "title": "مرحباً بك في الدائرة الداخلية",
+    "messagePrimary": "تم إنشاء ملفك الشخصي وتطبيق امتياز الترحيب تلقائياً على سلتك.",
+    "messageSecondary": "نتطلع إلى بناء مرونة بشرتك.",
+    "tagline": "جوهر التوهج الخالد",
+    "thanks": "شكراً لك"
+  },
   "footer": {
     "tagline": "The Essence of Timeless Glow",
     "copyright": "قلومي. جميع الحقوق محفوظة. قريباً.",
