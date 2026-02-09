@@ -5,7 +5,7 @@ import createProfileBg from '@/assets/image/modals/complete-profile-image.png'
 import { lato } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Loader2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Dispatch, SetStateAction } from 'react'
 import { useForm } from 'react-hook-form'
@@ -185,7 +185,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
               <div className="relative w-64">
                 <select
                   id="skinType"
-                  className="h-[38px] w-full appearance-none rounded-full bg-white px-5 py-2 pr-10 text-sm text-black focus:ring-2 focus:ring-black/20 focus:outline-none"
+                  className="h-9.5 w-full appearance-none rounded-full bg-white px-5 py-2 pr-10 text-sm text-black focus:ring-2 focus:ring-black/20 focus:outline-none"
                   {...register('skinType')}
                   aria-invalid={errors.skinType ? 'true' : 'false'}
                 >
@@ -216,7 +216,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
                     type="text"
                     placeholder={t('fields.day')}
                     maxLength={2}
-                    className="coming-create-modal-input w-[67px]"
+                    className="coming-create-modal-input w-16.75"
                     {...register('day')}
                     aria-invalid={errors.day ? 'true' : 'false'}
                     aria-label="Day"
@@ -227,7 +227,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
                     type="text"
                     placeholder={t('fields.month')}
                     maxLength={2}
-                    className="coming-create-modal-input w-[78px]"
+                    className="coming-create-modal-input w-19.5"
                     {...register('month')}
                     aria-invalid={errors.month ? 'true' : 'false'}
                     aria-label="Month"
@@ -238,7 +238,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
                     type="text"
                     placeholder={t('fields.year')}
                     maxLength={4}
-                    className="coming-create-modal-input w-[71px]"
+                    className="coming-create-modal-input w-17.75"
                     {...register('year')}
                     aria-invalid={errors.year ? 'true' : 'false'}
                     aria-label="Year"
@@ -258,9 +258,9 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
         <button
           type="submit"
           disabled={isPending}
-          className="mx-auto mt-4 flex h-[38px] w-64 cursor-pointer items-center justify-center rounded-full bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mx-auto mt-4 flex h-9.5 w-64 cursor-pointer items-center justify-center rounded-full bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {isPending ? t('submitting') || 'Submitting...' : t('cta')}
+          {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : t('cta')}
         </button>
       </div>
     </form>
