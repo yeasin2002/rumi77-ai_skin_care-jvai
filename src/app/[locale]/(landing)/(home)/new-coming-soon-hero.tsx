@@ -1,6 +1,5 @@
 import heroBgForMobile from '@/assets/image/new-coming-soon-mobile.jpg'
 import heroBg from '@/assets/image/new-coming-soon.png'
-import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { cls } from 'cls-extended'
 import { useTranslations } from 'next-intl'
@@ -41,26 +40,31 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
 
       {/* Content - Right Side */}
       <div
-        className={cn(
-          'relative z-10 ml-auto flex w-full flex-col items-end justify-center gap-8 px-6 whitespace-nowrap',
-          'md:w-3xl md:items-center lg:gap-14'
+        className={cls(
+          'relative z-10 ml-auto flex w-full flex-col items-end justify-center gap-4 px-6 whitespace-nowrap',
+          { md: 'w-3xl items-center', lg: 'gap-14' }
         )}
       >
         {/* Title */}
         <h1
           className={cls(
-            'font-caudex max-w-4/5 items-end justify-end text-center text-xl font-normal whitespace-pre-wrap text-black',
-            { md: 'max-w-full text-4xl whitespace-nowrap' }
+            'font-caudex max-w-4/5 items-end justify-end text-center text-xl font-normal text-black',
+            { md: 'max-w-full text-4xl' }
           )}
         >
-          {t('title')}
+          <span className="md:hidden">
+            {t('title').split(' ').slice(0, 3).join(' ')}
+            <br />
+            {t('title').split(' ').slice(3).join(' ')}
+          </span>
+          <span className="hidden md:inline">{t('title')}</span>
         </h1>
 
         {/* CTA Button */}
         <Link
           href={'/coming-soon'}
-          className={buttonVariants({
-            className: 'font-caudex! cursor-pointer bg-black! px-12 py-6 text-lg md:text-lg',
+          className={cls('cursor-pointer rounded-md bg-black! px-6 py-2 text-lg text-white', {
+            md: 'px-12 py-5 text-lg',
           })}
         >
           {t('cta')}
