@@ -40,7 +40,14 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      <Link href="/" className="auth-back-btn">
+      <Link
+        href="/"
+        className="auth-back-btn"
+        style={{
+          boxShadow:
+            '0 4.444px 6.667px -1.111px rgba(0, 0, 0, 0.10), 0 2.222px 4.444px -2.222px rgba(0, 0, 0, 0.10)',
+        }}
+      >
         <ArrowLeft className="size-5" />
       </Link>
 

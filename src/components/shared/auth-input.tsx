@@ -8,7 +8,7 @@ import { forwardRef } from 'react'
 const inputVariants = cva('', {
   variants: {
     variant: {
-      auth: 'border-input h-12 rounded-none border-0 border-b shadow-none',
+      auth: 'border-input h-12 rounded-none border-0 border-b 0 border-b-black shadow-none',
       default: 'bg-[#F8F5EE] border-input h-12 rounded-lg border shadow-none',
     },
   },
