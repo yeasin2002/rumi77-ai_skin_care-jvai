@@ -216,7 +216,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
                     type="text"
                     placeholder={t('fields.day')}
                     maxLength={2}
-                    className="coming-create-modal-input w-16.75"
+                    className="coming-create-modal-input"
                     {...register('day')}
                     aria-invalid={errors.day ? 'true' : 'false'}
                     aria-label="Day"
@@ -227,7 +227,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
                     type="text"
                     placeholder={t('fields.month')}
                     maxLength={2}
-                    className="coming-create-modal-input w-19.5"
+                    className="coming-create-modal-input"
                     {...register('month')}
                     aria-invalid={errors.month ? 'true' : 'false'}
                     aria-label="Month"
@@ -238,7 +238,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
                     type="text"
                     placeholder={t('fields.year')}
                     maxLength={4}
-                    className="coming-create-modal-input w-17.75"
+                    className="coming-create-modal-input"
                     {...register('year')}
                     aria-invalid={errors.year ? 'true' : 'false'}
                     aria-label="Year"

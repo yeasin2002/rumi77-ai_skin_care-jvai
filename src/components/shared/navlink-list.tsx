@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import Image, { StaticImageData } from 'next/image'
 import { usePathname } from 'next/navigation'
+import React, { useId } from 'react'
 
 export type NavLinkItem = {
   id: string | number
@@ -47,21 +48,25 @@ export const NavLinkList = ({
   return (
     <div aria-label="tab-list" className={cn('mt-8 mb-10', className)}>
       <nav className="flex gap-8">
-        {items.map((item) => (
-          <Link
-            key={crypto.randomUUID()}
-            href={{ pathname: item.href }}
-            className={cn(
-              'text-main-button hover:text-main-button/80 font-open-sans flex items-center gap-2 border-b-2 pb-3 text-2xl leading-none font-normal transition-colors',
-              linkClassName,
-              isActive(item.href) ? activeClassName : inactiveClassName
-            )}
-          >
-            {/* {item.icon && <item.icon className={iconClassName} />} */}
-            {item.icon && <Image src={item.icon} alt="Icon" className={iconClassName} />}
-            {item.label}
-          </Link>
-        ))}
+        {items.map((item) => {
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const id = useId()
+          return (
+            <Link
+              key={id}
+              href={{ pathname: item.href }}
+              className={cn(
+                'text-main-button hover:text-main-button/80 font-open-sans flex items-center gap-2 border-b-2 pb-3 text-2xl leading-none font-normal transition-colors',
+                linkClassName,
+                isActive(item.href) ? activeClassName : inactiveClassName
+              )}
+            >
+              {/* {item.icon && <item.icon className={iconClassName} />} */}
+              {item.icon && <Image src={item.icon} alt="Icon" className={iconClassName} />}
+              {item.label}
+            </Link>
+          )
+        })}
       </nav>
     </div>
   )

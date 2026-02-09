@@ -10,6 +10,7 @@ import icon4 from '@/assets/icons/shop-bags.svg'
 import icon2 from '@/assets/icons/tags.svg'
 import icon5 from '@/assets/icons/users.svg'
 import { DashboardNav } from '../../../components/dashboard/dashboard-nav'
+import { DashboardGuards } from './dashboard-guards'
 
 const dashboardNavList = [
   { id: 1, icon: icon1, label: 'Dashboard', href: '/dashboard' },
@@ -25,7 +26,7 @@ const dashboardNavList = [
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
+    <DashboardGuards>
       <div className="bg-main-button min-h-screen">
         <DashboardNav />
         <div className="px-6 py-6 lg:px-20">
@@ -38,7 +39,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           {children}
         </div>
       </div>
-    </>
+    </DashboardGuards>
   )
 }
 
