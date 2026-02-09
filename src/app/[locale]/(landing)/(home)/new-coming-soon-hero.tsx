@@ -1,7 +1,7 @@
 import heroBgForMobile from '@/assets/image/new-coming-soon-mobile.jpg'
 import heroBg from '@/assets/image/new-coming-soon.png'
 import { cn } from '@/lib/utils'
-import { cls } from 'cls-extended'
+
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -40,16 +40,16 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
 
       {/* Content - Right Side */}
       <div
-        className={cls(
+        className={cn(
           'relative z-10 ml-auto flex w-full flex-col items-end justify-center gap-4 px-6 whitespace-nowrap',
-          { md: 'w-3xl items-center', lg: 'gap-14' }
+          'md: md:w-3xl md:items-center lg:mr-20'
         )}
       >
         {/* Title */}
         <h1
-          className={cls(
+          className={cn(
             'font-caudex max-w-4/5 items-end justify-end text-center text-xl font-normal text-black',
-            { md: 'max-w-full text-4xl' }
+            'md:max-w-full md:text-4xl'
           )}
         >
           <span className="md:hidden">
@@ -63,9 +63,10 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
         {/* CTA Button */}
         <Link
           href={'/coming-soon'}
-          className={cls('cursor-pointer rounded-md bg-black! px-6 py-2 text-lg text-white', {
-            md: 'px-12 py-5 text-lg',
-          })}
+          className={cn(
+            'cursor-pointer rounded-md bg-black! px-6 py-1 text-lg text-white',
+            'md:px-12 md:py-3 md:text-lg'
+          )}
         >
           {t('cta')}
         </Link>

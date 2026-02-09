@@ -21,10 +21,7 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
           loop
           muted
           playsInline
-          className="size-full object-cover"
-          style={{
-            clipPath: 'ellipse(50% 50% at 50% 50%)',
-          }}
+          className="h-full rounded-[300px] object-cover"
         />
       </div>
 

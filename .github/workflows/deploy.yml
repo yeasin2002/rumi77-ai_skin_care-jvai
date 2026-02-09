@@ -4,10 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Git branch to redeploy'
-        required: true
-        default: 'main'
-        type: string
+        branch: coming-soon
 
 concurrency:
   group: vps-redeploy

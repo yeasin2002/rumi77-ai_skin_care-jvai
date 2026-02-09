@@ -1,9 +1,9 @@
 import logoCompact from '@/assets/icons/logo/logo-mini-dark.svg'
-// import clsx from 'clsx'
-import { cls } from 'cls-extended'
+
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
+import { cn } from '../../../lib/utils'
 
 export default async function ComingSoonPage() {
   const t = await getTranslations('comingSoon')
@@ -25,10 +25,10 @@ export default async function ComingSoonPage() {
 
         {/* Title */}
         <h1
-          className={cls('font-caudex mb-8 text-4xl font-normal text-black', {
-            md: 'text-5xl',
-            lg: 'text-6xl',
-          })}
+          className={cn(
+            'font-caudex mb-8 text-4xl font-normal text-black',
+            'md:text-5xl lg:text-6xl'
+          )}
         >
           {t('title')}
         </h1>
