@@ -89,16 +89,16 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
   return (
     <form
       onSubmit={handleSubmit(onFormSubmit)}
-      className="relative grid grid-cols-12"
+      className="relative grid grid-cols-1 lg:grid-cols-12"
       style={{
         backgroundImage: `url(${createProfileBg.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="col-span-5"></div>
+      <div className="col-span-5 hidden lg:block"></div>
       {/* Form Content */}
-      <div className="col-span-7 flex flex-col gap-6 bg-white/20 p-6 backdrop-blur-[1px] md:p-12">
+      <div className="flex flex-col gap-6 bg-white/20 p-6 backdrop-blur-[1px] md:p-12 lg:col-span-7">
         {/* Header */}
         <div className="flex flex-col gap-8 text-center text-black">
           <div className="text-xl">
@@ -182,7 +182,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
               {t('fields.skinType')}
             </label>
             <div className="col-span-2 flex flex-col">
-              <div className="relative w-64">
+              <div className="relative w-full">
                 <select
                   id="skinType"
                   className="h-9.5 w-full appearance-none rounded-full bg-white px-5 py-2 pr-10 text-sm text-black focus:ring-2 focus:ring-black/20 focus:outline-none"

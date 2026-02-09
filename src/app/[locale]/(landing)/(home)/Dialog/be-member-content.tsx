@@ -12,9 +12,9 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
   const t = useTranslations('home.beMemberDialog')
 
   return (
-    <div className="relative grid grid-cols-2">
+    <div className="relative grid grid-cols-1 lg:grid-cols-2">
       {/* Left Side - Video */}
-      <div className="relative w-full overflow-hidden md:h-auto">
+      <div className="relative hidden w-full overflow-hidden md:h-auto lg:block">
         <video
           src="/dialog/be-member-video.mp4"
           autoPlay

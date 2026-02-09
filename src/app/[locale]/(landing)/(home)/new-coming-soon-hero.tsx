@@ -2,6 +2,7 @@ import heroBgForMobile from '@/assets/image/new-coming-soon-mobile.jpg'
 import heroBg from '@/assets/image/new-coming-soon.png'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { cls } from 'cls-extended'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -47,10 +48,9 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
       >
         {/* Title */}
         <h1
-          className={cn(
-            'font-caudex text-xl font-normal text-black',
-            'max-w-4/5 items-end justify-end text-center whitespace-pre-wrap',
-            'md:max-w-full md:text-5xl md:whitespace-nowrap'
+          className={cls(
+            'font-caudex max-w-4/5 items-end justify-end text-center text-xl font-normal whitespace-pre-wrap text-black',
+            { md: 'max-w-full text-4xl whitespace-nowrap' }
           )}
         >
           {t('title')}

@@ -44,6 +44,6 @@
 
   /* coming-soon page */
   .coming-create-modal-input {
-    @apply h-[38px] w-64 rounded-full bg-white! px-5 py-2 text-sm text-black placeholder:text-black focus:ring-2 focus:ring-black/20 focus:outline-none;
+    @apply h-9.5 w-full  rounded-full bg-white! px-5 py-2 text-sm text-black placeholder:text-black focus:ring-2 focus:ring-black/20 focus:outline-none;
   }
 }
