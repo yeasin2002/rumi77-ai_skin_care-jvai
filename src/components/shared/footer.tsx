@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import React from 'react'
 
-const contactEmail = 'hello.hafsabinte@gmail.com'
+const contactEmail = 'Email: info@glowmi.net'
 type Props = {} & React.ComponentPropsWithRef<'footer'>
 
 export const Footer = async ({ className, ...props }: Props) => {

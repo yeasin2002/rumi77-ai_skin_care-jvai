@@ -5,14 +5,6 @@ import { getTranslations } from 'next-intl/server'
 
 export const ComingSoonContent = async () => {
   const t = await getTranslations('comingSoon')
-  // const [email, setEmail] = useState('')
-  // const [isSubmitted, setIsSubmitted] = useState(false)
-
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   setIsSubmitted(true)
-  //   setEmail('')
-  // }
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center py-16">
@@ -94,7 +86,7 @@ export const ComingSoonContent = async () => {
       {/* Footer Tagline */}
       <div className="absolute right-0 bottom-8 left-0">
         <p className={`font-open-sans text-main-primary-base_medium text-center text-sm`}>
-          The Essence of Timeless Glow
+          {t('tagline')}
         </p>
       </div>
     </div>

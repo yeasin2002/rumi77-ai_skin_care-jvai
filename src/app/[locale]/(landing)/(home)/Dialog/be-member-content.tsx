@@ -1,0 +1,63 @@
+'use client'
+
+import joinModalIcon from '@/assets/image/Join-modal-icon.png'
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+
+type BeMemberContentProps = {
+  onJoinClick: () => void
+}
+
+export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
+  const t = useTranslations('home.beMemberDialog')
+
+  return (
+    <div className="relative grid grid-cols-1 lg:grid-cols-2">
+      {/* Left Side - Video */}
+      <div className="relative hidden w-full overflow-hidden md:h-auto lg:block">
+        <video
+          src="/dialog/be-member-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full rounded-[300px] object-cover"
+        />
+      </div>
+
+      {/* Right Side - Content */}
+      <div className="flex flex-1 flex-col items-center justify-center gap-12 px-6 py-8 md:px-12 md:py-16">
+        {/* Header */}
+        <div className="flex flex-col items-center gap-2 text-center">
+          <h2 className="font-leto text-4xl font-normal text-black">{t('title')}</h2>
+          <p className="max-w-87 text-base text-[#3E4259]">{t('subtitle')}</p>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="flex w-full flex-col gap-16">
+          <div className="flex flex-col gap-4">
+            {/* First Offer with Icon */}
+            <div className="flex items-start gap-2">
+              <div className="relative size-8 shrink-0">
+                <Image src={joinModalIcon} alt="Image" />
+              </div>
+              <p className="text-base text-[#3e4259]">{t('firstOffer')}</p>
+            </div>
+
+            {/* Additional Benefits */}
+            <p className="text-base text-[#3e4259]">{t('benefits')}</p>
+          </div>
+
+          {/* CTA Button */}
+          <button
+            type="button"
+            onClick={onJoinClick}
+            className="mx-auto flex h-12 w-fit cursor-pointer items-center justify-center rounded bg-black px-12 py-5 text-xl text-white transition-colors hover:bg-gray-900"
+          >
+            {t('cta')}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}

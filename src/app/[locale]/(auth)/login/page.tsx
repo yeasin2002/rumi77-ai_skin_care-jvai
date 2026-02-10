@@ -1,8 +1,10 @@
 'use client'
 
+import { useLogin } from '@/api/api-hooks/auth.api-hook'
 import { AuthInput } from '@/components/shared'
 import { Button } from '@/components/ui'
 import { Link } from '@/i18n/navigation'
+import { useAuthStore } from '@/store/auth.store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft, Lock, Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -32,15 +34,41 @@ const Login = () => {
     resolver: zodResolver(loginSchema),
   })
 
+  const { mutateAsync: login } = useLogin()
+  const setUser = useAuthStore((state) => state.setUser)
+  const setToken = useAuthStore((state) => state.setToken)
+
   const onSubmit = async (data: LoginFormData) => {
-    // TODO: API integration
-    console.log(data)
-    router.push('/skin-analyzer/analysis')
+    try {
+      const response = await login(data)
+      const loginData = response.data?.data
+      console.log('🚀 ~ onSubmit ~ loginData:', loginData)
+
+      if (loginData) {
+        setUser(loginData.user ?? null)
+        setToken({ accessToken: loginData.access, refreshToken: loginData.refresh })
+
+        if (loginData.user?.role === 'admin') {
+          router.push('/dashboard')
+        } else {
+          router.push('/skin-analyzer/analysis')
+        }
+      }
+    } catch (error) {
+      console.log('🚀 ~ onSubmit ~ error:', error)
+    }
   }
 
   return (
     <div className="auth-container">
-      <Link href="/" className="auth-back-btn">
+      <Link
+        href="/"
+        className="auth-back-btn"
+        style={{
+          boxShadow:
+            '0 4.444px 6.667px -1.111px rgba(0, 0, 0, 0.10), 0 2.222px 4.444px -2.222px rgba(0, 0, 0, 0.10)',
+        }}
+      >
         <ArrowLeft className="size-5" />
       </Link>
 

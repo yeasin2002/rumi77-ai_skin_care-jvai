@@ -1,7 +1,5 @@
 'use client'
 
-import { Globe } from 'lucide-react'
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +10,9 @@ import { usePathname, useRouter } from '@/i18n/navigation'
 import { localeNames, routing } from '@/i18n/routing'
 import { useLocale } from 'next-intl'
 import { cn } from '../../lib/utils'
+
+import multiLangIcon from '@/assets/icons/multi-lang-icon.svg'
+import Image from 'next/image'
 
 export function LanguageToggle() {
   const locale = useLocale()
@@ -25,7 +26,8 @@ export function LanguageToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="cursor-pointer rounded-full bg-[#2447311A]">
-        <Globe className="size-10 p-2" />
+        <Image src={multiLangIcon} alt="multi Lang Icon" className="bg-white" />
+
         <span className="sr-only">Toggle language</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

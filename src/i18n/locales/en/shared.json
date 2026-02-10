@@ -14,5 +14,9 @@
     "productName": "Deep nourishing day serum",
     "price": "$ 98.00 ( USD )",
     "remove": "Remove"
+  },
+  "footer": {
+    "heading": "Science with Soul",
+    "cta": "Follow Us"
   }
 }

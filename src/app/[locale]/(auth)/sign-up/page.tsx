@@ -3,14 +3,18 @@
 import { AuthInput } from '@/components/shared'
 import { Button } from '@/components/ui'
 import { Link } from '@/i18n/navigation'
+import { useRegister } from '@/api/api-hooks/auth.api-hook'
+import { useAuthStore } from '@/store/auth.store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft, Lock, Mail } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 const SignUp = () => {
   const t = useTranslations('auth.signUp')
+  const router = useRouter()
 
   const signUpSchema = z.object({
     email: z.string().min(1, t('validation.emailRequired')).email(t('validation.emailInvalid')),
@@ -30,9 +34,26 @@ const SignUp = () => {
     resolver: zodResolver(signUpSchema),
   })
 
+  const { mutateAsync: registerUser } = useRegister()
+  const setUser = useAuthStore((state) => state.setUser)
+  const setToken = useAuthStore((state) => state.setToken)
+
   const onSubmit = async (data: SignUpFormData) => {
-    // TODO: API integration
-    console.log(data)
+    try {
+      const response = await registerUser(data)
+      const registerData = response.data?.data
+
+      if (registerData) {
+        setUser(registerData.user ?? null)
+        setToken({
+          accessToken: registerData.access_token,
+          refreshToken: registerData.refresh_token,
+        })
+        router.push('/skin-analyzer/analysis')
+      }
+    } catch (error) {
+      console.log('🚀 ~ onSubmit ~ error:', error)
+    }
   }
 
   return (

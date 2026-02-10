@@ -25,20 +25,25 @@
     @apply bg-card w-full max-w-md rounded-2xl border p-8 shadow-sm;
   }
   .auth-back-btn {
-    @apply bg-muted mb-8 inline-flex size-10 items-center justify-center rounded-full;
+    @apply mb-8 inline-flex size-10 items-center justify-center rounded-full bg-white shadow-2xl;
   }
   .auth-heading {
-    @apply font-open-sans text-4xl font-semibold text-[#000000];
+    @apply text-4xl font-semibold text-[#000000];
   }
   .auth-subheading {
-    @apply font-open-sans mt-2 text-base text-[#3B3B3B];
+    @apply mt-2 text-base text-[#3B3B3B];
   }
   .auth-action-btn {
-    @apply font-open-sans w-full py-6 text-[#FFFFFF] capitalize;
+    @apply w-full py-6 text-[#FFFFFF] capitalize;
   }
 
   /* nav  */
   .global-nav-link {
     @apply hover:text-main-button text-main-primary-base_light text-xl transition-colors;
+  }
+
+  /* coming-soon page */
+  .coming-create-modal-input {
+    @apply h-9.5 w-full  rounded-full bg-white! px-5 py-2 text-sm text-black placeholder:text-black focus:ring-2 focus:ring-black/20 focus:outline-none;
   }
 }

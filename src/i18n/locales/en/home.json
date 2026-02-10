@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "A Glow that feels like you",
-    "cta": "Shop Now"
+    "title": "The Essence of Timeless Glow",
+    "cta": "Explore"
   },
   "about": {
     "title": "About Glowmi",
@@ -181,6 +181,41 @@
     "imageAlt": "Glowmi Celestial Glow Brightening Serum",
     "email": "glowmi@gmail.com",
     "phone": "3251358133"
+  },
+  "beMemberDialog": {
+    "title": "Join Glowmi Circle",
+    "subtitle": "Become an exclusive member of Glowmi's skincare community.",
+    "firstOffer": "The first 500 members will receive their first order complimentary.",
+    "benefits": "All members enjoy a lifetime 20% privilege by using their membership ID on every Glowmi protocol, along with early access to launches, exclusive rewards, and personalized skincare guidance.",
+    "cta": "Join the Circle"
+  },
+  "createAccountDialog": {
+    "title": "Your skin decoded",
+    "subtitle": "Complete your profile to unlock.",
+    "offer": "Join the Glowmi Circle and receive your first order complimentary",
+    "fields": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Name",
+      "email": "Email",
+      "emailPlaceholder": "Address",
+      "contactNumber": "Contact Number",
+      "contactNumberPlaceholder": "Contact number",
+      "skinType": "Skin Type",
+      "skinTypePlaceholder": "Select",
+      "birthday": "Birthday",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
+    },
+    "cta": "Enter the Circle"
+  },
+  "welcomeDialog": {
+    "logoAlt": "Glowmi logo",
+    "title": "Welcome to the inner circle",
+    "messagePrimary": "Your profile has been created and your Welcome Privilege has been automatically applied to your bag.",
+    "messageSecondary": "We look forward to building your skin's resilience.",
+    "tagline": "The Essence of Timeless Glow",
+    "thanks": "Thank You"
   },
   "footer": {
     "tagline": "The Essence of Timeless Glow",
