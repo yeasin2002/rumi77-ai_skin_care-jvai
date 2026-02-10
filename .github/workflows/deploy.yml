@@ -3,8 +3,13 @@ name: Manual VPS Redeploy
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        branch: coming-soon
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'coming-soon'
+        type: choice
+        options:
+          - production
 
 concurrency:
   group: vps-redeploy
