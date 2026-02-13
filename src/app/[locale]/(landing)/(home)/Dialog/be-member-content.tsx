@@ -14,14 +14,14 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
   return (
     <div className="relative grid grid-cols-1 lg:grid-cols-2">
       {/* Left Side - Video */}
-      <div className="relative hidden w-full overflow-hidden md:h-auto lg:block">
+      <div className="flex size-full! items-center justify-center rounded-full">
         <video
           src="/dialog/be-member-video.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="h-full rounded-[300px] object-cover"
+          className="size-40 h-full rounded-full! object-cover md:size-110"
         />
       </div>
 
