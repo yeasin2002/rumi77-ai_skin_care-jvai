@@ -4,7 +4,7 @@ import { Lato } from 'next/font/google'
 //   weight: ['400', '700'],
 //   subsets: ['latin'],
 //   display: 'swap',
-//   variable: '--next-font-caudex',
+//   variable: '--next-',
 //   fallback: ['Georgia', 'serif'],
 // })
 

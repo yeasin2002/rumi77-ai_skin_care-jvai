@@ -23,10 +23,10 @@ export default function NotFound() {
           {/* Main Content */}
           <div className="space-y-6">
             {/* 404 Number */}
-            <p className={`font-caudex text-main-button/20 text-9xl font-normal`}>404</p>
+            <p className={`text-main-button/20 text-9xl font-normal`}>404</p>
 
             {/* Title */}
-            <h1 className={`font-caudex text-main-button text-4xl font-normal italic sm:text-5xl`}>
+            <h1 className={`text-main-button text-4xl font-normal italic sm:text-5xl`}>
               Page Not Found
             </h1>
 

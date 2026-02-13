@@ -32,6 +32,7 @@ export const NewNavLarge = ({ navItems }: Props) => {
               className="h-auto w-32 lg:w-36"
             />
           </Link>
+          text
         </div>
 
         {/* Navigation Bar - Nav Items Center + Icons Right */}
@@ -42,7 +43,7 @@ export const NewNavLarge = ({ navItems }: Props) => {
               <Link
                 key={item.name}
                 href={{ pathname: item.url }}
-                className="font-caudex text-[1.75rem] leading-normal font-bold text-black transition-opacity hover:opacity-70"
+                className="text-[1.75rem] leading-normal font-semibold! text-black transition-opacity hover:opacity-70"
               >
                 {item.name}
               </Link>
