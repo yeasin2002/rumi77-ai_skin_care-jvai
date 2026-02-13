@@ -48,7 +48,7 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
         {/* Title */}
         <h1
           className={cn(
-            'max-w-4/5 items-end justify-end text-center text-base font-normal text-black md:text-xl',
+            'max-w-4/5 items-end justify-end text-center text-sm font-normal text-black',
             'md:max-w-full md:text-4xl'
           )}
         >
