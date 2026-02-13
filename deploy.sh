@@ -1,14 +1,13 @@
 #!/bin/bash
 
 # Deployment script for Ubuntu VPS
-# Usage: ./deploy.sh [branch-name]
-# Example: ./deploy.sh coming-soon
+# Usage: ./deploy.sh
 
 set -e  # Exit on error
 
 # Configuration
-BRANCH_NAME="${1:-coming-soon}"
-APP_NAME="$BRANCH_NAME"
+BRANCH_NAME="coming-soon"
+APP_NAME="coming-soon"
 
 echo "🚀 Starting deployment for branch: $BRANCH_NAME"
 
