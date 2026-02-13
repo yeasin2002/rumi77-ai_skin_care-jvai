@@ -15,6 +15,9 @@ echo "🚀 Starting deployment for branch: $BRANCH_NAME"
 echo "⏹️  Stopping PM2 process: $APP_NAME"
 pm2 stop "$APP_NAME" 2>/dev/null || echo "No process to stop"
 
+echo "⏹️ Deleting All Services"
+pm2 delete all || echo "No process to delete"
+
 # Pull latest changes
 echo "📥 Pulling latest changes from git"
 git pull origin "$BRANCH_NAME"
