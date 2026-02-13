@@ -13,15 +13,13 @@ export const FooterSingle = async () => {
         <Image src={logoCompact} alt="Glowmi Logo" className="w-auto" />
 
         {/* Tagline */}
-        <p className={`text-main-primary-base_medium font-open-sans mt-4 text-lg`}>
-          {t('tagline')}
-        </p>
+        <p className={`text-main-primary-base_medium mt-4 text-lg`}>{t('tagline')}</p>
 
         {/* Divider */}
         <div className="bg-main-button mt-8 h-px w-24" />
 
         {/* Copyright */}
-        <p className={`font-open-sans mt-6 text-sm text-[#2447314D]`}>
+        <p className={`mt-6 text-sm text-[#2447314D]`}>
           © {currentYear} {t('copyright')}
         </p>
       </div>

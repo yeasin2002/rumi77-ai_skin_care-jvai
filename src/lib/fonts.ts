@@ -12,7 +12,7 @@ import { Lato } from 'next/font/google'
 //   weight: ['400', '600'],
 //   subsets: ['latin', 'latin-ext'],
 //   display: 'swap',
-//   variable: '--next-font-open-sans',
+//   variable: '--next-',
 //   fallback: ['system-ui', 'sans-serif'],
 // })
 

@@ -45,9 +45,7 @@ const SingleProductDetails = async () => {
 
           {/* Description */}
           <div className="mt-8">
-            <h3 className="font-open-sans text-main-button text-lg font-semibold">
-              {t('description.title')}
-            </h3>
+            <h3 className="text-main-button text-lg font-semibold">{t('description.title')}</h3>
             <p className="text-main-button/80 mt-2 text-sm leading-relaxed">
               {t('description.paragraph1')}
             </p>
@@ -58,15 +56,13 @@ const SingleProductDetails = async () => {
 
           {/* Skin Type */}
           <div className="mt-8">
-            <h3 className="font-open-sans text-main-button text-lg font-semibold italic">
-              {t('skinType.title')}
-            </h3>
+            <h3 className="text-main-button text-lg font-semibold italic">{t('skinType.title')}</h3>
             <p className="text-main-button/80 mt-2 text-sm">{t('skinType.value')}</p>
           </div>
 
           {/* Key Ingredients */}
           <div className="mt-8">
-            <h3 className="font-open-sans text-main-button text-lg font-semibold italic">
+            <h3 className="text-main-button text-lg font-semibold italic">
               {t('keyIngredients.title')}
             </h3>
             <p className="text-main-button/80 mt-2 text-sm">{t('keyIngredients.value')}</p>
@@ -74,7 +70,7 @@ const SingleProductDetails = async () => {
 
           {/* Key Benefits */}
           <div className="mt-8">
-            <h3 className="font-open-sans text-main-button text-lg font-semibold italic">
+            <h3 className="text-main-button text-lg font-semibold italic">
               {t('keyBenefits.title')}
             </h3>
             <p className="text-main-button/80 mt-2 text-sm">{t('keyBenefits.value')}</p>
@@ -82,9 +78,7 @@ const SingleProductDetails = async () => {
 
           {/* How to Use */}
           <div className="mt-8">
-            <h3 className="font-open-sans text-main-button text-lg font-semibold italic">
-              {t('howToUse.title')}
-            </h3>
+            <h3 className="text-main-button text-lg font-semibold italic">{t('howToUse.title')}</h3>
             <p className="text-main-button/80 mt-2 text-sm">{t('howToUse.value')}</p>
           </div>
         </div>

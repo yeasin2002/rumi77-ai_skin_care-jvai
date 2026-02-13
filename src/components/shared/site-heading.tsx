@@ -23,9 +23,7 @@ export const SiteHeading = ({
         {heading}
       </h2>
       {subHeading && (
-        <h3 className={cn(`font-open-sans text-main-primary-base_medium`, subHeadingClassname)}>
-          {subHeading}
-        </h3>
+        <h3 className={cn(`text-main-primary-base_medium`, subHeadingClassname)}>{subHeading}</h3>
       )}
     </div>
   )

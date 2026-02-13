@@ -74,9 +74,7 @@ const ProductCard = ({ product, t }: ProductCardProps) => {
         {product.step}
       </div>
       <div className="flex-1">
-        <h3 className="font-open-sans text-main-button text-lg font-medium">
-          {t(`products.${productKey}.name`)}
-        </h3>
+        <h3 className="text-main-button text-lg font-medium">{t(`products.${productKey}.name`)}</h3>
         <p className="text-main-button/60 text-sm">
           {t(`products.${productKey}.brand`)} • {t(`products.${productKey}.type`)}
         </p>

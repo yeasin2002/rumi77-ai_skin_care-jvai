@@ -21,14 +21,14 @@ const ContactUs = async () => {
             {t('title')}
           </h1>
 
-          <p className="font-open-sans text-main-primary-base_medium mb-8 text-lg leading-relaxed">
+          <p className="text-main-primary-base_medium mb-8 text-lg leading-relaxed">
             {t('description')}
           </p>
 
           <div className="space-y-4">
             <a
               href={`mailto:${t('email')}`}
-              className="font-open-sans text-main-primary-base_medium flex items-center gap-3 text-lg hover:underline"
+              className="text-main-primary-base_medium flex items-center gap-3 text-lg hover:underline"
             >
               <Mail className="size-5" />
               {t('email')}
@@ -36,7 +36,7 @@ const ContactUs = async () => {
 
             <a
               href={`tel:${t('phone')}`}
-              className="font-open-sans text-main-primary-base_medium flex items-center gap-3 text-sm hover:underline"
+              className="text-main-primary-base_medium flex items-center gap-3 text-sm hover:underline"
             >
               <Phone className="size-5" />
               {t('phone')}

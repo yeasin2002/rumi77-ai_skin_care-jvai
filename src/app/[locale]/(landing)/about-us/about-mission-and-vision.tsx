@@ -21,17 +21,13 @@ export const AboutMissionAndVision = async () => {
             {/* Mission */}
             <div>
               <h3 className="text-main-button mb-3 text-lg font-bold">{t('mission.title')}</h3>
-              <p className="font-open-sans text-main-button text-sm leading-relaxed">
-                {t('mission.description')}
-              </p>
+              <p className="text-main-button text-sm leading-relaxed">{t('mission.description')}</p>
             </div>
 
             {/* Vision */}
             <div>
               <h3 className="text-main-button mb-3 text-lg font-bold">{t('vision.title')}</h3>
-              <p className="font-open-sans text-main-button text-sm leading-relaxed">
-                {t('vision.description')}
-              </p>
+              <p className="text-main-button text-sm leading-relaxed">{t('vision.description')}</p>
             </div>
           </div>
         </div>

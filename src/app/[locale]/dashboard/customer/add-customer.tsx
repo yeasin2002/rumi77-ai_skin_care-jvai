@@ -44,7 +44,7 @@ export const AddCustomer = () => {
         </button>
       </div> */}
 
-      <h1 className="font-open-sans text-3xl font-medium text-white">Add Customer</h1>
+      <h1 className="text-3xl font-medium text-white">Add Customer</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-[140px_1fr] items-center gap-4">

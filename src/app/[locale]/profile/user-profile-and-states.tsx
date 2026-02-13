@@ -49,9 +49,7 @@ export const UserProfileAndStates = () => {
             />
           </div>
           <div>
-            <h2 className="font-open-sans text-main-button text-2xl font-normal">
-              {t('userProfile.name')}
-            </h2>
+            <h2 className="text-main-button text-2xl font-normal">{t('userProfile.name')}</h2>
             <p className="text-main-button/70 text-sm">{t('userProfile.email')}</p>
             <span className="bg-main-button mt-2 inline-block rounded-full px-4 py-1 text-xs text-white">
               {t('userProfile.skinConcern')}

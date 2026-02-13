@@ -23,15 +23,13 @@ const SaveRoutine = async () => {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-main-primary-base_medium font-open-sans text-xl font-medium">
-        {t('title')}
-      </h2>
+      <h2 className="text-main-primary-base_medium text-xl font-medium">{t('title')}</h2>
       <div className="space-y-3">
         {routines.map((routine) => (
           <Card key={routine.id} className="border-main-button/30 bg-background-secondary">
             <CardContent className="flex items-center justify-between">
               <div className="space-y-1">
-                <h3 className="text-main-primary-base_medium font-open-sans text-3xl font-normal">
+                <h3 className="text-main-primary-base_medium text-3xl font-normal">
                   {routine.title}
                 </h3>
                 <p className="text-sm text-[#BD9B5B]!">

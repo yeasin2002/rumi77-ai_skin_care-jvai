@@ -34,7 +34,7 @@ export default async function ComingSoonPage() {
         </h2>
 
         {/* Description */}
-        <p className="font-open-sans mb-12 max-w-xl text-base leading-relaxed text-black/80 md:text-lg">
+        <p className="mb-12 max-w-xl text-base leading-relaxed text-black/80 md:text-lg">
           {t('description')}
         </p>
 

@@ -172,7 +172,7 @@ const Analysis = () => {
             <div key={feature.title} className="flex flex-col items-center text-center">
               <Image src={feature.image} alt={feature.title} className="mb-4 size-10" />
               <h3 className="text-main-button mb-2 text-xl">{feature.title}</h3>
-              <p className="font-open-sans text-main-button/70 text-sm">{feature.subtitle}</p>
+              <p className="text-main-button/70 text-sm">{feature.subtitle}</p>
             </div>
           ))}
         </div>

@@ -58,9 +58,7 @@ export const GlowmiProductShowcase = async () => {
             >
               {t('heading')}
             </h2>
-            <p className={`font-open-sans mt-4 max-w-sm text-sm text-white/80 sm:text-base`}>
-              {t('subheading')}
-            </p>
+            <p className={`mt-4 max-w-sm text-sm text-white/80 sm:text-base`}>{t('subheading')}</p>
           </div>
         </div>
       </div>

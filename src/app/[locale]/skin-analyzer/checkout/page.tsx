@@ -24,8 +24,8 @@ const Checkout = async () => {
 
         {/* Subtotal */}
         <div className="mt-6 flex items-center justify-between">
-          <span className="text-main-button font-open-sans text-base">{t('subtotal')}</span>
-          <span className="text-main-button font-open-sans text-lg font-semibold">$98.00 USD</span>
+          <span className="text-main-button text-base">{t('subtotal')}</span>
+          <span className="text-main-button text-lg font-semibold">$98.00 USD</span>
         </div>
 
         {/* Checkout Button */}

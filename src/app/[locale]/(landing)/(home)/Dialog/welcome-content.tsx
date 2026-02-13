@@ -22,12 +22,10 @@ export const WelcomeContent = () => {
         <h2 className="text-3xl font-semibold text-black sm:text-4xl">{t('title')}</h2>
 
         <div className="flex flex-col items-center gap-4">
-          <p className="font-open-sans text-base leading-relaxed text-black/80 sm:text-lg">
+          <p className="text-base leading-relaxed text-black/80 sm:text-lg">
             {t('messagePrimary')}
           </p>
-          <p className="font-open-sans text-sm text-black/70 sm:text-base">
-            {t('messageSecondary')}
-          </p>
+          <p className="text-sm text-black/70 sm:text-base">{t('messageSecondary')}</p>
         </div>
 
         <div className="mt-2 flex items-center gap-4">

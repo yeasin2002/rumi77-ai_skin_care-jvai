@@ -14,7 +14,7 @@ const MyCart = async () => {
           <span>{t('subtotal')}</span>
           <span className="font-medium">$98.99 USD</span>
         </div>
-        <Button className="font-open-sans! w-full py-7 text-xl">{t('continueToCheckout')}</Button>
+        <Button className="! w-full py-7 text-xl">{t('continueToCheckout')}</Button>
       </div>
     </div>
   )

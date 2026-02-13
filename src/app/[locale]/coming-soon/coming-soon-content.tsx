@@ -25,12 +25,10 @@ export const ComingSoonContent = async () => {
             {t('title')}
           </h1>
           {/* Subtitle */}
-          <h2 className={`font-open-sans text-main-primary-base_medium text-xl sm:text-2xl`}>
-            {t('subtitle')}
-          </h2>
+          <h2 className={`text-main-primary-base_medium text-xl sm:text-2xl`}>{t('subtitle')}</h2>
           {/* Description */}
           <p
-            className={`font-open-sans text-main-primary-base_medium mx-auto max-w-lg text-base leading-relaxed sm:text-lg`}
+            className={`text-main-primary-base_medium mx-auto max-w-lg text-base leading-relaxed sm:text-lg`}
           >
             {t('description')}
           </p>
@@ -46,18 +44,18 @@ export const ComingSoonContent = async () => {
                 value={email}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                 required
-                className={`font-open-sans border-main-button/20 focus:border-main-button focus:ring-main-button h-12 flex-1 rounded-full bg-white px-6 text-base`}
+                className={` border-main-button/20 focus:border-main-button focus:ring-main-button h-12 flex-1 rounded-full bg-white px-6 text-base`}
               />
               <Button
                 type="submit"
-                className={`font-open-sans h-12 rounded-full px-8 text-base font-semibold`}
+                className={` h-12 rounded-full px-8 text-base font-semibold`}
               >
                 {t('notifyButton')}
               </Button>
             </form>
           ) : (
             <div
-              className={`font-open-sans text-main-button mx-auto mt-8 rounded-full bg-white px-6 py-4 text-base font-medium shadow-sm`}
+              className={` text-main-button mx-auto mt-8 rounded-full bg-white px-6 py-4 text-base font-medium shadow-sm`}
             >
               {t('successMessage')}
             </div>
@@ -67,7 +65,7 @@ export const ComingSoonContent = async () => {
           {/* <div className="mt-12">
             <Link
               href={{ pathname: '/' }}
-              className={`font-open-sans text-main-button inline-flex items-center gap-2 text-base font-medium transition-opacity hover:opacity-70`}
+              className={` text-main-button inline-flex items-center gap-2 text-base font-medium transition-opacity hover:opacity-70`}
             >
               <ArrowLeft className="h-4 w-4" />
               {t('backHome')}
@@ -83,9 +81,7 @@ export const ComingSoonContent = async () => {
       </div>
       {/* Footer Tagline */}
       <div className="absolute right-0 bottom-8 left-0">
-        <p className={`font-open-sans text-main-primary-base_medium text-center text-sm`}>
-          {t('tagline')}
-        </p>
+        <p className={`text-main-primary-base_medium text-center text-sm`}>{t('tagline')}</p>
       </div>
     </div>
   )

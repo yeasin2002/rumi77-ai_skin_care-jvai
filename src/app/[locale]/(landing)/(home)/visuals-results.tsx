@@ -31,7 +31,7 @@ export const VisualsResults = async () => {
             <h3 className={`text-main-button text-3xl font-semibold`}>
               {t(`states.${key}.title`)}
             </h3>
-            <p className={`text-main-primary-base_medium font-open-sans mt-2 text-sm font-medium`}>
+            <p className={`text-main-primary-base_medium mt-2 text-sm font-medium`}>
               <span>{t(`states.${key}.subtitle`)}</span>
               <br />
               <span className="mt-2 block">{t(`states.${key}.desc`)}</span>
@@ -39,9 +39,7 @@ export const VisualsResults = async () => {
           </div>
         ))}
       </div>
-      <p className={`font-open-sans text-main-primary-base_medium mt-8 text-center`}>
-        {t('subtitle')}
-      </p>
+      <p className={`text-main-primary-base_medium mt-8 text-center`}>{t('subtitle')}</p>
     </section>
   )
 }

@@ -50,8 +50,8 @@ const OrderHistory = async () => {
             <div className="relative size-32! shrink-0 overflow-hidden rounded-lg">
               <Image src={productImg} alt={t('productName')} fill className="object-contain p-2" />
             </div>
-            <div className="font-open-sans space-y-1 font-medium">
-              <p className="font-open-sans text-sm font-semibold text-white">#12134</p>
+            <div className="space-y-1 font-medium">
+              <p className="text-sm font-semibold text-white">#12134</p>
               <h3 className="text-3xl font-bold text-white">{t('productName')}</h3>
               <p className="text-sm text-white">$ 98.00 ( USD )</p>
               <p className="text-sm text-white">

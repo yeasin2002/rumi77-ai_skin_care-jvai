@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
           Privacy Policy
         </h1>
 
-        <p className="font-open-sans text-main-button text-2xl">
+        <p className="text-main-button text-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
           ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in

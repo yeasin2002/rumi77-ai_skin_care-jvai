@@ -19,7 +19,7 @@ export const Hero = async () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-10 bg-black/20 lg:gap-y-28">
         <h1 className={`text-3xl text-white lg:text-6xl`}>{t('title')}</h1>
         <Button
-          className={`font-open-sans text-xl font-normal uppercase [box-shadow:none]! lg:px-10 lg:py-8 lg:text-2xl`}
+          className={`text-xl font-normal uppercase [box-shadow:none]! lg:px-10 lg:py-8 lg:text-2xl`}
         >
           {t('cta')}
         </Button>

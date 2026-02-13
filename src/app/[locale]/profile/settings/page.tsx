@@ -42,9 +42,7 @@ const Settings = () => {
 
   return (
     <div className="bg-main-button rounded-xl p-6">
-      <h2 className="font-open-sans mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!">
-        {t('title')}
-      </h2>
+      <h2 className="mb-6 text-4xl leading-none font-normal text-[#F7F5ED]!">{t('title')}</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <IconInput
@@ -52,7 +50,7 @@ const Settings = () => {
           placeholder={t('namePlaceholder')}
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          className="placeholder:text-main-button text-main-button text-sm"
           error={errors.name?.message}
           {...register('name')}
         />
@@ -61,7 +59,7 @@ const Settings = () => {
           placeholder={t('genderPlaceholder')}
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          className="placeholder:text-main-button text-main-button text-sm"
           error={errors.gender?.message}
           {...register('gender')}
         />
@@ -71,7 +69,7 @@ const Settings = () => {
           type="email"
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          className="placeholder:text-main-button text-main-button text-sm"
           error={errors.email?.message}
           {...register('email')}
         />
@@ -80,7 +78,7 @@ const Settings = () => {
           placeholder={t('skinTypePlaceholder')}
           variant="default"
           labelClassName="text-[#E6DFC2BF] pb-4!"
-          className="placeholder:text-main-button text-main-button font-open-sans text-sm"
+          className="placeholder:text-main-button text-main-button text-sm"
           error={errors.skinType?.message}
           {...register('skinType')}
         />

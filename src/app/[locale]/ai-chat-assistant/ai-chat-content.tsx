@@ -69,7 +69,7 @@ export const AiChatContent = () => {
   ]
 
   return (
-    <div className="font-open-sans! *:font-open-sans flex flex-col gap-4 py-6">
+    <div className="! *: flex flex-col gap-4 py-6">
       {messages.map((message) => (
         <div
           key={message.id}
@@ -82,7 +82,7 @@ export const AiChatContent = () => {
                 : 'bg-main-button text-main-secondary mr-8'
             }`}
           >
-            <p className="font-open-sans text-sm leading-relaxed whitespace-pre-line">
+            <p className="text-sm leading-relaxed whitespace-pre-line">
               {message.contentKey ? t(message.contentKey as string) : message.content}
             </p>
 
@@ -105,9 +105,7 @@ export const AiChatContent = () => {
                     <span className="text-xs">{message.product.brand}</span>
                     <span className="text-sm font-semibold">{message.product.price}</span>
                   </div>
-                  <Button className={`font-open-sans mt-3 w-full rounded-sm!`}>
-                    {t('product.viewDetails')}
-                  </Button>
+                  <Button className={`mt-3 w-full rounded-sm!`}>{t('product.viewDetails')}</Button>
                 </div>
               </div>
             )}

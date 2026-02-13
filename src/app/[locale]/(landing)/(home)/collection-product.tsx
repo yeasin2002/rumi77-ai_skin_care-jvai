@@ -34,9 +34,7 @@ export const CollectionProduct = async () => {
 
   return (
     <section className="px-4 py-16 sm:px-8">
-      <p
-        className={`font-open-sans text-main-primary-base_medium text-center text-sm tracking-widest uppercase`}
-      >
+      <p className={`text-main-primary-base_medium text-center text-sm tracking-widest uppercase`}>
         {t('subtitle')}
       </p>
       <SiteHeading heading={t('title')} subHeading={t('desc')} />
@@ -69,7 +67,7 @@ export const CollectionProduct = async () => {
             {/* Content */}
             <div className="text-main-button flex flex-col items-center p-6 text-center">
               <h3 className={`text-xl font-semibold`}>{item.title}</h3>
-              <p className={`font-open-sans mt-2 text-sm`}>{item.description}</p>
+              <p className={`mt-2 text-sm`}>{item.description}</p>
             </div>
           </div>
         ))}

@@ -32,7 +32,7 @@ export default function NotFound() {
 
             {/* Description */}
             <p
-              className={`font-open-sans text-main-primary-base_medium mx-auto max-w-lg text-base leading-relaxed sm:text-lg`}
+              className={`text-main-primary-base_medium mx-auto max-w-lg text-base leading-relaxed sm:text-lg`}
             >
               Oops! The page you&apos;re looking for seems to have wandered off. Let&apos;s get you
               back on track to your skincare journey.
@@ -41,7 +41,7 @@ export default function NotFound() {
             {/* Action Buttons */}
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href={{ pathname: '/' }}>
-                <Button className={`font-open-sans h-12 rounded-full px-8 text-base font-semibold`}>
+                <Button className={`h-12 rounded-full px-8 text-base font-semibold`}>
                   <Home className="mr-2 size-4" />
                   Back to Home
                 </Button>
@@ -52,7 +52,7 @@ export default function NotFound() {
             <div className="mt-8">
               <Link
                 href={{ pathname: '/' }}
-                className={`font-open-sans text-main-button inline-flex items-center gap-2 text-base font-medium transition-opacity hover:opacity-70`}
+                className={`text-main-button inline-flex items-center gap-2 text-base font-medium transition-opacity hover:opacity-70`}
               >
                 <ArrowLeft className="size-4" />
                 Go back
@@ -70,7 +70,7 @@ export default function NotFound() {
 
         {/* Footer Tagline */}
         <div className="absolute right-0 bottom-8 left-0">
-          <p className={`font-open-sans text-main-primary-base_medium text-center text-sm`}>
+          <p className={`text-main-primary-base_medium text-center text-sm`}>
             The Essence of Timeless Glow
           </p>
         </div>

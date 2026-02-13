@@ -10,9 +10,7 @@ export const BrandStory = async () => {
           {t('title')}
         </h2>
 
-        <p className="font-open-sans text-main-button text-justify text-xl leading-[137%]">
-          {t('description')}
-        </p>
+        <p className="text-main-button text-justify text-xl leading-[137%]">{t('description')}</p>
       </div>
     </section>
   )
