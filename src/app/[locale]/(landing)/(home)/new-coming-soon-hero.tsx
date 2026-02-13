@@ -48,16 +48,16 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
         {/* Title */}
         <h1
           className={cn(
-            'font-caudex max-w-4/5 items-end justify-end text-center text-xl font-normal text-black',
+            'font-caudex max-w-4/5 items-end justify-end text-center text-base font-normal text-black md:text-xl',
             'md:max-w-full md:text-4xl'
           )}
         >
-          <span className="md:hidden">
+          {/* <span className="md:hidden">
             {t('title').split(' ').slice(0, 3).join(' ')}
             <br />
             {t('title').split(' ').slice(3).join(' ')}
-          </span>
-          <span className="hidden md:inline">{t('title')}</span>
+          </span> */}
+          <span>{t('title')}</span>
         </h1>
 
         {/* CTA Button */}
