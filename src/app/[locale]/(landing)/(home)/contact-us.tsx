@@ -16,7 +16,7 @@ export const ContactUs = async () => {
 
         {/* Right - Contact Info */}
         <div className="flex flex-col">
-          <h2 className="text-main-button font-caudex text-3xl md:text-4xl">{t('title')}</h2>
+          <h2 className="text-main-button text-3xl md:text-4xl">{t('title')}</h2>
           <p className="mt-4 max-w-sm text-sm text-gray-600">{t('description')}</p>
 
           <div className="mt-8 flex flex-col gap-4">

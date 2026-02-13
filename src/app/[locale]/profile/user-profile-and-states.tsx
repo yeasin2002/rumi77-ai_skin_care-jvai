@@ -66,7 +66,7 @@ export const UserProfileAndStates = () => {
           <Card key={stat.id} className="border-none bg-[#d9d9d0] shadow-none">
             <CardContent className="pt-4">
               <stat.icon className="text-main-button size-6" />
-              <p className="font-caudex text-main-button mt-4 text-4xl font-normal">{stat.value}</p>
+              <p className="text-main-button mt-4 text-4xl font-normal">{stat.value}</p>
               <p className="text-main-button/70 mt-1 text-sm">{stat.label}</p>
             </CardContent>
           </Card>

@@ -22,7 +22,7 @@ export const GlowmiStates = async () => {
         {cardsStates.map((data, index) => (
           <div
             key={data.key}
-            className={`font-caudex flex flex-col items-center rounded-2xl bg-white px-6 py-10 text-center shadow-sm lg:py-16`}
+            className={`flex flex-col items-center rounded-2xl bg-white px-6 py-10 text-center shadow-sm lg:py-16`}
           >
             <span className="text-main-button text-5xl font-light">
               {String(index + 1).padStart(2, '0')}

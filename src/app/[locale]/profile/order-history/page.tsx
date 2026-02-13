@@ -17,7 +17,7 @@ const OrderHistory = async () => {
               <div className="h-16 w-px bg-white/30" />
             </div>
             <div>
-              <p className="font-caudex text-white">{t('orderPlaced')}</p>
+              <p className="text-white">{t('orderPlaced')}</p>
               <p className="text-sm text-white">25.12.2025</p>
             </div>
           </div>
@@ -28,7 +28,7 @@ const OrderHistory = async () => {
               <div className="h-16 w-px bg-white/30" />
             </div>
             <div>
-              <p className="font-caudex text-white">{t('shipped')}</p>
+              <p className="text-white">{t('shipped')}</p>
               <p className="text-sm text-white/70">28.12.2025</p>
             </div>
           </div>
@@ -38,7 +38,7 @@ const OrderHistory = async () => {
               <div className="size-3 rounded-full bg-white/70" />
             </div>
             <div>
-              <p className="font-caudex text-white">{t('delivered')}</p>
+              <p className="text-white">{t('delivered')}</p>
               <p className="text-sm text-white/70">29.12.2025</p>
             </div>
           </div>
@@ -52,7 +52,7 @@ const OrderHistory = async () => {
             </div>
             <div className="font-open-sans space-y-1 font-medium">
               <p className="font-open-sans text-sm font-semibold text-white">#12134</p>
-              <h3 className="font-caudex text-3xl font-bold text-white">{t('productName')}</h3>
+              <h3 className="text-3xl font-bold text-white">{t('productName')}</h3>
               <p className="text-sm text-white">$ 98.00 ( USD )</p>
               <p className="text-sm text-white">
                 {t('orderLocation')}: 1901 Thornridge Cir.

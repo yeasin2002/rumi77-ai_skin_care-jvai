@@ -11,7 +11,7 @@ const Checkout = async () => {
       <div className="mx-auto max-w-xl">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
-          <h1 className="font-caudex text-main-button text-3xl font-normal">{t('title')}</h1>
+          <h1 className="text-main-button text-3xl font-normal">{t('title')}</h1>
           <button type="button" className="text-main-button hover:text-main-button/70">
             <X className="size-6" />
           </button>

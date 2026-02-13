@@ -15,16 +15,12 @@ export const AboutMissionAndVision = async () => {
 
         {/* Right - Content */}
         <div className="flex flex-col justify-center">
-          <h2 className="font-caudex text-main-button mb-10 text-5xl font-normal md:text-5xl">
-            {t('title')}
-          </h2>
+          <h2 className="text-main-button mb-10 text-5xl font-normal md:text-5xl">{t('title')}</h2>
 
           <div className="space-y-8">
             {/* Mission */}
             <div>
-              <h3 className="font-caudex text-main-button mb-3 text-lg font-bold">
-                {t('mission.title')}
-              </h3>
+              <h3 className="text-main-button mb-3 text-lg font-bold">{t('mission.title')}</h3>
               <p className="font-open-sans text-main-button text-sm leading-relaxed">
                 {t('mission.description')}
               </p>
@@ -32,9 +28,7 @@ export const AboutMissionAndVision = async () => {
 
             {/* Vision */}
             <div>
-              <h3 className="font-caudex text-main-button mb-3 text-lg font-bold">
-                {t('vision.title')}
-              </h3>
+              <h3 className="text-main-button mb-3 text-lg font-bold">{t('vision.title')}</h3>
               <p className="font-open-sans text-main-button text-sm leading-relaxed">
                 {t('vision.description')}
               </p>

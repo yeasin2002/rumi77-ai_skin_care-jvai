@@ -54,7 +54,7 @@ export const NewNavMobile = ({ navItems }: Props) => {
                   <Link
                     key={item.name}
                     href={{ pathname: item.url }}
-                    className="font-caudex rounded-lg px-4 py-3 text-xl font-bold text-black transition-colors hover:bg-gray-100"
+                    className="rounded-lg px-4 py-3 text-xl font-bold text-black transition-colors hover:bg-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     {item.name}

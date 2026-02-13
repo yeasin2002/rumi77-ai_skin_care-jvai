@@ -19,9 +19,7 @@ export const WelcomeContent = () => {
           priority
         />
 
-        <h2 className="font-caudex text-3xl font-semibold text-black sm:text-4xl">
-          {t('title')}
-        </h2>
+        <h2 className="text-3xl font-semibold text-black sm:text-4xl">{t('title')}</h2>
 
         <div className="flex flex-col items-center gap-4">
           <p className="font-open-sans text-base leading-relaxed text-black/80 sm:text-lg">
@@ -38,8 +36,8 @@ export const WelcomeContent = () => {
           <span className="h-px w-28 bg-black/30 sm:w-36" />
         </div>
 
-        <p className="font-caudex text-base text-black sm:text-lg">{t('tagline')}</p>
-        <p className="font-caudex text-sm text-black/70 sm:text-base">{t('thanks')}</p>
+        <p className="text-base text-black sm:text-lg">{t('tagline')}</p>
+        <p className="text-sm text-black/70 sm:text-base">{t('thanks')}</p>
       </div>
     </div>
   )

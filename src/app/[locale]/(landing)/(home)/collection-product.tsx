@@ -68,7 +68,7 @@ export const CollectionProduct = async () => {
 
             {/* Content */}
             <div className="text-main-button flex flex-col items-center p-6 text-center">
-              <h3 className={`font-caudex text-xl font-semibold`}>{item.title}</h3>
+              <h3 className={`text-xl font-semibold`}>{item.title}</h3>
               <p className={`font-open-sans mt-2 text-sm`}>{item.description}</p>
             </div>
           </div>

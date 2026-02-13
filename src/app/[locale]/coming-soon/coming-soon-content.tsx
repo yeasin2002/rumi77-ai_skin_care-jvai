@@ -21,9 +21,7 @@ export const ComingSoonContent = async () => {
         {/* Main Content */}
         <div className="animate-fade-in-up space-y-6">
           {/* Title */}
-          <h1
-            className={`font-caudex text-main-button text-5xl font-normal italic sm:text-6xl md:text-7xl`}
-          >
+          <h1 className={`text-main-button text-5xl font-normal italic sm:text-6xl md:text-7xl`}>
             {t('title')}
           </h1>
           {/* Subtitle */}

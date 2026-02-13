@@ -22,9 +22,7 @@ export const YourRoutinesContents = () => {
           <div className="flex items-center gap-3">
             <Sun className="size-12 text-yellow-500" />
             <div className="space-y-3">
-              <h2 className="font-caudex text-main-button text-5xl">
-                {t('routines.morning.title')}
-              </h2>
+              <h2 className="text-main-button text-5xl">{t('routines.morning.title')}</h2>
               <p className="text-main-button/60 text-sm">{t('routines.morning.subtitle')}</p>
             </div>
           </div>
@@ -46,9 +44,7 @@ export const YourRoutinesContents = () => {
           <div className="flex items-center gap-3">
             <Moon className="text-main-button size-12" />
             <div className="space-y-3">
-              <h2 className="font-caudex text-main-button text-5xl">
-                {t('routines.evening.title')}
-              </h2>
+              <h2 className="text-main-button text-5xl">{t('routines.evening.title')}</h2>
               <p className="text-main-button/60 text-sm">{t('routines.evening.subtitle')}</p>
             </div>
           </div>

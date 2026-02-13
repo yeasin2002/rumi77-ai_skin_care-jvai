@@ -17,7 +17,7 @@ export const CheckoutItems = () => {
 
       {/* Product Info */}
       <div className="flex-1">
-        <h3 className="font-caudex text-xl font-bold text-[#58351B]">{t('productName')}</h3>
+        <h3 className="text-xl font-bold text-[#58351B]">{t('productName')}</h3>
         <p className="mt-1 text-xl font-semibold text-[#6D5534]">{t('price')}</p>
         <button type="button" className="underline-[#6D5534] mt-2 text-sm text-[#6D5534] underline">
           {t('remove')}

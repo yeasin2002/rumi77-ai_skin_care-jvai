@@ -2,7 +2,7 @@ const TermsConditions = () => {
   return (
     <div className="bg-background min-h-screen px-6 py-20 lg:px-8">
       <div className="px-32">
-        <h1 className="font-caudex text-main-button mb-10 text-center text-7xl leading-none font-normal tracking-normal">
+        <h1 className="text-main-button mb-10 text-center text-7xl leading-none font-normal tracking-normal">
           Privacy Policy
         </h1>
 

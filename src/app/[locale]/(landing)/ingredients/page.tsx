@@ -16,7 +16,7 @@ const Ingredients = async () => {
           priority
           quality={100}
         />
-        <h1 className="font-caudex text-main-button absolute bottom-10 left-20 text-5xl leading-none font-normal tracking-normal">
+        <h1 className="text-main-button absolute bottom-10 left-20 text-5xl leading-none font-normal tracking-normal">
           {t('title1')} <br /> {t('title2')}
         </h1>
 

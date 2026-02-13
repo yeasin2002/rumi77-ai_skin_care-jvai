@@ -27,7 +27,7 @@ export const ProductView = () => {
         <div className="space-y-6">
           {/* Title */}
           <div>
-            <h1 className="font-caudex text-3xl font-normal text-white lg:text-4xl">
+            <h1 className="text-3xl font-normal text-white lg:text-4xl">
               Deep nourishing day serum
             </h1>
             <p className="mt-1 text-sm text-white/70">Daily Brightening & Barrier Repair Serum</p>

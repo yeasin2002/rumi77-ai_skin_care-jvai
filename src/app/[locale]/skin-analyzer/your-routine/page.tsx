@@ -70,7 +70,7 @@ const YourRoutine = () => {
 
       {/* Chat CTA */}
       <div className="mx-auto mt-12 max-w-4xl px-6 text-center">
-        <h3 className="font-caudex text-main-button mb-2 text-2xl">{t('chatCta.title')}</h3>
+        <h3 className="text-main-button mb-2 text-2xl">{t('chatCta.title')}</h3>
         <p className="text-main-button/70 mb-6 text-sm">{t('chatCta.description')}</p>
         <Link
           href={'/ai-chat-assistant'}

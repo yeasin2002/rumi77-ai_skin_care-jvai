@@ -18,7 +18,7 @@ const SingleProductDetails = async () => {
         {/* Right - Product Details */}
         <div>
           {/* Title */}
-          <h1 className="font-caudex text-main-button text-4xl font-normal">{t('productName')}</h1>
+          <h1 className="text-main-button text-4xl font-normal">{t('productName')}</h1>
           <p className="text-main-button/70 mt-1 text-sm">{t('subtitle')}</p>
 
           {/* Price */}

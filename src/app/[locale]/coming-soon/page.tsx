@@ -24,17 +24,12 @@ export default async function ComingSoonPage() {
         </Link>
 
         {/* Title */}
-        <h1
-          className={cn(
-            'font-caudex mb-8 text-4xl font-normal text-black',
-            'md:text-5xl lg:text-6xl'
-          )}
-        >
+        <h1 className={cn('mb-8 text-4xl font-normal text-black', 'md:text-5xl lg:text-6xl')}>
           {t('title')}
         </h1>
 
         {/* Subtitle */}
-        <h2 className="font-caudex mb-6 text-xl font-normal text-black md:text-2xl lg:text-3xl">
+        <h2 className="mb-6 text-xl font-normal text-black md:text-2xl lg:text-3xl">
           {t('subtitle')}
         </h2>
 
@@ -51,7 +46,7 @@ export default async function ComingSoonPage() {
         </div>
 
         {/* Bottom Tagline */}
-        <p className="font-caudex text-sm text-black/70 md:text-base">{t('tagline')}</p>
+        <p className="text-sm text-black/70 md:text-base">{t('tagline')}</p>
       </div>
     </div>
   )

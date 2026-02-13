@@ -45,7 +45,7 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
               key={item.name}
               href={{ pathname: item.url }}
               className={cn(
-                `font-caudex text-lg font-medium text-white transition-opacity hover:opacity-80 lg:text-2xl`,
+                `text-lg font-medium text-white transition-opacity hover:opacity-80 lg:text-2xl`,
                 className
               )}
             >
@@ -60,7 +60,7 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
               key={item.name}
               href={{ pathname: item.url }}
               className={cn(
-                `font-caudex text-base font-medium text-white transition-opacity hover:opacity-80 lg:text-lg`,
+                `text-base font-medium text-white transition-opacity hover:opacity-80 lg:text-lg`,
                 className
               )}
             >
@@ -85,7 +85,7 @@ export const NavList = async ({ wrapperClassName, className, ...props }: Props) 
                 key={item.name}
                 href={{ pathname: item.url }}
                 className={cn(
-                  `font-caudex text-main-button text-lg font-medium transition-colors hover:opacity-80`,
+                  `text-main-button text-lg font-medium transition-colors hover:opacity-80`,
                   className
                 )}
               >

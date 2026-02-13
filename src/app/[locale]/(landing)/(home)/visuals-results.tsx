@@ -28,7 +28,7 @@ export const VisualsResults = async () => {
             <div className="mb-4 flex size-14 shrink-0 items-center justify-center overflow-visible rounded-xl bg-[#2447311A]">
               <Image src={iconMap[key]} alt="Icons" className="size-8" />
             </div>
-            <h3 className={`text-main-button font-caudex text-3xl font-semibold`}>
+            <h3 className={`text-main-button text-3xl font-semibold`}>
               {t(`states.${key}.title`)}
             </h3>
             <p className={`text-main-primary-base_medium font-open-sans mt-2 text-sm font-medium`}>

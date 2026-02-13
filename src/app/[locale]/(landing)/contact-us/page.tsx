@@ -17,7 +17,7 @@ const ContactUs = async () => {
       <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center gap-8 px-6 py-20 md:grid-cols-2 lg:px-8">
         {/* Left - Contact Info */}
         <div className="flex flex-col justify-center">
-          <h1 className="font-caudex text-main-button mb-4 text-5xl leading-none font-normal tracking-normal">
+          <h1 className="text-main-button mb-4 text-5xl leading-none font-normal tracking-normal">
             {t('title')}
           </h1>
 
