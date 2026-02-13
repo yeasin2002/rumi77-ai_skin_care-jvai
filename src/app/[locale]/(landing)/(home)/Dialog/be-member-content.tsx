@@ -21,7 +21,7 @@ export const BeMemberContent = ({ onJoinClick }: BeMemberContentProps) => {
           loop
           muted
           playsInline
-          className="size-40 h-full rounded-full! object-cover md:size-110"
+          className="mt-10 size-80 rounded-full! object-cover md:mt-0 md:size-110"
         />
       </div>
 
