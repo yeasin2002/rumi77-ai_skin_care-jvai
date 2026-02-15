@@ -42,7 +42,7 @@ export const NewNavLarge = ({ navItems }: Props) => {
               <Link
                 key={item.name}
                 href={{ pathname: item.url }}
-                className="text-[1.75rem] leading-normal font-normal! text-black transition-opacity hover:opacity-70"
+                className="text-[1.50rem] leading-normal font-light! text-black transition-opacity hover:opacity-70"
               >
                 {item.name}
               </Link>

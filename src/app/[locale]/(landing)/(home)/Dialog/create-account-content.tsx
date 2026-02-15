@@ -2,13 +2,15 @@
 
 import { useCreateTempInfo } from '@/api/api-hooks/member.api-hook'
 import createProfileBg from '@/assets/image/modals/complete-profile-image.png'
+import { DatePicker } from '@/components/shared/date-picker'
 import { lato } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { format } from 'date-fns'
 import { ChevronDown, Loader2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Dispatch, SetStateAction } from 'react'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { ModalStep } from '../show-modals'
 
@@ -17,31 +19,7 @@ const createAccountSchema = z.object({
   email: z.string().regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Invalid email address'),
   contactNumber: z.string().min(10, 'Contact number must be at least 10 digits'),
   skinType: z.string().min(1, 'Please select a skin type'),
-  day: z
-    .string()
-    .min(1, 'Required')
-    .max(2)
-    .refine((val) => {
-      const num = parseInt(val)
-      return num >= 1 && num <= 31
-    }, 'Invalid day'),
-  month: z
-    .string()
-    .min(1, 'Required')
-    .max(2)
-    .refine((val) => {
-      const num = parseInt(val)
-      return num >= 1 && num <= 12
-    }, 'Invalid month'),
-  year: z
-    .string()
-    .min(4, 'Required')
-    .max(4)
-    .refine((val) => {
-      const num = parseInt(val)
-      const currentYear = new Date().getFullYear()
-      return num >= 1900 && num <= currentYear
-    }, 'Invalid year'),
+  birthday: z.date({ message: 'A date of birth is required' }),
 })
 
 type CreateAccountFormData = z.infer<typeof createAccountSchema>
@@ -55,6 +33,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm<CreateAccountFormData>({
@@ -66,7 +45,7 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
 
   const onFormSubmit = (data: CreateAccountFormData) => {
     // Format birthday as YYYY-MM-DD
-    const birthday = `${data.year}-${data.month.padStart(2, '0')}-${data.day.padStart(2, '0')}`
+    const birthday = format(data.birthday, 'yyyy-MM-dd')
 
     // Map form data to API format
     createTempInfo(
@@ -210,44 +189,14 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
           <div className="grid grid-cols-3 gap-2">
             <label className="min-w-24 text-base text-black">{t('fields.birthday')}</label>
             <div className="col-span-2 flex flex-col">
-              <div className="flex w-full items-center justify-between gap-1">
-                <div className="flex flex-col">
-                  <input
-                    type="text"
-                    placeholder={t('fields.day')}
-                    maxLength={2}
-                    className="coming-create-modal-input"
-                    {...register('day')}
-                    aria-invalid={errors.day ? 'true' : 'false'}
-                    aria-label="Day"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <input
-                    type="text"
-                    placeholder={t('fields.month')}
-                    maxLength={2}
-                    className="coming-create-modal-input"
-                    {...register('month')}
-                    aria-invalid={errors.month ? 'true' : 'false'}
-                    aria-label="Month"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <input
-                    type="text"
-                    placeholder={t('fields.year')}
-                    maxLength={4}
-                    className="coming-create-modal-input"
-                    {...register('year')}
-                    aria-invalid={errors.year ? 'true' : 'false'}
-                    aria-label="Year"
-                  />
-                </div>
-              </div>
-              {(errors.day || errors.month || errors.year) && (
+              <Controller
+                control={control}
+                name="birthday"
+                render={({ field }) => <DatePicker value={field.value} onChange={field.onChange} />}
+              />
+              {errors.birthday && (
                 <span className="mt-1 text-xs text-red-600" role="alert">
-                  {errors.day?.message || errors.month?.message || errors.year?.message}
+                  {errors.birthday.message}
                 </span>
               )}
             </div>
