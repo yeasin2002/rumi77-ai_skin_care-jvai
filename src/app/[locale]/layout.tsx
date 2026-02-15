@@ -46,7 +46,7 @@ export default async function RootLayout({
 
 export const metadata: Metadata = {
   title: {
-    default: 'GLOWMI - AI-Powered Skincare',
+    default: 'GLOWMI - Science with intelligence',
     template: '%s | GLOWMI',
   },
   description:
