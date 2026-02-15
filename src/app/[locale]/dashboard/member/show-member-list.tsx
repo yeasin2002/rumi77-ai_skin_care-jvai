@@ -1,6 +1,5 @@
 import { useDeleteTempInfo } from '@/api/api-hooks/member.api-hook'
 import { TempInfoResponse } from '@/api/query-list/member.query'
-import { Checkbox } from '@/components/ui/checkbox'
 import { TableCell, TableRow } from '@/components/ui/table'
 import { Trash2 } from 'lucide-react'
 import { useState } from 'react'
@@ -39,15 +38,14 @@ export const ShowMemberList = ({ member }: Props) => {
 
   return (
     <TableRow key={member.id} className="border-b border-gray-100">
-      <TableCell>
-        <Checkbox />
-      </TableCell>
+      <TableCell>{member.id}</TableCell>
       <TableCell>
         <span className="text-main-button font-medium">{member.full_name}</span>
       </TableCell>
+      <TableCell className="text-main-button">{member.full_name}</TableCell>
       <TableCell className="text-main-button">{member.email}</TableCell>
-      <TableCell className="text-main-button">{member.contact_number}</TableCell>
-      <TableCell className="text-main-button capitalize">{member.skin_type}</TableCell>
+      <TableCell className="text-main-button capitalize">{member.contact_number}</TableCell>
+      <TableCell className="text-main-button">{member.skin_type || 'N/A'}</TableCell>
       <TableCell className="text-main-button">{member.birthday || 'N/A'}</TableCell>
       <TableCell>
         <div className="flex items-center justify-end gap-2">
