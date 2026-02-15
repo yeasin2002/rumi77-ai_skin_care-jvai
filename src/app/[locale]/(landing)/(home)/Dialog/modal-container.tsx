@@ -2,9 +2,13 @@
 
 import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect, useSyncExternalStore } from 'react'
 import { createPortal } from 'react-dom'
 import { cn } from '../../../../../lib/utils'
+
+const emptySubscribe = () => () => {}
+const getSnapshot = () => true
+const getServerSnapshot = () => false
 
 type ModalContainerProps = {
   isOpen: boolean
@@ -23,6 +27,8 @@ export const ModalContainer = ({
   showCloseButton = true,
   hasClosedModal = false,
 }: ModalContainerProps) => {
+  const isMounted = useSyncExternalStore(emptySubscribe, getSnapshot, getServerSnapshot)
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -33,6 +39,8 @@ export const ModalContainer = ({
       document.body.style.overflow = 'unset'
     }
   }, [isOpen])
+
+  if (!isMounted) return null
 
   return createPortal(
     <AnimatePresence>

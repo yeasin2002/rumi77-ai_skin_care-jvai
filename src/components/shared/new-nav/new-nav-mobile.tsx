@@ -39,7 +39,13 @@ export const NewNavMobile = ({ navItems }: Props) => {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]" showCloseButton={false}>
               {/* Header with Logo and Close Button */}
               <div className="flex items-center justify-between border-b pb-4">
-                <Image src={newLogo} alt="GLOWMI" width={100} height={30} className="h-auto w-24" />
+                <Image
+                  src={newLogo}
+                  alt="GLOWMI"
+                  width={100}
+                  height={30}
+                  className="mt-2 ml-2 h-auto w-24"
+                />
                 <SheetClose
                   className="rounded-lg p-2 transition-colors hover:bg-gray-100"
                   aria-label="Close menu"
@@ -54,7 +60,7 @@ export const NewNavMobile = ({ navItems }: Props) => {
                   <Link
                     key={item.name}
                     href={{ pathname: item.url }}
-                    className="rounded-lg px-4 py-3 text-xl font-bold text-black transition-colors hover:bg-gray-100"
+                    className="rounded-lg px-4 py-3 text-xl font-normal text-black transition-colors hover:bg-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     {item.name}
