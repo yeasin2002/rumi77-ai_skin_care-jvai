@@ -16,7 +16,6 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
       className={cn('relative flex min-h-61.25 w-full items-center md:min-h-[120vh]', className)}
       {...props}
     >
-      <div className="absolute inset-0 z-0 min-h-screen w-full md:min-h-[120vh]"></div>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -38,38 +37,27 @@ export const NewComingSoonHero = ({ className, ...props }: Props) => {
         />
       </div>
 
-      {/* Content - Right Side */}
       <div
         className={cn(
-          'relative z-10 ml-auto flex w-full flex-col items-end justify-center gap-4 px-6 whitespace-nowrap',
-          'md: md:w-3xl md:items-center lg:mr-20'
+          'z-10 mt-24 flex w-full flex-col items-end gap-2 pr-3',
+          'md:mt-0 md:mr-20 md:ml-auto md:w-xl md:items-center md:px-0'
         )}
       >
-        {/* Title */}
-        <h1
-          className={cn(
-            'max-w-4/5 items-end justify-end text-center text-sm font-normal text-black',
-            'md:max-w-full md:text-4xl'
-          )}
-        >
-          {/* <span className="md:hidden">
-            {t('title').split(' ').slice(0, 3).join(' ')}
-            <br />
-            {t('title').split(' ').slice(3).join(' ')}
-          </span> */}
-          <span>{t('title')}</span>
-        </h1>
+        <div className={cn('flex flex-col items-center justify-center gap-2', 'md:gap-4')}>
+          <h1 className={cn('text-sm font-normal text-black', 'md:text-4xl')}>
+            <span>{t('title')}</span>
+          </h1>
 
-        {/* CTA Button */}
-        <Link
-          href={'/coming-soon'}
-          className={cn(
-            'cursor-pointer rounded-md bg-black! px-6 py-1 text-lg text-white',
-            'md:px-12 md:py-3 md:text-lg'
-          )}
-        >
-          {t('cta')}
-        </Link>
+          <Link
+            href={'/coming-soon'}
+            className={cn(
+              'cursor-pointer rounded-[4px]! bg-black! px-6 py-1 text-xs text-white',
+              'md:px-12 md:py-3 md:text-lg'
+            )}
+          >
+            {t('cta')}
+          </Link>
+        </div>
       </div>
     </section>
   )

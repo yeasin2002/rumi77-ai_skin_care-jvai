@@ -30,7 +30,7 @@ export const ShowModals = () => {
     <ModalContainer
       isOpen={currentStep !== null}
       onClose={handleClose}
-      // maxWidth={currentStep === 'welcome' ? 'max-w-[980px]' : 'max-w-[900px]'}
+      hasClosedModal={hasClosedModal}
     >
       {currentStep === 'be-member' && <BeMemberContent onJoinClick={handleJoinClick} />}
       {currentStep === 'create-account' && <CreateAccountContent setCurrentStep={setCurrentStep} />}

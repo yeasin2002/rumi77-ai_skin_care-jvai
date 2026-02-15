@@ -11,6 +11,7 @@ import { ChevronDown, Loader2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Dispatch, SetStateAction } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { z } from 'zod'
 import { ModalStep } from '../show-modals'
 
@@ -41,14 +42,13 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
     mode: 'onBlur',
   })
 
-  const { mutate: createTempInfo, isPending } = useCreateTempInfo()
+  const { mutateAsync: createTempInfo, isPending } = useCreateTempInfo()
 
-  const onFormSubmit = (data: CreateAccountFormData) => {
+  const onFormSubmit = async (data: CreateAccountFormData) => {
     // Format birthday as YYYY-MM-DD
     const birthday = format(data.birthday, 'yyyy-MM-dd')
 
-    // Map form data to API format
-    createTempInfo(
+    await createTempInfo(
       {
         full_name: data.fullName,
         email: data.email,
@@ -60,6 +60,10 @@ export const CreateAccountContent = ({ setCurrentStep }: CreateAccountContentPro
       {
         onSuccess: () => {
           setCurrentStep('welcome')
+        },
+        onError: (error) => {
+          console.log('createTempInfo Error: ', error)
+          toast.error('Something went wrong. Please try again.')
         },
       }
     )

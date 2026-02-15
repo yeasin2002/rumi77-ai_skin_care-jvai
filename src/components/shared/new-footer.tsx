@@ -111,7 +111,9 @@ export const NewFooter = async ({ className, ...props }: Props) => {
                   alt={social.name}
                   width={24}
                   height={24}
-                  className="h-5 w-5 md:h-6 md:w-6"
+                  className={cn('size-5 md:size-6', {
+                    'size-4 md:size-5': social.name === 'twitter',
+                  })}
                 />
               </a>
             ))}
