@@ -3,6 +3,7 @@
 import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { ReactNode, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { cn } from '../../../../../lib/utils'
 
 type ModalContainerProps = {
@@ -33,7 +34,7 @@ export const ModalContainer = ({
     }
   }, [isOpen])
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -41,7 +42,6 @@ export const ModalContainer = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          // hasClosedModal: 'pointer-events-none',
           className={
             'fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 ' +
             (hasClosedModal ? 'pointer-events-none' : '')
@@ -73,6 +73,7 @@ export const ModalContainer = ({
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   )
 }
